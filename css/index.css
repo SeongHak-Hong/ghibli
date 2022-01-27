@@ -1,0 +1,113 @@
+/* display */
+.flex {display:flex;}
+.block {display:block;}
+.inline-block {display:inline-block;}
+.inline {display: inline;}
+.none {display: none;}
+
+/* position */
+.relative {position: relative;}
+.absolute {position: absolute;}
+
+/* text-indent */
+.text-indent-9999 {text-indent: -9999em;}
+
+/* overfloww */
+.hidden {overflow: hidden;}
+
+/* flex */
+.space-between {justify-content: space-between;}
+.justify-content-center {justify-content: center;}
+
+
+* {
+  padding:0;
+  margin:0;
+}
+body {
+  background: url(../img/bg/tpDykBH.png) no-repeat 50% 50% / cover;
+}
+
+/* 헤더 */
+#header-wrap {
+  opacity: 0;
+}
+
+
+/* ***메인섹션*** */
+main {
+  width:62.5rem;
+  height:60rem;
+  /* margin-top:1.5rem; */
+  z-index: 98;
+  /* background: orangered; */
+}
+
+
+/* ***영화 비주얼*** */
+/* 영화스크린같은 줄 */
+#movie > * {
+  background-color: #101010;
+  width:100%;
+  height:3.125rem;
+}
+#movie-bg {
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background-color: #101010;
+}
+/* 아랫줄 */
+.over {
+  left:0;
+  top:0;
+}
+/* 아랫줄 */
+.under {
+  left:0;
+  bottom:0;
+}
+/* 캐릭터 */
+#character {
+  width:100%;
+  height:100%;
+  left:0;
+  top:0;
+}
+#ponyo {
+  left: 35px;
+  top: 520px;
+  z-index: 1;
+}
+#cloud {
+  left:0;
+  top: -6px;
+}
+#porco {
+  left: 69px;
+  top: 127px;
+  z-index: -1;
+}
+#haul {
+  left: 379px;
+  top: 283px;
+  z-index: 1;
+}
+#mononoke {
+  left: 617px;
+  top: 549px;
+}
+#totoro {
+  left: 842px;
+  top: 368px;
+  z-index: -1;
+}
+#kiki {
+  left: 1285px;
+  top: 228px;
+}
+#laputa {
+  left: 802px;
+  top: 13px;
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghibli</title>
+  <link href="./css/reset.css" rel="stylesheet">
+  <link href="./css/index.css" rel="stylesheet">
+</head>
+<body>
+  <!-- ***헤더영역*** -->
+  <div id="header-wrap" class="flex space-between">
+    <header class="flex relative">
+        <div id="hamburger">
+          <a href="#" class="block">
+            <img src="./img/icon/hamburger.png" alt="menu">
+          </a>
+        </div>
+        <div id="logo">
+          <a href="./index.html">
+            <img src="./img/logo/ghibli_logo.png" alt="logo">
+          </a>
+        </div>
+      </header>
+    </div> 
+    <!-- 메뉴(메뉴 버튼 클릭시 나옴) -->
+    <div id="menu" class="absolute">
+      <ul>
+        <li>
+          <a href="#">
+            <span>NEWS</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>EVENT</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>BOOK</span>
+          </a>
+        </li>
+        <li>
+          <a href="./film.html">
+            <span>FILM</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>ABOUT</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>HELP</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- 푸터(메뉴 버튼 클릭시 나옴) -->
+    <footer id="footer" class="absolute">
+      <span>&copy; 2005-2022 STUDIO GHIBLI Inc</span>
+      <span>·</span>
+      <a href="#">Terms of use</a>
+      <span>·</span>
+      <a href="#">Contact</a>
+      <span>·</span>
+      <a href="#">Rss feed</a>
+    </footer>
+  </div>
+  <!-- 메뉴 배경 -->
+  <div id="menu-bg" class="absolute"></div>
+  <!-- ***메뉴토글*** -->
+  <script src="./js/menu.js"></script>
+
+
+
+  <!-- ***메인영역*** -->
+  <div id="container" class="flex justify-content-center">
+  <main></main>
+  </div>
+  
+  
+
+  
+  
+  <!-- ***영화 비주얼*** -->
+  <!-- 영화스크린같은 줄 -->
+  <div id="movie">
+    <div class="over absolute"></div>
+    <div class="under absolute"></div>
+  </div>
+  <div id="movie-bg" class="absolute"></div>
+  <!-- 캐릭터 -->
+  <div id="character" class="absolute">
+    <div id="ponyo" class="absolute">
+      <img src="img/remove_bg/ponyo.png" alt="ponyo">
+    </div>
+    <div id="cloud" class="absolute">
+      <img src="img/remove_bg/blue-cloud-PNG-transparent 2.png" alt="cloud">
+    </div>
+    <div id="porco" class="absolute">
+      <img src="img/remove_bg/red.png" alt="porco rosso">
+    </div>
+    <div id="haul" class="absolute">
+      <img src="img/remove_bg/haul.png" alt="haul">
+    </div>
+    <div id="mononoke" class="absolute">
+      <img src="img/remove_bg/ashitaka 1.png" alt="mononoke">
+    </div>
+    <div id="totoro" class="absolute">
+      <img src="img/remove_bg/totoro.png" alt="totoro">
+    </div>
+    <div id="kiki" class="absolute">
+      <img src="img/remove_bg/kiki.png" alt="kiki">
+    </div>
+    <div id="laputa" class="absolute">
+      <img src="img/remove_bg/laputa.png" alt="laputa">
+    </div>
+  </div>
+  <!-- 뮤직플레이어 -->
+  <div id="music-player" class="absolute">
+    <div id="album-art" class="hidden relative">
+      <img src="img/music/ponyo040.jpg" alt="ponyo">
+    </div>
+    <div id="music-info" class="flex absolute align-items-center">
+      <div id="text">
+        <h1>Ponyo on the Cliff by the Sea</h1>
+        <p>Fujioka Fujimaki, Ohashi Nozomi</p>
+      </div> 
+      <div id="play-button"></div>
+    </div>
+    <div id="play-line"></div>
+    <div id="play-control" class="absolute">
+      <img src="./img/music/play1.png" alt="play-control">
+    </div>
+  </div>
+
+
+  <!-- ***페이드 효과*** -->
+  <script>
+    const movieBg = document.querySelector("#movie-bg");
+    const movie = document.querySelector("#movie");
+    const character = document.querySelector("#character");
+    const musicPlayer = document.querySelector("#music-player");
+
+    movieBg.style.opacity = 1;
+    character.style.opacity = 0;
+    musicPlayer.style.opacity = 0;
+
+    // 첫번째 페이드인
+    const firstTime = setInterval(function(){
+      if (movieBg.style.opacity > 0) {
+        movieBg.style.opacity = 0;
+        movieBg.style.transition = 1 + "s";
+      } else {
+        clearInterval(firstTime);
+      }
+    }, 1000);
+
+    // 두번째 페이드아웃
+    const secondTime = setTimeout(function(){
+      if (movieBg.style.opacity == 0) {
+        
+
+        movieBg.style.opacity = 1;
+        movie.style.opacity = 0;
+        movie.style.transition = 1 + "s";
+      } else {
+        clearTimeout(secondTime);
+      }
+    }, 3000);
+
+    
+
+    // 세번째 페이드인
+     const thirdTime = setTimeout(function() {
+      if (movieBg.style.opacity == 1) {
+        const header = document.querySelector("#header-wrap");
+        const body = document.querySelector("body");
+
+        movie.style.display = "none";
+        header.style.opacity = 1;
+        movieBg.style.opacity = 0;
+        body.style.background = "url(./img/bg/ghibli_background.jpg) no-repeat 50% 50% / cover";
+        character.style.opacity = 1;
+        character.style.transition = .6 + "s";
+        musicPlayer.style.opacity = 1;
+        musicPlayer.style.transition = .6 + "s";
+      } else {
+        clearTimeout(thirdTime);
+      }
+     }, 5000);
+  </script>
+
+ 
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+/* ***배경화면*** */
+body {
+  background: url(../img/bg/howl050.jpg) no-repeat 50% 50% / cover;
+}
+
+/* ***메인섹션*** */
+#container {
+  width:100%;
+  height: 100%;
+}
+/* **타이틀** */
+#title {
+  margin-left:3rem;
+}
+#title strong {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.75rem;
+  letter-spacing: -0.025rem;
+  color: #F9FFFE;
+  line-height: 1;
+}
+#close a {
+  width:100%;
+  margin-left:1rem;
+  transform: translateY(.2rem);
+}
+
+/* 사이드메뉴 */
+#side-menu {
+  z-index: 99;
+  width:max-content;
+  height:30rem;
+  transform: translateY(3rem);
+  margin-left:3.625rem;
+  margin-top:2rem;
+}
+#side-menu a {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size:1.375rem;
+  letter-spacing: -0.025rem;
+  text-decoration: none;
+}
+#side-menu li {
+  height:2.75rem;
+}
+#side-menu li a {
+  color: rgba(249, 255, 254, 0.6);
+  height:100%;
+  line-height: 2.75rem;
+}
+
+/* ***영화정보*** */
+#film {
+  top: 0;
+  width:100%;
+  height:100%;
+  background: rgba(3, 26, 39, 0.88);
+  backdrop-filter: blur(3px);
+  padding:2rem 2rem 6rem;
+  transition: .5s;
+  opacity: 0;
+}
+#poster {
+  width:23.625rem;
+  border-radius: .8rem;
+}
+#poster img {
+  height:100%;
+  min-width: 7.375rem;
+}
+#info {
+  width:max-content;
+  margin-left:1.75rem;
+}
+#info ul {
+  list-style-type: none;
+}
+#info ul li {
+  white-space: nowrap;
+}
+#info ul li ~ li {
+  margin-top:1rem;
+}
+#info span {
+  display: inline-block;
+  width:5.75rem;
+  text-align: end;
+  letter-spacing: -0.025em;
+  color: rgba(249, 255, 254, 0.6);
+  font-weight: 300;
+}
+#info strong {
+  width:max-content;
+  margin-left:3rem;
+  letter-spacing: -0.025em;
+  color: #F9FFFE;
+  font-weight: 300;
+}
+
+
+
+/* ***페이드인*** */
+#movie-bg {
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background-color: #101010;
+  z-index: 100;
+}
+
+
+
+/* ***미디어쿼리*** */
+

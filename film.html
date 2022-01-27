@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghibli</title>
+  <link href="./css/reset.css" rel="stylesheet">
+  <link href="./css/film.css" rel="stylesheet">
+</head>
+<body>
+<!-- ***헤더영역*** -->
+<div id="header-wrap" class="flex space-between">
+  <header class="flex relative">
+      <div id="hamburger">
+        <a href="#" class="block">
+          <img src="./img/icon/hamburger.png" alt="menu">
+        </a>
+      </div>
+      <div id="logo">
+        <a href="./index.html">
+          <img src="./img/logo/ghibli_logo.png" alt="logo">
+        </a>
+      </div>
+    </header>
+  </div> 
+  <!-- 메뉴(메뉴 버튼 클릭시 나옴) -->
+  <div id="menu" class="absolute">
+    <ul>
+      <li>
+        <a href="#">
+          <span>NEWS</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span>EVENT</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span>BOOK</span>
+        </a>
+      </li>
+      <li>
+        <a href="./film.html">
+          <span>FILM</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span>ABOUT</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span>HELP</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- 푸터(메뉴 버튼 클릭시 나옴) -->
+  <footer id="footer" class="absolute">
+    <span>&copy; 2005-2022 STUDIO GHIBLI Inc</span>
+    <span>·</span>
+    <a href="#">Terms of use</a>
+    <span>·</span>
+    <a href="#">Contact</a>
+    <span>·</span>
+    <a href="#">Rss feed</a>
+  </footer>
+</div>
+
+
+
+  <!-- ***메인영역*** -->
+  <div id="container" class="flex absolute justify-content-center align-items-center">
+    <main class="relative">
+      <section id="film">
+        <h2 class="none">film-list</h2>
+        <div id="poster-wrap">
+          <ul id="poster-list" class="flex">
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/baron.jpg" alt="chihiro">
+                </div>
+                <span>The cat returns</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/chihiro.jpg" alt="chihiro">
+                </div>
+                <span>Spirited away</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="./gallery.html">
+                <div class="img-wrap">
+                  <img src="./img/poster/howl.jpg" alt="howl">
+                </div>
+                <span>Howl's Moving Castle</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/mononoke.jpg" alt="mononoke">
+                </div>
+                <span>Princess Mononoke</span>
+              </a>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/majo.jpg" alt="majo">
+                </div>
+                <span>Kiki's Delivery Service</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/ponyo.jpg" alt="ponyo">
+                </div>
+                <span>Ponyo</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/totoro.jpg" alt="totoro">
+                </div>
+                <span>My Neighbor Totoro</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/Arrietty.jpg" alt="Arrietty">
+                </div>
+                <span>Arrietty</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/laputa.jpg" alt="laputa">
+                </div>
+                <span>Castle in the Sky</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/mimi.jpg" alt="whisper of the heart">
+                </div>
+                <span>Whisper of the Heart</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/ged.jpg" alt="Tales from Earthsea">
+                </div>
+                <span>Tales from Earthsea</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/ghiblies.jpg" alt="The GHIBLIES episode 2">
+                </div>
+                <span>The GHIBLIES episode 2</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/kaguyahime.jpg" alt="The Tale of The Princess Kaguya">
+                </div>
+                <span>The Tale of The Princess Kaguya</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/kazetachinu.jpg" alt="The Wind Rises">
+                </div>
+                <span>The Wind Rises</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/kokurikozaka.jpg" alt="From Up on Poppy Hill">
+                </div>
+                <span>From Up on Poppy Hill</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/marnie.jpg" alt="When Marnie Was There">
+                </div>
+                <span>When Marnie Was There</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/nausicaa.jpg" alt="Nausicaä of the Valley of the Wind">
+                </div>
+                <span>Nausicaä of the Valley of the Wind</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/omoide.jpg" alt="Only Yesterday">
+                </div>
+                <span>Only Yesterday</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/onyourmark.jpg" alt="On Your Mark">
+                </div>
+                <span>On Your Mark</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/porco.jpg" alt="Porco Rosso">
+                </div>
+                <span>Porco Rosso</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/red-turtle.jpg" alt="LA TORTUE ROUGE">
+                </div>
+                <span>LA TORTUE ROUGE</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/tanuki.jpg" alt="Pom Poko">
+                </div>
+                <span>Pom Poko</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/umi.jpg" alt="The Ocean Waves">
+                </div>
+                <span>The Ocean Waves</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                  <img src="./img/poster/yamada.jpg" alt="My Neighbors the Yamadas">
+                </div>
+                <span>My Neighbors the Yamadas</span>
+              </a>
+            </li>
+            <li class="poster">
+              <a href="#">
+                <div class="img-wrap">
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+  <!-- 뮤직플레이어 -->
+  <div id="music-player" class="absolute">
+    <div id="album-art" class="hidden relative">
+      <img src="img/music/ponyo040.jpg" alt="ponyo">
+    </div>
+    <div id="music-info" class="flex absolute align-items-center">
+      <div id="text">
+        <h1>Ponyo on the Cliff by the Sea</h1>
+        <p>Fujioka Fujimaki, Ohashi Nozomi</p>
+      </div> 
+      <div id="play-button"></div>
+    </div>
+    <div id="play-line"></div>
+    <div id="play-control" class="absolute">
+      <img src="./img/music/play1.png" alt="play-control">
+    </div>
+  </div>
+
+
+
+   <!-- ***메뉴토글*** -->
+   <script src="./js/menu.js"></script>
+   <div id="menu-bg" class="absolute"></div>
+
+
+
+  <!-- ***페이드인***  -->
+  <div id="movie-bg" class="absolute"></div>
+
+  <script>
+    const movieBg = document.querySelector("#movie-bg");
+
+    movieBg.style.opacity = 1;
+
+    // // 페이드아웃
+    // const firstTime = setInterval(function(){
+    //   if(movieBg.style.opacity == 0) {
+    //     movieBg.style.opacity = 1;
+    //   } else {
+    //     clearInterval(firstTime);
+    //   }
+    // }, 300);
+
+    // 페이드인
+    const secondTime = setInterval(function(){
+      if (movieBg.style.opacity == 1) {
+        movieBg.style.opacity = 0;
+        movieBg.style.transition = 1 + "s";
+      } else {
+        clearInterval(secondTime);
+      }
+    }, 500);
+
+    // movieBG의 z-index 낮추기
+    const zIndex0 = setTimeout(function(){
+      movieBg.style.zIndex = 0;
+      clearTimeout(zIndex0);
+    }, 1200);
+  </script>
+
+
+
+  <!-- ***슬라이더*** -->
+  <script>
+   const slider = document.querySelector('poster')
+   let isMouseDown = false;
+   let startY, scrollDown;
+
+   slider.addEventListener('mousedown', () => {
+     isMouseDown = true;
+    //  slider.classList.add('active');
+   });
+
+   slider.addEventListener('mouseleave', () => {
+    isMouseDown = false;
+    // slider.classList.remove('.active');
+   });
+
+   slider.addEventListener('mouseup', () => {
+     isMouseDown = false;
+    //  slider.classList.remove('active');
+   });
+
+   slider.addEventListener('mousemove', () => {
+
+   });
+
+   slider.addEventListener('mousedown', (e) => {
+    isMouseDown = true;
+    // slider.classList.add('active');
+
+    startY = e.pageY - slider.offsetDown;
+    scrollDowwn = slider.scrollDown;
+   });
+
+   slider.addEventListener('mousemove', (e) => {
+     if (!isMouseDown) return;
+
+     e.preventDefault();
+     const y = e.pageY - slider.offsetDown;
+     const walk = (y - startY) * 1;
+     slider.scrollDown = scrollDown - walk;
+   });
+  </script>
+
+  <!-- ***배경*** -->
+  <!-- 블러 -->
+  <div id="bg-blur" class="absolute"></div>
+  <!-- 비디오 -->
+  <div id="bg-video" class="hidden absolute">
+    <video muted autoplay loop>
+      <source src="./video/StudioGhibli_HBOMax_bg.mp4" type="video/mp4">
+    </video>
+  </div>
+</body>
+</html>

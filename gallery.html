@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghibli</title>
+  <link href="./css/reset.css" rel="stylesheet">
+  <link href="./css/gallery.css" rel="stylesheet">
+</head>
+<body>
+  <div id="container" class="flex flex-direction-column">
+    <!-- ***헤더영역*** -->
+    <div id="header-wrap" class="flex space-between">
+      <header class="flex relative">
+        <div id="left" class="flex align-items-center">
+          <div id="hamburger">
+            <a href="#" class="block">
+              <img src="./img/icon/hamburger.png" alt="menu">
+            </a>
+          </div>
+          <!-- 타이틀 -->
+            <div id="title" class="flex align-items-center">
+              <strong class="inline-block">Howl's Moving Castle</strong>
+              <div id="close">
+                <a href="./film.html" class="block">
+                  <img src="./img/icon/close_small.png" alt="close">
+                </a>
+              </div>
+            </div>
+        </div>
+        <div id="logo">
+          <a href="./index.html">
+            <img src="./img/logo/ghibli_logo.png" alt="logo">
+          </a>
+        </div>
+      </header>
+    </div> 
+    <!-- 메뉴(메뉴 버튼 클릭시 나옴) -->
+    <div id="menu" class="absolute">
+      <ul>
+        <li>
+          <a href="#">
+            <span>NEWS</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>EVENT</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>BOOK</span>
+          </a>
+        </li>
+        <li>
+          <a href="./film.html">
+            <span>FILM</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>ABOUT</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>HELP</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- 푸터(메뉴 버튼 클릭시 나옴) -->
+    <footer id="footer" class="absolute">
+      <span>&copy; 2005-2022 STUDIO GHIBLI Inc</span>
+      <span>·</span>
+      <a href="#">Terms of use</a>
+      <span>·</span>
+      <a href="#">Contact</a>
+      <span>·</span>
+      <a href="#">Rss feed</a>
+    </footer>
+    
+
+
+
+
+    <!-- ***사이드메뉴*** -->
+    <section id="side-menu" class="relative">
+      <h2 class="none">side-menu</h2>
+      <ul id="side-menu-ul" class="list-style-none">
+        <li data-index="0">
+          <a href="#" class="block">GALLERY</a>
+        </li>
+        <li data-index="1">
+          <a href="#" class="block">INFO</a>
+        </li>
+      </ul>
+    </section>
+
+
+
+
+    <!-- ***영화정보*** -->
+    <section id="film" class="flex absolute align-items-center justify-content-center">
+      <h2 class="none">film-info</h2>
+      <div id="content" class="flex justify-content-center">
+        <!-- 포스터 -->
+        <div id="poster" class="hidden">
+          <img src="./img/poster/howl.jpg" alt="howl">
+        </div>
+        <!-- 정보 -->
+        <div id="info">
+          <ul>
+            <li>
+              <span>원작</span>
+              <strong>다이애나-윈 존스</strong>
+            </li>
+            <li>
+              <span>각본·감독</span>
+              <strong>미야자키 하야오</strong>
+            </li>
+            <li>
+              <span>프로듀서</span>
+              <strong>스즈키 토시오</strong>
+            </li>
+            <li>
+              <span>음악</span>
+              <strong>히사이시 조</strong>
+            </li>
+            <li>
+              <span>주제가</span>
+              <strong>바이쇼 오치 에코</strong>
+            </li>
+            <li>
+              <span>목소리 출연</span>
+              <strong>바이쇼 오치 에코·키무라 타쿠야·미와 아키히로</strong>
+            </li>
+            <li>
+              <span></span>
+              <strong>가슈 우인 타츠야·카미키 류노스케·오오 이즈미 히로시</strong>
+            </li>
+            <li>
+              <span></span>
+              <strong>하라다 다이지로·카토오 하루코</strong>
+            </li>
+            <li>
+              <span>상영 시간</span>
+              <strong>약 119분</strong>
+            </li>
+            <li>
+              <span>배급</span>
+              <strong>도호</strong>
+            </li>
+            <li>
+              <span>개봉일</span>
+              <strong>2004.11.20 (토)</strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- 사이드메뉴 info 누르면 영화정보 보이도록 -->
+    <script>
+    const film = document.querySelector("#film");
+    const sidemenuLi = document.querySelectorAll("#side-menu-ul li");
+
+    // info on
+    sidemenuLi[1].onclick = function(e) {
+      film.style.opacity = 1;
+    }
+
+    // info off
+    sidemenuLi[0].onclick = function(e) {
+      film.style.opacity = 0;
+    }
+    </script>
+
+
+
+
+    <!-- ***메뉴토글*** -->
+    <script src="./js/menu.js"></script>
+    <div id="menu-bg" class="absolute"></div>
+
+
+
+
+    <!-- ***뮤직플레이어*** -->
+    <div id="music-player" class="absolute">
+      <div id="album-art" class="hidden relative">
+        <img src="img/music/ponyo040.jpg" alt="ponyo">
+      </div>
+      <div id="music-info" class="flex absolute align-items-center">
+        <div id="text">
+          <h1>Ponyo on the Cliff by the Sea</h1>
+          <p>Fujioka Fujimaki, Ohashi Nozomi</p>
+        </div> 
+        <div id="play-button"></div>
+      </div>
+      <div id="play-line"></div>
+      <div id="play-control" class="absolute">
+        <img src="./img/music/play1.png" alt="play-control">
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- ***페이드인***  -->
+  <div id="movie-bg" class="absolute"></div>
+
+
+
+
+  <!-- ***사이드메뉴 on/off*** -->
+  <script>
+
+  const sidemenuUl = document.querySelector('#side-menu ul');
+
+  for(let i = 0; i < sidemenuUl.children.length; i++) {
+    sidemenuUl.children[i].style.color = "#F9FFFE";
+    sidemenuUl.children[i].style.opacity = .6;
+    sidemenuUl.children[i].style.textDecoration = "";
+  }
+
+// 클릭이벤트
+sidemenuUl.addEventListener('click', function(event) {
+  console.log(event.target);
+  console.log(event.target.parentElement.dataset.index);
+  console.log(typeof event.target.parentElement.dataset.index);
+  let getIndexValue = Number(event.target.parentElement.dataset.index);
+  console.log(typeof getIndexValue);
+  
+
+  console.log("반복문으로 활용할 인덱스 값을 마크업 속성노드에서 추출 :" + getIndexValue);
+  for(let i = 0; i < sidemenuUl.children.length; i++) {
+    if(getIndexValue !== i) {
+        console.log(i);
+        console.log("제외된 추출값 :" + getIndexValue);
+        sidemenuUl.children[i].style.opacity = 0.6;
+        sidemenuUl.children[i].children[0].style.color = "#F9FFFE";
+        sidemenuUl.children[i].children[0].style.textDecoration = "";
+      } else if (getIndexValue !== null) {
+        sidemenuUl.children[i].style.opacity = 1;
+        sidemenuUl.children[i].children[0].style.color = "#F9FFFE";
+        sidemenuUl.children[i].children[0].style.textDecoration = "underline";
+      }
+    }
+});
+  </script>
+
+
+
+
+  <!-- ***진입시 페이드효과*** -->
+  <script>
+    const movieBg = document.querySelector("#movie-bg");
+
+    movieBg.style.opacity = 1;
+
+    // // 페이드아웃
+    // const firstTime = setInterval(function(){
+    //   if(movieBg.style.opacity == 0) {
+    //     movieBg.style.opacity = 1;
+    //   } else {
+    //     clearInterval(firstTime);
+    //   }
+    // }, 300);
+
+    // 페이드인
+    const secondTime = setInterval(function(){
+      if (movieBg.style.opacity == 1) {
+        movieBg.style.opacity = 0;
+        movieBg.style.transition = 1 + "s";
+      } else {
+        clearInterval(secondTime);
+      }
+    }, 500);
+
+    // movieBG의 z-index 낮추기
+    const zIndex0 = setTimeout(function(){
+      movieBg.style.zIndex = 0;
+      clearTimeout(zIndex0);
+    }, 1200);
+  </script>
+</body>
+</html>
