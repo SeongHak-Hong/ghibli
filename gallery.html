@@ -161,21 +161,6 @@
         </div>
       </div>
     </section>
-    <!-- 사이드메뉴 info 누르면 영화정보 보이도록 -->
-    <script>
-    const film = document.querySelector("#film");
-    const sidemenuLi = document.querySelectorAll("#side-menu-ul li");
-
-    // info on
-    sidemenuLi[1].onclick = function(e) {
-      film.style.opacity = 1;
-    }
-
-    // info off
-    sidemenuLi[0].onclick = function(e) {
-      film.style.opacity = 0;
-    }
-    </script>
 
 
 
@@ -209,7 +194,87 @@
 
 
 
-  <!-- ***페이드인***  -->
+  <!-- ***갤러리(배경화면) 슬라이드*** -->
+  <div id="slide" class="absolute">
+    <ul id="slide-ul" class="flex absolute">
+      <li>
+        <img src="./img/gallery/howl050.jpg" alt="howl1">
+      </li>
+      <li>
+        <img src="./img/gallery/howl001.jpg" alt="howl2">
+      </li>
+      <li>
+        <img src="./img/gallery/howl004.jpg" alt="howl3">
+      </li>
+      <li>
+        <img src="./img/gallery/howl005.jpg" alt="howl4">
+      </li>
+      <li>
+        <img src="./img/gallery/howl016.jpg" alt="howl5">
+      </li>
+      <li>
+        <img src="./img/gallery/howl033.jpg" alt="howl6">
+      </li>
+      <li>
+        <img src="./img/gallery/howl035.jpg" alt="howl7">
+      </li>
+      <li>
+        <img src="./img/gallery/howl039.jpg" alt="howl8">
+      </li>
+      <li>
+        <img src="./img/gallery/howl043.jpg" alt="howl9">
+      </li>
+      <li>
+        <img src="./img/gallery/howl045.jpg" alt="howl10">
+      </li>
+    </ul>
+  </div>
+  <!-- 컨트롤(페이저) -->
+  <div id="controls" class="flex absolute space-between">
+    <div id="prev" class="swapBtn">
+      <img src="./img/icon/chevron_left.png" alt="prev">
+    </div>
+    <div id="pager">
+      <div id="cur-pos" class="inline-block">1</div>
+      <span>/</span>
+      <div id="total-page" class="inline-block">10</div>
+    </div>
+    <div id="next" class="swapBtn">
+      <img src="./img/icon/chevron_right.png" alt="next">
+    </div>
+  </div>
+  <!-- 슬라이드 자바스크립트 -->
+  <script>
+      const liItems = document.querySelectorAll('#slide-ul li');
+      const next = document.querySelector('#next');
+      const prev = document.querySelector('#prev');
+
+      for(let i = 0; i < liItems.length; i++) {
+        liItems[i].style.display = 'none';
+        liItems[0].style.display = 'block';
+      }
+      let slideIndex = 0;
+      next.addEventListener('click', function() {
+        if(slideIndex < liItems.length) {
+          for(let i = 0; i < liItems.length; i++) {
+            if(i !== slideIndex) {
+              liItems[i].style.display = "none";
+            } else {
+              liItems[i].style.display = "block";
+              
+            }
+          }
+          slideIndex++;
+        } else {
+          slideIndex = 0;
+        }
+      });
+  </script>
+
+
+
+
+  <!-- ***페이드인 - 윈도우 로드***  -->
   <div id="movie-bg" class="absolute"></div>
 
 
@@ -222,6 +287,7 @@
   
   for(let i = 0; i < sidemenuUl.children.length; i++) {
     sidemenuUl.children[i].children[0].style.color = "#F9FFFE";
+    sidemenuUl.children[i].children[0].style.transition = ".7s";
     sidemenuUl.children[0].children[0].style.opacity = 1;
     sidemenuUl.children[1].children[0].style.opacity = .6;
     sidemenuUl.children[0].children[0].style.textDecoration = "underline";
@@ -252,6 +318,28 @@ sidemenuUl.addEventListener('click', function(event) {
       }
     }
 });
+  </script>
+
+
+
+
+<!-- ***사이드메뉴 info 누르면 '1. 영화정보 보이기', '2. 페이저 숨기기'*** -->
+  <script>
+    const film = document.querySelector("#film");
+    const sidemenuLi = document.querySelectorAll("#side-menu-ul li");
+    const pagerWrap = document.querySelector("#pager-wrap");
+
+    // info on
+    sidemenuLi[1].onclick = function(e) {
+      film.style.opacity = 1;
+      pagerWrap.style.opacity = 0;
+    }
+
+    // info off
+    sidemenuLi[0].onclick = function(e) {
+      film.style.opacity = 0;
+      pagerWrap.style.opacity = 1;
+    }
   </script>
 
 
