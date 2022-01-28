@@ -219,11 +219,13 @@
   <script>
 
   const sidemenuUl = document.querySelector('#side-menu ul');
-
+  
   for(let i = 0; i < sidemenuUl.children.length; i++) {
-    sidemenuUl.children[i].style.color = "#F9FFFE";
-    sidemenuUl.children[i].style.opacity = .6;
-    sidemenuUl.children[i].style.textDecoration = "";
+    sidemenuUl.children[i].children[0].style.color = "#F9FFFE";
+    sidemenuUl.children[0].children[0].style.opacity = 1;
+    sidemenuUl.children[1].children[0].style.opacity = .6;
+    sidemenuUl.children[0].children[0].style.textDecoration = "underline";
+    sidemenuUl.children[1].children[0].style.textDecoration = "";
   }
 
 // 클릭이벤트
@@ -240,11 +242,11 @@ sidemenuUl.addEventListener('click', function(event) {
     if(getIndexValue !== i) {
         console.log(i);
         console.log("제외된 추출값 :" + getIndexValue);
-        sidemenuUl.children[i].style.opacity = 0.6;
+        sidemenuUl.children[i].children[0].style.opacity = 0.6;
         sidemenuUl.children[i].children[0].style.color = "#F9FFFE";
-        sidemenuUl.children[i].children[0].style.textDecoration = "";
-      } else if (getIndexValue !== null) {
-        sidemenuUl.children[i].style.opacity = 1;
+        sidemenuUl.children[i].children[0].style.textDecoration = "none";
+      } else {
+        sidemenuUl.children[i].children[0].style.opacity = 1;
         sidemenuUl.children[i].children[0].style.color = "#F9FFFE";
         sidemenuUl.children[i].children[0].style.textDecoration = "underline";
       }

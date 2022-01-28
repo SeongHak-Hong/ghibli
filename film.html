@@ -73,9 +73,11 @@
 
 
 
+
   <!-- ***메인영역*** -->
   <div id="container" class="flex absolute justify-content-center align-items-center">
     <main class="relative">
+      <!-- 포스터 리스트 -->
       <section id="film">
         <h2 class="none">film-list</h2>
         <div id="poster-wrap">
@@ -284,7 +286,11 @@
       </section>
     </main>
   </div>
-  <!-- 뮤직플레이어 -->
+
+
+
+
+  <!-- ***뮤직플레이어*** -->
   <div id="music-player" class="absolute">
     <div id="album-art" class="hidden relative">
       <img src="img/music/ponyo040.jpg" alt="ponyo">
@@ -304,9 +310,11 @@
 
 
 
-   <!-- ***메뉴토글*** -->
-   <script src="./js/menu.js"></script>
-   <div id="menu-bg" class="absolute"></div>
+
+  <!-- ***메뉴토글*** -->
+  <script src="./js/menu.js"></script>
+  <div id="menu-bg" class="absolute"></div>
+
 
 
 
@@ -317,15 +325,6 @@
     const movieBg = document.querySelector("#movie-bg");
 
     movieBg.style.opacity = 1;
-
-    // // 페이드아웃
-    // const firstTime = setInterval(function(){
-    //   if(movieBg.style.opacity == 0) {
-    //     movieBg.style.opacity = 1;
-    //   } else {
-    //     clearInterval(firstTime);
-    //   }
-    // }, 300);
 
     // 페이드인
     const secondTime = setInterval(function(){
@@ -343,6 +342,7 @@
       clearTimeout(zIndex0);
     }, 1200);
   </script>
+
 
 
 
@@ -388,6 +388,9 @@
      slider.scrollDown = scrollDown - walk;
    });
   </script>
+
+
+
 
   <!-- ***배경*** -->
   <!-- 블러 -->

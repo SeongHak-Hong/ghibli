@@ -46,7 +46,7 @@ body {
   height:2.75rem;
 }
 #side-menu li a {
-  color: rgba(249, 255, 254, 0.6);
+  /* color: #F9FFFE; */
   height:100%;
   line-height: 2.75rem;
 }

@@ -72,19 +72,19 @@
   </div>
   <!-- 메뉴 배경 -->
   <div id="menu-bg" class="absolute"></div>
-  <!-- ***메뉴토글*** -->
+  <!-- 메뉴토글 -->
   <script src="./js/menu.js"></script>
+
 
 
 
   <!-- ***메인영역*** -->
   <div id="container" class="flex justify-content-center">
-  <main></main>
+    <main></main>
   </div>
   
   
 
-  
   
   <!-- ***영화 비주얼*** -->
   <!-- 영화스크린같은 줄 -->
@@ -139,6 +139,8 @@
   </div>
 
 
+
+
   <!-- ***페이드 효과*** -->
   <script>
     const movieBg = document.querySelector("#movie-bg");
@@ -173,8 +175,6 @@
       }
     }, 3000);
 
-    
-
     // 세번째 페이드인
      const thirdTime = setTimeout(function() {
       if (movieBg.style.opacity == 1) {
@@ -195,7 +195,8 @@
      }, 5000);
   </script>
 
- 
+
+
 
 </body>
 </html>
