@@ -342,19 +342,22 @@ sidemenuUl.addEventListener('click', function(event) {
       controls.style.opacity = 1;
       const blink0 = setTimeout(function(){
         lantern.style.opacity = 1;
-      }, 16);
+      }, 530);
       const blink1 = setTimeout(function(){
         lantern.style.opacity = 0;
-      }, 300);
+      }, 730);
       const blink2 = setTimeout(function(){
         lantern.style.opacity = 1;
-      }, 500);
+      }, 830);
       const blink3 = setTimeout(function(){
         lantern.style.opacity = 0;
-      }, 600);
+      }, 930);
       const blink4 = setTimeout(function(){
+        lantern.style.opacity = 0;
+      }, 1130);
+      const blink5 = setTimeout(function(){
         lantern.style.opacity = 1;
-      }, 1200);
+      }, 1700);
       
     }
   </script>
@@ -367,15 +370,6 @@ sidemenuUl.addEventListener('click', function(event) {
     const movieBg = document.querySelector("#movie-bg");
 
     movieBg.style.opacity = 1;
-
-    // // 페이드아웃
-    // const firstTime = setInterval(function(){
-    //   if(movieBg.style.opacity == 0) {
-    //     movieBg.style.opacity = 1;
-    //   } else {
-    //     clearInterval(firstTime);
-    //   }
-    // }, 300);
 
     // 페이드인
     const secondTime = setInterval(function(){
@@ -392,6 +386,34 @@ sidemenuUl.addEventListener('click', function(event) {
       movieBg.style.zIndex = 0;
       clearTimeout(zIndex0);
     }, 1200);
+
+    // 랜턴 깜빡
+      const blink0 = setTimeout(function(){
+        lantern.style.opacity = 0;
+      }, 1216);
+      const blink1 = setTimeout(function(){
+        lantern.style.opacity = 1;
+      }, 1416);
+      const blink2 = setTimeout(function(){
+        lantern.style.opacity = 0;
+      }, 1516);
+      const blink3 = setTimeout(function(){
+        lantern.style.opacity = 1;
+      }, 1616);
+      const blink4 = setTimeout(function(){
+        lantern.style.opacity = 0;
+      }, 1716);
+      const blink5 = setTimeout(function(){
+        lantern.style.opacity = 1;
+      }, 1816);
+      const blink6 = setTimeout(function(){
+        lantern.style.opacity = 0;
+      }, 1916);
+      const blink7 = setTimeout(function(){
+        lantern.style.opacity = 1;
+      }, 2516);
+
+    
   </script>
 </body>
 </html>
