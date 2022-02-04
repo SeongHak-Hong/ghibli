@@ -327,18 +327,18 @@ sidemenuUl.addEventListener('click', function(event) {
   <script>
     const film = document.querySelector("#film");
     const sidemenuLi = document.querySelectorAll("#side-menu-ul li");
-    const pagerWrap = document.querySelector("#pager-wrap");
+    const controls = document.querySelector("#controls");
 
     // info on
     sidemenuLi[1].onclick = function(e) {
       film.style.opacity = 1;
-      pagerWrap.style.opacity = 0;
+      controls.style.opacity = 0;
     }
 
     // info off
     sidemenuLi[0].onclick = function(e) {
       film.style.opacity = 0;
-      pagerWrap.style.opacity = 1;
+      controls.style.opacity = 1;
     }
   </script>
 

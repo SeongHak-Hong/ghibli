@@ -1,7 +1,8 @@
 /* ***컨테이너*** */
 #container {
-  background: url(../img/bg/event_blank1.png) 100% 100% no-repeat;
-  background-size: cover;
+  left:0;
+  top:0;
+  background-color: #0f1216;
 }
 
 
@@ -15,29 +16,22 @@
   height:100%;
   background: url(../img/bg/lantern.png) 100% 100% no-repeat;
   background-size: cover;
+  z-index: 2;
+  transition: .5s;
 }
 
 
 
 
-
-/* ***타이틀*** */
-#title {
-  margin-left:3rem;
-}
-#title strong {
-  font-family: 'Be Vietnam Pro', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.75rem;
-  letter-spacing: -0.025rem;
-  color: #F9FFFE;
-  line-height: 1;
-}
-#close a {
+/* ***배경이미지*** */
+#bg {
   width:100%;
-  margin-left:1rem;
-  transform: translateY(.2rem);
+  height:100%;
+  background: url(../img/bg/event_blank3.png) 100% 100% no-repeat;
+  background-size: cover;
+  left:0;
+  top:0;
+  z-index: 1;
 }
 
 
@@ -71,6 +65,7 @@
 
 /* ***영화정보*** */
 #film {
+  left:0;
   top: 0;
   width:100%;
   height:100%;
@@ -78,6 +73,7 @@
   padding:2rem 2rem 6rem;
   transition: .5s;
   opacity: 0;
+  z-index: 0;
 }
 #poster {
   width:23.625rem;
@@ -121,37 +117,91 @@
 
 /* ***슬라이드(배경화면)*** */
 #slide {
-  width:100vw;
-  height:100vh;
-  left:0;
-  top:0;
-  z-index: -1;
-  background-color: #00493d;
-}
-#slide-ul {
-  width:1330px;
-  height:1020px;
-
-  left:50%;
+  width:1000px;
+  height:800px;
+  left:26rem;
   top:50%;
-  transform: translate(-50%,-50%);
+  transform: translate(9rem, -50%);
+  z-index: 2;
 }
-#slide-ul img {
-  height:104%;
+/* ul */
+#slide-ul {
+  width:100%;
+  height:100%;
+  box-sizing: border-box;
+  padding-right: 1rem;
 }
+/* li */
+.slide-li {
+  width:100%;
+  height:100%;
+}
+/* 배너 */
+.banner {
+  margin-top: 7.625rem;
+}
+.banner img {
+  filter: grayscale(0%);
+  width:80%;
+}
+/* 텍스트 */
+.slide-text * {
+  text-align: end;
+  line-height: 1.6;
+  letter-spacing: -.025em;
+  width:80%;
+}
+/* 타이틀 */
+.slide-title {
+  margin: 1.4rem 0 1rem;
+  font-size:2.5rem;
+  font-weight: 500;
+  color:rgba(250, 250, 250, .98);
+}
+/* 일정, 장소 */
+.date, .place {
+  font-size:1.125rem;
+  font-weight: 300;
+  color:rgba(250, 250, 250, .8);
+}
+/* 설명 */
+.explain {
+  margin-top:2rem;
+  font-size:.875rem;
+  font-weight: 200;
+  color:rgba(250, 250, 250, .6);
+}
+/* 버튼 */
+.button {
+  width:140px;
+  height:30px;
+  border-radius: 15px;
+  background-color: rgba(250, 250, 250, .6);
+  cursor: pointer;
+  letter-spacing: -.025em;
+  text-align: center;
+  float: right;
+  margin-top:4rem;
+  transition: .5s;
+}
+.button:hover {
+  background-color: rgba(250, 250, 250, 1);
+}
+
+
 
 
 /* ***컨트롤(페이저)*** */
 #controls{
   bottom:3rem;
-  left:50%;
+  left:53%;
   transform: translateX(-50%);
   width:10rem;
   height:1.6rem;
   transition: .3s;
   padding:.8rem 1.6rem;
   border-radius: 2rem;
-  z-index: 1;
+  z-index: 98;
   color: rgba(249, 255, 254, .6);
 }
 /* 페이저 호버 */

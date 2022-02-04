@@ -9,10 +9,18 @@
   <link href="./css/event.css" rel="stylesheet">
 </head>
 <body>
-  <div id="container" class="flex flex-direction-column">
+  <div id="container" class="flex flex-direction-column absolute">
     <!-- ***랜턴이미지*** -->
     <div id="lantern" class="absolute"></div>
+
+
+
+
+    <!-- ***배경*** -->
+    <div id="bg" class="absolute"></div>
     
+
+
     
     <!-- ***헤더영역*** -->
     <div id="header-wrap" class="flex space-between">
@@ -190,9 +198,27 @@
 
 
   <!-- ***슬라이드(이벤트 리스트)*** -->
-  <div id="slide" class="absolute">
-    <ul id="slide-ul" class="flex absolute">
-      <li></li>
+  <div id="slide" class="absolute flex justify-content-center">
+    <ul id="slide-ul" class="flex">
+      <li id="slide1" class="slide-li flex justify-content-end">
+        <div class="banner flex justify-content-end">
+          <img src="./img/event/Ghibli_exhibition.png" alt="banner1">
+        </div>
+        <div class="slide-text flex align-items-end flex-direction-column">
+          <strong class="slide-title block">Toshio SUZUKI Ghibli exhibition</strong>
+          <span class="place block">The Museum of Kyoto(Kyoto Prefecture)</span>
+          <p class="date">
+            2022.04.23(Sat)- 2022.06.19(Sun)
+          </p>
+          <p class="explain">
+            Takahata Isao ・ Miyazaki and the Kata-mai (literally, " both have sent a bunch of animated film out in the world along with Studio Ghibli and producers Toshio Suzuki 
+            producer) draw attention to an exhibition.
+          </p>
+        </div>
+        <div class="button">
+          More
+        </div>
+      </li>
     </ul>
   </div>
   <!-- 컨트롤(페이저) -->
@@ -289,32 +315,54 @@ sidemenuUl.addEventListener('click', function(event) {
 
 
 
-<!-- ***사이드메뉴 info 누르면 '1. 영화정보 보이기', '2. 페이저 숨기기'*** -->
+<!-- ***사이드메뉴 closed 누르면 '1. 종료된 행사 보이기', '2. 페이저 숨기기', '3. 랜턴 깜박'*** -->
   <script>
     const film = document.querySelector("#film");
     const sidemenuLi = document.querySelectorAll("#side-menu-ul li");
-    const pagerWrap = document.querySelector("#pager-wrap");
+    const controls = document.querySelector("#controls");
+    const slide = document.querySelector("#slide");
     const lantern = document.querySelector("#lantern");
 
     // info on
     sidemenuLi[1].onclick = function(e) {
       film.style.opacity = 1;
-      pagerWrap.style.opacity = 0;
-      lantern.style.zIndex = "0";
+      film.style.zIndex = 1;
+      slide.style.zIndex = 0;
+      lantern.style.zIndex = 0;
+      lantern.style.opacity = 0;
+      controls.style.opacity = 0;
     }
 
     // info off
     sidemenuLi[0].onclick = function(e) {
       film.style.opacity = 0;
-      pagerWrap.style.opacity = 1;
-      lantern.style.zIndex = "1";
+      film.style.zIndex = 0;
+      slide.style.zIndex = 2;
+      lantern.style.zIndex = 2;
+      controls.style.opacity = 1;
+      const blink0 = setTimeout(function(){
+        lantern.style.opacity = 1;
+      }, 16);
+      const blink1 = setTimeout(function(){
+        lantern.style.opacity = 0;
+      }, 300);
+      const blink2 = setTimeout(function(){
+        lantern.style.opacity = 1;
+      }, 500);
+      const blink3 = setTimeout(function(){
+        lantern.style.opacity = 0;
+      }, 600);
+      const blink4 = setTimeout(function(){
+        lantern.style.opacity = 1;
+      }, 1200);
+      
     }
   </script>
 
 
 
 
-  <!-- ***진입시 페이드효과*** -->
+  <!-- ***진입시 페이드효과, 랜턴 깜빡*** -->
   <script>
     const movieBg = document.querySelector("#movie-bg");
 
