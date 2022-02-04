@@ -142,12 +142,10 @@
   margin-top: 7.625rem;
 }
 .banner img {
-  filter: grayscale(0%);
   width:80%;
 }
 /* 텍스트 */
 .slide-text * {
-  text-align: end;
   line-height: 1.6;
   letter-spacing: -.025em;
   width:80%;
@@ -173,19 +171,18 @@
   color:rgba(250, 250, 250, .6);
 }
 /* 버튼 */
-.button {
+.button span {
   width:140px;
   height:30px;
   border-radius: 15px;
   background-color: rgba(250, 250, 250, .6);
   cursor: pointer;
-  letter-spacing: -.025em;
-  text-align: center;
-  float: right;
   margin-top:4rem;
   transition: .5s;
+  letter-spacing: -.025em;
+  color:#0f1216;
 }
-.button:hover {
+.button:hover span {
   background-color: rgba(250, 250, 250, 1);
 }
 
@@ -195,7 +192,7 @@
 /* ***컨트롤(페이저)*** */
 #controls{
   bottom:3rem;
-  left:53%;
+  left:55%;
   transform: translateX(-50%);
   width:10rem;
   height:1.6rem;

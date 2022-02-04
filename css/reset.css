@@ -11,8 +11,9 @@
 .relative {position: relative;}
 .absolute {position: absolute;}
 
-/* text-indent */
+/* text */
 .text-indent-9999 {text-indent: -9999em;}
+.text-align-center {text-align: center;}
 
 /* overfloww */
 .hidden {overflow: hidden;}
