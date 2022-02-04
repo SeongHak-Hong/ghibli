@@ -1,0 +1,187 @@
+/* ***컨테이너*** */
+#container {
+  background: url(../img/bg/event_blank1.png) 100% 100% no-repeat;
+  background-size: cover;
+}
+
+
+
+
+/* ***랜턴이미지*** */
+#lantern {
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background: url(../img/bg/lantern.png) 100% 100% no-repeat;
+  background-size: cover;
+}
+
+
+
+
+
+/* ***타이틀*** */
+#title {
+  margin-left:3rem;
+}
+#title strong {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.75rem;
+  letter-spacing: -0.025rem;
+  color: #F9FFFE;
+  line-height: 1;
+}
+#close a {
+  width:100%;
+  margin-left:1rem;
+  transform: translateY(.2rem);
+}
+
+
+
+
+/* ***사이드메뉴*** */
+#side-menu {
+  z-index: 99;
+  width:max-content;
+  height:30rem;
+  transform: translateY(3rem);
+  margin-left:3.625rem;
+  margin-top:2rem;
+}
+#side-menu a {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size:1.375rem;
+  letter-spacing: -0.025rem;
+  text-decoration: none;
+}
+#side-menu li {
+  height:2.75rem;
+}
+#side-menu li a {
+  height:100%;
+  line-height: 2.75rem;
+}
+
+
+
+
+/* ***영화정보*** */
+#film {
+  top: 0;
+  width:100%;
+  height:100%;
+  background: rgba(3, 26, 39, 0.88);
+  padding:2rem 2rem 6rem;
+  transition: .5s;
+  opacity: 0;
+}
+#poster {
+  width:23.625rem;
+  border-radius: .8rem;
+}
+#poster img {
+  height:100%;
+  min-width: 7.375rem;
+}
+#info {
+  width:max-content;
+  margin-left:1.75rem;
+}
+#info ul {
+  list-style-type: none;
+}
+#info ul li {
+  white-space: nowrap;
+}
+#info ul li ~ li {
+  margin-top:1rem;
+}
+#info span {
+  display: inline-block;
+  width:5.75rem;
+  text-align: end;
+  letter-spacing: -0.025em;
+  color: rgba(249, 255, 254, 0.6);
+  font-weight: 300;
+}
+#info strong {
+  width:max-content;
+  margin-left:3rem;
+  letter-spacing: -0.025em;
+  color: #F9FFFE;
+  font-weight: 300;
+}
+
+
+
+
+/* ***슬라이드(배경화면)*** */
+#slide {
+  width:100vw;
+  height:100vh;
+  left:0;
+  top:0;
+  z-index: -1;
+  background-color: #00493d;
+}
+#slide-ul {
+  width:1330px;
+  height:1020px;
+
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+}
+#slide-ul img {
+  height:104%;
+}
+
+
+/* ***컨트롤(페이저)*** */
+#controls{
+  bottom:3rem;
+  left:50%;
+  transform: translateX(-50%);
+  width:10rem;
+  height:1.6rem;
+  transition: .3s;
+  padding:.8rem 1.6rem;
+  border-radius: 2rem;
+  z-index: 1;
+  color: rgba(249, 255, 254, .6);
+}
+/* 페이저 호버 */
+#controls:hover {
+  background: rgba(249, 255, 254, .16);
+  backdrop-filter: blur(6px);
+}
+/* 이전, 다음 아이콘 크기 */
+#prev, #next {
+  width:2rem;
+  transform:translateY(-.125rem);
+  cursor: pointer;
+}
+#prev img, #next img {
+  width:100%;
+}
+/* 현재 위치값 폰트컬러 */
+#cur-pos {
+  color: rgba(249, 255, 254, 1);
+}
+
+
+
+
+/* ***페이드인*** */
+#movie-bg {
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background-color: #101010;
+  z-index: 100;
+}

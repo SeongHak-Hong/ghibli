@@ -6,10 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ghibli</title>
   <link href="./css/reset.css" rel="stylesheet">
-  <link href="./css/gallery.css" rel="stylesheet">
+  <link href="./css/event.css" rel="stylesheet">
 </head>
 <body>
   <div id="container" class="flex flex-direction-column">
+    <!-- ***랜턴이미지*** -->
+    <div id="lantern" class="absolute"></div>
+    
+    
     <!-- ***헤더영역*** -->
     <div id="header-wrap" class="flex space-between">
       <header class="flex relative">
@@ -19,15 +23,6 @@
               <img src="./img/icon/hamburger.png" alt="menu">
             </a>
           </div>
-          <!-- 타이틀 -->
-            <div id="title" class="flex align-items-center">
-              <strong class="inline-block">Howl's Moving Castle</strong>
-              <div id="close">
-                <a href="./film.html" class="block">
-                  <img src="./img/icon/close_small.png" alt="close">
-                </a>
-              </div>
-            </div>
         </div>
         <div id="logo">
           <a href="./index.html">
@@ -91,10 +86,10 @@
       <h2 class="none">side-menu</h2>
       <ul id="side-menu-ul" class="list-style-none">
         <li data-index="0">
-          <a href="#" class="block">GALLERY</a>
+          <a href="#" class="block">ONGOING</a>
         </li>
         <li data-index="1">
-          <a href="#" class="block">INFO</a>
+          <a href="#" class="block">CLOSED</a>
         </li>
       </ul>
     </section>
@@ -194,39 +189,10 @@
 
 
 
-  <!-- ***갤러리(배경화면) 슬라이드*** -->
+  <!-- ***슬라이드(이벤트 리스트)*** -->
   <div id="slide" class="absolute">
     <ul id="slide-ul" class="flex absolute">
-      <li>
-        <img src="./img/gallery/howl043.jpg" alt="howl1">
-      </li>
-      <li>
-        <img src="./img/gallery/howl001.jpg" alt="howl2">
-      </li>
-      <li>
-        <img src="./img/gallery/howl004.jpg" alt="howl3">
-      </li>
-      <li>
-        <img src="./img/gallery/howl005.jpg" alt="howl4">
-      </li>
-      <li>
-        <img src="./img/gallery/howl016.jpg" alt="howl5">
-      </li>
-      <li>
-        <img src="./img/gallery/howl033.jpg" alt="howl6">
-      </li>
-      <li>
-        <img src="./img/gallery/howl035.jpg" alt="howl7">
-      </li>
-      <li>
-        <img src="./img/gallery/howl039.jpg" alt="howl8">
-      </li>
-      <li>
-        <img src="./img/gallery/howl050.jpg" alt="howl9">
-      </li>
-      <li>
-        <img src="./img/gallery/howl045.jpg" alt="howl10">
-      </li>
+      <li></li>
     </ul>
   </div>
   <!-- 컨트롤(페이저) -->
@@ -328,17 +294,20 @@ sidemenuUl.addEventListener('click', function(event) {
     const film = document.querySelector("#film");
     const sidemenuLi = document.querySelectorAll("#side-menu-ul li");
     const pagerWrap = document.querySelector("#pager-wrap");
+    const lantern = document.querySelector("#lantern");
 
     // info on
     sidemenuLi[1].onclick = function(e) {
       film.style.opacity = 1;
       pagerWrap.style.opacity = 0;
+      lantern.style.zIndex = "0";
     }
 
     // info off
     sidemenuLi[0].onclick = function(e) {
       film.style.opacity = 0;
       pagerWrap.style.opacity = 1;
+      lantern.style.zIndex = "1";
     }
   </script>
 
