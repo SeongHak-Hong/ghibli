@@ -278,18 +278,18 @@ sidemenuUl.addEventListener('click', function(event) {
     sidemenuLi[1].onclick = function(e) {
       light.style.opacity = 1;
       light.style.zIndex = 10;
-      light.style.transition = 2.2 +"s";
+      light.style.transition = .4 +"s";
       slide.style.zIndex = 0;
       lantern.style.zIndex = 0;
       lantern.style.opacity = 0;
-      controls.style.opacity = 0;
+      controls.style.opacity = .3;
     }
 
     // info off
     sidemenuLi[0].onclick = function(e) {
       light.style.opacity = 0;
       light.style.zIndex = 0;
-      light.style.transition = 2.2 +"s";
+      light.style.transition = 3 +"s";
       slide.style.zIndex = 2;
       lantern.style.zIndex = 2;
       controls.style.opacity = 1;
