@@ -108,61 +108,6 @@
     <!-- ***영화정보*** -->
     <section id="film" class="flex absolute align-items-center justify-content-center">
       <h2 class="none">film-info</h2>
-      <div id="content" class="flex justify-content-center">
-        <!-- 포스터 -->
-        <div id="poster" class="hidden">
-          <img src="./img/poster/howl.jpg" alt="howl">
-        </div>
-        <!-- 정보 -->
-        <div id="info">
-          <ul>
-            <li>
-              <span>원작</span>
-              <strong>다이애나-윈 존스</strong>
-            </li>
-            <li>
-              <span>각본·감독</span>
-              <strong>미야자키 하야오</strong>
-            </li>
-            <li>
-              <span>프로듀서</span>
-              <strong>스즈키 토시오</strong>
-            </li>
-            <li>
-              <span>음악</span>
-              <strong>히사이시 조</strong>
-            </li>
-            <li>
-              <span>주제가</span>
-              <strong>바이쇼 오치 에코</strong>
-            </li>
-            <li>
-              <span>목소리 출연</span>
-              <strong>바이쇼 오치 에코·키무라 타쿠야·미와 아키히로</strong>
-            </li>
-            <li>
-              <span></span>
-              <strong>가슈 우인 타츠야·카미키 류노스케·오오 이즈미 히로시</strong>
-            </li>
-            <li>
-              <span></span>
-              <strong>하라다 다이지로·카토오 하루코</strong>
-            </li>
-            <li>
-              <span>상영 시간</span>
-              <strong>약 119분</strong>
-            </li>
-            <li>
-              <span>배급</span>
-              <strong>도호</strong>
-            </li>
-            <li>
-              <span>개봉일</span>
-              <strong>2004.11.20 (토)</strong>
-            </li>
-          </ul>
-        </div>
-      </div>
     </section>
 
 
@@ -271,6 +216,11 @@
 
 
 
+  <!-- ***라이트(불빛)*** -->\
+  <div id="light"></div>
+
+
+
 
   <!-- ***사이드메뉴 on/off*** -->
   <script>
@@ -317,16 +267,17 @@ sidemenuUl.addEventListener('click', function(event) {
 
 <!-- ***사이드메뉴 closed 누르면 '1. 종료된 행사 보이기', '2. 페이저 숨기기', '3. 랜턴 깜박'*** -->
   <script>
-    const film = document.querySelector("#film");
+    // const film = document.querySelector("#film");
     const sidemenuLi = document.querySelectorAll("#side-menu-ul li");
     const controls = document.querySelector("#controls");
     const slide = document.querySelector("#slide");
     const lantern = document.querySelector("#lantern");
+    const light = document.querySelector('#light');
 
     // info on
     sidemenuLi[1].onclick = function(e) {
-      film.style.opacity = 1;
-      film.style.zIndex = 1;
+      light.style.opacity = 1;
+      light.style.zIndex = 1;
       slide.style.zIndex = 0;
       lantern.style.zIndex = 0;
       lantern.style.opacity = 0;
@@ -335,8 +286,8 @@ sidemenuUl.addEventListener('click', function(event) {
 
     // info off
     sidemenuLi[0].onclick = function(e) {
-      film.style.opacity = 0;
-      film.style.zIndex = 0;
+      light.style.opacity = 0;
+      light.style.zIndex = 0;
       slide.style.zIndex = 2;
       lantern.style.zIndex = 2;
       controls.style.opacity = 1;
@@ -411,6 +362,15 @@ sidemenuUl.addEventListener('click', function(event) {
       }, 2616);
 
     
+  </script>
+
+
+  <script>
+    var pos = document.documentElement;
+    pos.addEventListener('mousemove', e =>{
+      pos.style.setProperty('--x', e.clientX + 'px')
+      pos.style.setProperty('--y', e.clientY + 'px')
+    });
   </script>
 </body>
 </html>
