@@ -265,7 +265,7 @@ sidemenuUl.addEventListener('click', function(event) {
 
 
 
-<!-- ***사이드메뉴 closed 누르면 '1. 종료된 행사 보이기', '2. 페이저 숨기기', '3. 랜턴 깜박'*** -->
+<!-- ***사이드메뉴 closed 누르면 '1. 종료된 행사 보이기', '2. 페이저 숨기기', '3. 랜턴 깜박', '4. 손전등'*** -->
   <script>
     // const film = document.querySelector("#film");
     const sidemenuLi = document.querySelectorAll("#side-menu-ul li");
@@ -277,7 +277,8 @@ sidemenuUl.addEventListener('click', function(event) {
     // info on
     sidemenuLi[1].onclick = function(e) {
       light.style.opacity = 1;
-      light.style.zIndex = 1;
+      light.style.zIndex = 10;
+      light.style.transition = 2.2 +"s";
       slide.style.zIndex = 0;
       lantern.style.zIndex = 0;
       lantern.style.opacity = 0;
@@ -288,6 +289,7 @@ sidemenuUl.addEventListener('click', function(event) {
     sidemenuLi[0].onclick = function(e) {
       light.style.opacity = 0;
       light.style.zIndex = 0;
+      light.style.transition = 2.2 +"s";
       slide.style.zIndex = 2;
       lantern.style.zIndex = 2;
       controls.style.opacity = 1;
