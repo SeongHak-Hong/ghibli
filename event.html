@@ -306,11 +306,15 @@ sidemenuUl.addEventListener('click', function(event) {
         lantern.style.opacity = 0;
       }, 930);
       const blink4 = setTimeout(function(){
-        lantern.style.opacity = 0;
+        lantern.style.opacity = 1;
       }, 1130);
       const blink5 = setTimeout(function(){
+        lantern.style.opacity = 0;
+      }, 1230);
+      const blink6 = setTimeout(function(){
         lantern.style.opacity = 1;
       }, 1700);
+      clearTimeout(blink0, blink1, blink2, blink3, blink4, blink5, blink6);
       
     }
   </script>
