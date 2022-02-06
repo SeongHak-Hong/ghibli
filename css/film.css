@@ -47,6 +47,9 @@ main {
   text-decoration: none;
   text-align: center;
 }
+.poster a .img-wrap {
+  width:100%;
+}
 .poster a img {
   width:100%;
   border:.25rem solid transparent;
