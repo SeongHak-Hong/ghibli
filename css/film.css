@@ -7,7 +7,6 @@
 /* ***메인섹션*** */
 #container {
   padding: 0 4.5rem; 
-  margin-top:1rem;
   height:max-content;
   left:50%;
   top:50%;
@@ -20,7 +19,7 @@ main {
 }
 /* 포스터 */
 #film {
-  height:39rem;
+  height:28rem;
 }
 #film ul {
   justify-content: space-between;
@@ -28,27 +27,18 @@ main {
   list-style-type: none;
 }
 #poster-wrap {
-  height:37rem;
-}
-#poster-list {
-  height:100%;
+  height:28rem;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 .poster {
-  width:17%;
+  width:30%;
   box-sizing: border-box;
-}
-.poster:nth-child(5) ~ .poster {
-  margin-top:1.875rem;
 }
 .poster a {
   display: block;
   text-decoration: none;
   text-align: center;
-}
-.poster a .img-wrap {
-  width:100%;
 }
 .poster a img {
   width:100%;
@@ -71,7 +61,7 @@ main {
   white-space: nowrap;
 }
 /* 페이저 */
-/* .pager {
+.pager {
   right:-5%;
   top:40%;
   transform: translateY(-50%);
@@ -91,7 +81,7 @@ main {
 }
 .pager-on {
   background: rgba(249, 255, 254, 0.6);
-} */
+}
 
 
 

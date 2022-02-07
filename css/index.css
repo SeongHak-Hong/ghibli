@@ -96,11 +96,11 @@ main {
 }
 #mononoke {
   left: 617px;
-  top: 549px;
+  bottom: 60px;
 }
 #totoro {
   left: 842px;
-  top: 368px;
+  bottom: 60px;
   z-index: -1;
 }
 #kiki {

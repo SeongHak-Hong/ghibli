@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghibli</title>
+  <link href="./css/reset.css" rel="stylesheet">
+  <link href="./css/film.css" rel="stylesheet">
+</head>
+<body>
+<!-- ***헤더영역*** -->
+<div id="header-wrap" class="flex space-between">
+  <header class="flex relative">
+      <div id="hamburger">
+        <a href="#" class="block">
+          <img src="./img/icon/hamburger.png" alt="menu">
+        </a>
+      </div>
+      <div id="logo">
+        <a href="./index.html">
+          <img src="./img/logo/ghibli_logo.png" alt="logo">
+        </a>
+      </div>
+    </header>
+  </div> 
+  <!-- 메뉴(메뉴 버튼 클릭시 나옴) -->
+  <div id="menu" class="absolute">
+    <ul>
+      <li>
+        <a href="#">
+          <span>NEWS</span>
+        </a>
+      </li>
+      <li>
+        <a href="./event.html">
+          <span>EVENT</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span>BOOK</span>
+        </a>
+      </li>
+      <li>
+        <a href="./film.html">
+          <span>FILM</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span>ABOUT</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span>HELP</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- 푸터(메뉴 버튼 클릭시 나옴) -->
+  <footer id="footer" class="absolute">
+    <span>&copy; 2005-2022 STUDIO GHIBLI Inc</span>
+    <span>·</span>
+    <a href="#">Terms of use</a>
+    <span>·</span>
+    <a href="#">Contact</a>
+    <span>·</span>
+    <a href="#">Rss feed</a>
+  </footer>
+</div>
+
+
+
+
+  <!-- ***메인영역*** -->
+  <div id="container" class="flex absolute justify-content-center align-items-center">
+    <main class="relative">
+      <!-- 포스터 리스트 -->
+      <section id="film">
+        <h2 class="none">film-list</h2>
+        <ul id="poster-wrap">
+          <li class="poster absolute">
+            <div class="img-wrap">
+            </div>
+          </li>
+          <li class="poster absolute">
+            <div class="img-wrap">
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+
+
+
+  <!-- ***뮤직플레이어*** -->
+  <div id="music-player" class="absolute">
+    <div id="album-art" class="hidden relative">
+      <img src="img/music/ponyo040.jpg" alt="ponyo">
+    </div>
+    <div id="music-info" class="flex absolute align-items-center">
+      <div id="text">
+        <h1>Ponyo on the Cliff by the Sea</h1>
+        <p>Fujioka Fujimaki, Ohashi Nozomi</p>
+      </div> 
+      <div id="play-button"></div>
+    </div>
+    <div id="play-line"></div>
+    <div id="play-control" class="absolute">
+      <img src="./img/music/play1.png" alt="play-control">
+    </div>
+  </div>
+
+
+
+
+  <!-- 컨트롤(페이저) -->
+  <div id="controls" class="flex absolute space-between">
+    <div id="prev" class="swapBtn">
+      <img src="./img/icon/chevron_left.png" alt="prev">
+    </div>
+    <div id="pager">
+      <div id="cur-pos" class="inline-block">1</div>
+      <span>/</span>
+      <div id="total-page" class="inline-block">10</div>
+    </div>
+    <div id="next" class="swapBtn">
+      <img src="./img/icon/chevron_right.png" alt="next">
+    </div>
+  </div>
+
+
+
+  <!-- ***메뉴토글*** -->
+  <script src="./js/menu.js"></script>
+  <div id="menu-bg" class="absolute"></div>
+
+
+
+
+  <!-- ***페이드인***  -->
+  <div id="movie-bg" class="absolute"></div>
+
+  <script>
+    const movieBg = document.querySelector("#movie-bg");
+
+    movieBg.style.opacity = 1;
+
+    // 페이드인
+    const secondTime = setInterval(function(){
+      if (movieBg.style.opacity == 1) {
+        movieBg.style.opacity = 0;
+        movieBg.style.transition = 1 + "s";
+      } else {
+        clearInterval(secondTime);
+      }
+    }, 500);
+
+    // movieBG의 z-index 낮추기
+    const zIndex0 = setTimeout(function(){
+      movieBg.style.zIndex = 0;
+      clearTimeout(zIndex0);
+    }, 1200);
+  </script>
+
+
+
+
+  <!-- ***슬라이더*** -->
+  
+
+
+
+  <!-- ***배경*** -->
+  <div id="bg" class="absolute">
+    <div id="bg-light" class="absolute"></div>
+    <div id="bg-mirror" class="absolute"></div>
+    <div id="bg-over" class="absolute"></div>
+    <div id="bg-under" class="absolute"></div>
+  </div>
+</body>
+</html>
