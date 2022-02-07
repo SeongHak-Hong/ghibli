@@ -245,30 +245,61 @@
   </div>
   <!-- 슬라이드 자바스크립트 -->
   <script>
-      const liItems = document.querySelectorAll('#slide-ul li');
-      const next = document.querySelector('#next');
-      const prev = document.querySelector('#prev');
+      let slide = document.querySelector("#slide");
+      let slides = document.querySelector("#slide-ul");
+      let slideImg = document.querySelectorAll("#slide-ul li");
+      currentIdx = 0;
+      slideCount = slideImg.length;
+      const prev = document.querySelector("#prev");
+      const next = document.querySelector("#next");
+      slideWidth = slide.clientWidth;
+      slideMargin = 0;
 
-      for(let i = 0; i < liItems.length; i++) {
-        liItems[i].style.display = 'none';
-        liItems[0].style.display = 'block';
+      makeClone();
+      initfunction();
+
+      function makeClone(){
+        let cloneSlide_first = slideImg[0].cloneNode(true); //slideImg.firstElementChild.cloneNode(true);
+        let cloneSlide_last = slides.lastElementChild.cloneNode(true);
+        slides.append(cloneSlide_first); 
+        slides.insertBefore(cloneSlide_last,slides.firstElementChild);
       }
-      let slideIndex = 0;
-      next.addEventListener('click', function() {
-        if(slideIndex < liItems.length) {
-          for(let i = 0; i < liItems.length; i++) {
-            if(i !== slideIndex) {
-              liItems[i].style.display = "none";
-            } else {
-              liItems[i].style.display = "block";
-              
-            }
-          }
-          slideIndex++;
-        } else {
-          slideIndex = 0;
+
+      function initfunction(){
+        slides.style.width = (slideWidth + slideMargin) * (slideCount+2) + "px";
+        slides.style.left = -(slideWidth + slideMargin) + "px";
+      }
+
+      next.addEventListener('click', function () {
+        if (currentIdx <= slideCount-1) {
+          slides.style.left = -(currentIdx+2) * (slideWidth+slideMargin) + "px";
+          slides.style.transition = `${0.3}s ease-out`;
+        }if (currentIdx === slideCount-1){
+          setTimeout(function(){
+            slides.style.left = -(slideWidth + slideMargin) + "px";
+            slides.style.transition = `${0}s ease-out`;
+          },500);
+          currentIdx = -1;
+          } 
+          currentIdx+=1;
         }
-      });
+      );
+
+      prev.addEventListener('click', function () {
+        console.log(currentIdx);
+          if (currentIdx >= 0) {
+            slides.style.left = -(currentIdx) * (slideWidth + slideMargin) + "px";
+            slides.style.transition = `${0.3}s ease-out`;
+          }if (currentIdx === 0){
+            setTimeout(function(){
+              slides.style.left = -(slideCount) * (slideWidth + slideMargin)+ "px";
+              slides.style.transition = `${0}s ease-out`;
+            },500);
+            currentIdx=slideCount;
+            } 
+            currentIdx-=1;
+          }
+      );
   </script>
 
 
