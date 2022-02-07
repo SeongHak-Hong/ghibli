@@ -143,9 +143,9 @@
 
 
   <!-- ***슬라이드(이벤트 리스트)*** -->
-  <div id="slide" class="absolute flex justify-content-center">
-    <ul id="slide-ul" class="flex">
-      <li id="slide1" class="slide-li flex justify-content-center">
+  <div id="slide" class="relative flex justify-content-center hidden">
+    <ul id="slide-ul" class="flex absolute">
+      <li class="slide-li flex justify-content-center flex-direction-column">
         <div class="banner flex justify-content-center">
           <img src="./img/event/Ghibli_exhibition.png" alt="banner1">
         </div>
@@ -164,6 +164,24 @@
           <span class="text-align-center">More</span>
         </div>
       </li>
+      <li class="slide-li flex justify-content-center flex-direction-column">
+        <div class="banner flex justify-content-center">
+          <img src="./img/event/Ghibli_expo.png" alt="banner2">
+        </div>
+        <div class="slide-text flex align-items-center flex-direction-column">
+          <strong class="slide-title block text-align-center">Ghibli The Grand Exposition</strong>
+          <span class="place block text-align-center">Iwate Prefectural Museum of Art, access</span>
+          <p class="date text-align-center">
+            2022.03.23(Sat)- 2022.05.19(Sun)
+          </p>
+          <p class="explain text-align-center">
+            So far, Ghibli -- which eventually go out in the world of the trajectory of the propaganda that are produced by various trials and errors, While He together with an undisclosed data said.Another Tales of the public is clearly and return of his work, Ghibli.
+          </p>
+        </div>
+        <div class="button flex justify-content-center">
+          <span class="text-align-center">More</span>
+        </div>
+      </li>
     </ul>
   </div>
   <!-- 컨트롤(페이저) -->
@@ -174,7 +192,7 @@
     <div id="pager">
       <div id="cur-pos" class="inline-block">1</div>
       <span>/</span>
-      <div id="total-page" class="inline-block">10</div>
+      <div id="total-page" class="inline-block"></div>
     </div>
     <div id="next" class="swapBtn">
       <img src="./img/icon/chevron_right.png" alt="next">
@@ -182,31 +200,71 @@
   </div>
   <!-- 슬라이드 자바스크립트 -->
   <script>
-      const liItems = document.querySelectorAll('#slide-ul li');
-      const next = document.querySelector('#next');
-      const prev = document.querySelector('#prev');
+    let slide = document.querySelector("#slide");
+    let slides = document.querySelector("#slide-ul");
+    let slideLi = document.querySelectorAll(".slide-li");
+    currentIdx = 0;
+    slideCount = slideLi.length;
+    const prev = document.querySelector("#prev");
+    const next = document.querySelector("#next");
+    slideWidth = slide.clientWidth;
+    slideMargin = 0;
 
-      for(let i = 0; i < liItems.length; i++) {
-        liItems[i].style.display = 'none';
-        liItems[0].style.display = 'block';
+    makeClone();
+    initfunction();
+
+    function makeClone(){
+      let cloneSlide_first = slideLi[0].cloneNode(true); //slideLi.firstElementChild.cloneNode(true);
+      let cloneSlide_last = slides.lastElementChild.cloneNode(true);
+      slides.append(cloneSlide_first); 
+      slides.insertBefore(cloneSlide_last,slides.firstElementChild);
+    }
+
+    function initfunction(){
+      slides.style.width = (slideWidth + slideMargin) * (slideCount+2) + "px";
+      slides.style.left = -(slideWidth + slideMargin) + "px";
+    }
+
+    next.addEventListener('click', function () {
+      if (currentIdx <= slideCount-1) {
+        slides.style.left = -(currentIdx+2) * (slideWidth+slideMargin) + "px";
+        slides.style.transition = `${0.3}s ease-out`;
+      }if (currentIdx === slideCount-1){
+        setTimeout(function(){
+          slides.style.left = -(slideWidth + slideMargin) + "px";
+          slides.style.transition = `${0}s ease-out`;
+        },500);
+        currentIdx = -1;
+        } 
+        currentIdx+=1;
       }
-      let slideIndex = 0;
-      next.addEventListener('click', function() {
-        if(slideIndex < liItems.length) {
-          for(let i = 0; i < liItems.length; i++) {
-            if(i !== slideIndex) {
-              liItems[i].style.display = "none";
-            } else {
-              liItems[i].style.display = "block";
-              
-            }
-          }
-          slideIndex++;
-        } else {
-          slideIndex = 0;
+    );
+
+    prev.addEventListener('click', function () {
+      console.log(currentIdx);
+        if (currentIdx >= 0) {
+          slides.style.left = -(currentIdx) * (slideWidth + slideMargin) + "px";
+          slides.style.transition = `${0.3}s ease-out`;
+        }if (currentIdx === 0){
+          setTimeout(function(){
+            slides.style.left = -(slideCount) * (slideWidth + slideMargin)+ "px";
+            slides.style.transition = `${0}s ease-out`;
+          },500);
+          currentIdx=slideCount;
+          } 
+          currentIdx-=1;
         }
-      });
-  </script>
+    );
+
+    
+</script>
+<!-- 컨트롤 자바스크립트 -->
+<script>
+  const totalPage = document.querySelector("#total-page");
+  console.dir(totalPage);
+
+  totalPage.textContent = slideLi.length;
+</script>
 
 
 
@@ -236,30 +294,30 @@
     sidemenuUl.children[1].children[0].style.textDecoration = "";
   }
 
-// 클릭이벤트
-sidemenuUl.addEventListener('click', function(event) {
-  console.log(event.target);
-  console.log(event.target.parentElement.dataset.index);
-  console.log(typeof event.target.parentElement.dataset.index);
-  let getIndexValue = Number(event.target.parentElement.dataset.index);
-  console.log(typeof getIndexValue);
-  
+  // 클릭이벤트
+  sidemenuUl.addEventListener('click', function(event) {
+    console.log(event.target);
+    console.log(event.target.parentElement.dataset.index);
+    console.log(typeof event.target.parentElement.dataset.index);
+    let getIndexValue = Number(event.target.parentElement.dataset.index);
+    console.log(typeof getIndexValue);
+    
 
-  console.log("반복문으로 활용할 인덱스 값을 마크업 속성노드에서 추출 :" + getIndexValue);
-  for(let i = 0; i < sidemenuUl.children.length; i++) {
-    if(getIndexValue !== i) {
-        console.log(i);
-        console.log("제외된 추출값 :" + getIndexValue);
-        sidemenuUl.children[i].children[0].style.opacity = 0.6;
-        sidemenuUl.children[i].children[0].style.color = "#F9FFFE";
-        sidemenuUl.children[i].children[0].style.textDecoration = "none";
-      } else {
-        sidemenuUl.children[i].children[0].style.opacity = 1;
-        sidemenuUl.children[i].children[0].style.color = "#F9FFFE";
-        sidemenuUl.children[i].children[0].style.textDecoration = "underline";
+    console.log("반복문으로 활용할 인덱스 값을 마크업 속성노드에서 추출 :" + getIndexValue);
+    for(let i = 0; i < sidemenuUl.children.length; i++) {
+      if(getIndexValue !== i) {
+          console.log(i);
+          console.log("제외된 추출값 :" + getIndexValue);
+          sidemenuUl.children[i].children[0].style.opacity = 0.6;
+          sidemenuUl.children[i].children[0].style.color = "#F9FFFE";
+          sidemenuUl.children[i].children[0].style.textDecoration = "none";
+        } else {
+          sidemenuUl.children[i].children[0].style.opacity = 1;
+          sidemenuUl.children[i].children[0].style.color = "#F9FFFE";
+          sidemenuUl.children[i].children[0].style.textDecoration = "underline";
+        }
       }
-    }
-});
+  });
   </script>
 
 

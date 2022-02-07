@@ -352,17 +352,17 @@
 
    slider.addEventListener('mousedown', () => {
      isMouseDown = true;
-    //  slider.classList.add('active');
+     slider.classList.add('active');
    });
 
    slider.addEventListener('mouseleave', () => {
     isMouseDown = false;
-    // slider.classList.remove('.active');
+    slider.classList.remove('.active');
    });
 
    slider.addEventListener('mouseup', () => {
      isMouseDown = false;
-    //  slider.classList.remove('active');
+     slider.classList.remove('active');
    });
 
    slider.addEventListener('mousemove', () => {
@@ -371,7 +371,7 @@
 
    slider.addEventListener('mousedown', (e) => {
     isMouseDown = true;
-    // slider.classList.add('active');
+    slider.classList.add('active');
 
     startY = e.pageY - slider.offsetDown;
     scrollDowwn = slider.scrollDown;

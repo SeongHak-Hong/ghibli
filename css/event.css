@@ -16,9 +16,10 @@
   height:100%;
   background: url(../img/bg/lantern1.png) no-repeat 50% 50% / cover;
   background-size: cover;
-  z-index: 2;
+  z-index: 10;
   transition: .5s;
   opacity: 0;
+  pointer-events: none;
 }
 
 
@@ -118,23 +119,21 @@
 
 /* ***슬라이드(배경화면)*** */
 #slide {
-  width:52.0833%;
-  height:800px;
-  left:22%;
-  bottom:-20.5rem;
-  transform: translate(9rem, -50%);
+  width:1000px;
+  height:50rem;
+  left:50%;
+  top:50%;
+  transform: translate(-40.5%, -50%);
   z-index: 2;
 }
 /* ul */
 #slide-ul {
-  width:100%;
-  height:100%;
-  box-sizing: border-box;
-  padding-right: 1rem;
+  left:0;
+  top:0;
 }
 /* li */
 .slide-li {
-  width:100%;
+  width:1000px;
   height:100%;
 }
 /* 배너 */
@@ -192,8 +191,8 @@
 /* ***컨트롤(페이저)*** */
 #controls{
   bottom:3rem;
-  left:55%;
-  transform: translateX(-50%);
+  left:50%;
+  transform: translateX(-4.5%);
   width:10rem;
   height:1.6rem;
   transition: .3s;

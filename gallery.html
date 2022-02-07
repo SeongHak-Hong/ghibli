@@ -235,9 +235,9 @@
       <img src="./img/icon/chevron_left.png" alt="prev">
     </div>
     <div id="pager">
-      <div id="cur-pos" class="inline-block">1</div>
+      <div id="cur-pos" class="inline-block"></div>
       <span>/</span>
-      <div id="total-page" class="inline-block">10</div>
+      <div id="total-page" class="inline-block"></div>
     </div>
     <div id="next" class="swapBtn">
       <img src="./img/icon/chevron_right.png" alt="next">
@@ -301,6 +301,17 @@
           }
       );
   </script>
+  <!-- 컨트롤(페이저) 자바스크립트 -->
+<script>
+  const totalPage = document.querySelector("#total-page");
+  const curPos = document.querySelector("#cur-pos");
+  console.dir(totalPage);
+
+  curPos.textContent = slideCount + 1;
+  console.log(currentIdx);
+  // 총 슬라이드 수 표시
+  totalPage.textContent = slideImg.length;
+</script>
 
 
 
