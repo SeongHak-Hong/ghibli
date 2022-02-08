@@ -43,7 +43,7 @@
     <div id="menu" class="absolute">
       <ul>
         <li>
-          <a href="#">
+          <a href="./news.html">
             <span>NEWS</span>
           </a>
         </li>
@@ -192,7 +192,7 @@
     <div id="pager">
       <div id="cur-pos" class="inline-block">1</div>
       <span>/</span>
-      <div id="total-page" class="inline-block"></div>
+      <div id="total-page" class="inline-block">2</div>
     </div>
     <div id="next" class="swapBtn">
       <img src="./img/icon/chevron_right.png" alt="next">
@@ -225,7 +225,13 @@
       slides.style.left = -(slideWidth + slideMargin) + "px";
     }
 
+
+    const pagerNumber = document.querySelectorAll('#pager div');
+      console.log(pagerNumber.length);
+      console.log(pagerNumber[0].textContent);
+
     next.addEventListener('click', function () {
+      pagerNumber[0].textContent = currentIdx + 1;
       if (currentIdx <= slideCount-1) {
         slides.style.left = -(currentIdx+2) * (slideWidth+slideMargin) + "px";
         slides.style.transition = `${0.3}s ease-out`;
@@ -234,17 +240,31 @@
           slides.style.left = -(slideWidth + slideMargin) + "px";
           slides.style.transition = `${0}s ease-out`;
         },500);
-        currentIdx = -1;
+        currentIdx = -1;  
         } 
         currentIdx+=1;
       }
     );
+      // kongukjae code for slide #pager numbering
+      // 문자열 1(안의 내용물)이 출력되는것을 확인 할 수 있다. 
+      // <div id="pager">
+      //  <div id="cur-pos" class="inline-block">1</div>
+      //  <span>/</span>
+      //  <div id="total-page" class="inline-block">2</div>
+      // </div>
+      //  **************************************************************
+      // #pager의 자식요소는 총 세개이다. / 그 중 div 태그는 두개이다.
+
 
     prev.addEventListener('click', function () {
+      // kongukjae code added
+      // currentIdx 핸들러 변수를 '값'으로 쓰는 예시이다.
+      // 변수는 조건식의 '기준'으로도 '값'으로도 사용할 수 있다. 
       console.log(currentIdx);
         if (currentIdx >= 0) {
           slides.style.left = -(currentIdx) * (slideWidth + slideMargin) + "px";
           slides.style.transition = `${0.3}s ease-out`;
+          pagerNumber[0].textContent = currentIdx + 1;
         }if (currentIdx === 0){
           setTimeout(function(){
             slides.style.left = -(slideCount) * (slideWidth + slideMargin)+ "px";
@@ -258,7 +278,7 @@
 
     
 </script>
-<!-- 컨트롤 자바스크립트 -->
+<!-- 컨트롤(페이저) 자바스크립트 -->
 <script>
   const totalPage = document.querySelector("#total-page");
   console.dir(totalPage);
@@ -271,6 +291,7 @@
 
   <!-- ***페이드인 - 윈도우 로드***  -->
   <div id="movie-bg" class="absolute"></div>
+
 
 
 
