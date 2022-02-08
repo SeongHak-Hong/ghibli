@@ -14,6 +14,9 @@
 /* text */
 .text-indent-9999 {text-indent: -9999em;}
 .text-align-center {text-align: center;}
+.text-align-jutify {text-align: justify;}
+.ellipsis {text-overflow: ellipsis;}
+.white-space-nowrap {white-space: nowrap;}
 
 /* overfloww */
 .hidden {overflow: hidden;}
@@ -29,6 +32,10 @@
 .align-self-start {align-self: flex-start;}
 .flex-nowrap {flex-wrap: nowrap;}
 
+/* box-sizing */
+.border-box {box-sizing: border-box;}
+
+
 * {
   padding:0;
   margin:0;
@@ -41,6 +48,7 @@ body {
   justify-content: center;
   overflow: hidden;
   flex-wrap:wrap;
+  color:#262626;
 }
 
 #container {
