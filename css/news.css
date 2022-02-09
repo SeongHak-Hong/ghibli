@@ -1,0 +1,165 @@
+body {
+  background: url(../img/bg/ghibli_background.jpg) no-repeat 50% 50% / cover;
+}
+
+
+
+
+/* ***메인섹션*** */
+/* 컨테이너 */
+#container {
+  left:0;
+  top:0;
+  z-index: 98;
+  padding:0 1rem;
+}
+/* 게시판 */
+#board {
+  width:62.5rem;
+  height:60%;
+  overflow-y: scroll;
+}
+/* 리스트 */
+.board-list {
+  width:100%;
+  height:8rem;
+  border-radius: 1rem;
+  background-color: rgb(240, 248, 255, .7);
+  backdrop-filter: blur(5px);
+  padding:.3rem;
+}
+/* 리스트간 상하 간격 */
+.board-list ~ .board-list {
+  margin-top:1rem;
+}
+/* 콘텐츠랩 */
+.content-wrap {
+  height:100%;
+}
+/* 썸네일 */
+.thum-wrap {
+  width:20%;
+}
+.thum-wrap img {
+  width:70%;
+}
+/* 텍스트 */
+.text-wrap {
+  width:70%;
+  height:100%;
+  margin:.5rem 0;
+}
+/* 콘텐츠 제목 */
+.text-wrap h1 {
+  width:80%;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+/* 콘텐츠 날짜 */
+.text-wrap span {
+  font-size:.875rem;
+  font-weight: 300;
+}
+/* 콘텐츠 내용 */
+.text-wrap p {
+  font-size:.875rem;
+  height:4.375rem;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-top:.25rem;
+  text-indent: .875rem;
+}
+/* 더보기 */
+.more {
+  width:10%;
+}
+/* 더보기 이미지 */
+.more img {
+  width:2rem;
+  cursor: pointer;
+  z-index: 1;
+}
+/* 더보기 호버 애니메이션 */
+.more img:hover {
+  animation: more .4s infinite alternate;
+}
+/* 더보기 배경 */
+.more-bg {
+  width:2rem;
+  height:2rem;
+  background-color: #109CEB;
+  border-radius: 50%;
+}
+/* 더보기 애니메이션 */
+@keyframes more {
+  0% {
+    transform: translateY(-.2125rem);
+  }
+  100% {
+    transform: translateY(.2125rem);
+  }
+}
+
+
+
+
+/* ***스크롤다운 아이콘*** */
+#scroll {
+  left:50%;
+  bottom:10%;
+  animation: scroll .5s infinite alternate;
+}
+/* 스크롤다운 애니메이션 */
+@keyframes scroll {
+  0% {
+    bottom:9%;
+  }
+  100% {
+    bottom:11%;
+  }
+}
+
+
+
+
+/* ***페이드인*** */
+#movie-bg {
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background-color: #101010;
+  z-index: 100;
+  pointer-events: none;
+}
+
+
+
+
+/* ***캐릭터*** */
+#character {
+  width:100%;
+  height:100%;
+  left:0;
+  top:0;
+  pointer-events: none;
+}
+#kiki {
+  left: 120px;
+  top: 40px;
+  animation: kiki 1.2s infinite ease-in-out alternate;
+}
+/* 캐릭터 애니메이션 */
+@keyframes kiki {
+  0% {
+
+  }
+  50% {
+    top: 20px;
+    left:110px;
+  }
+  100% {
+    top:50px;
+    left:125px;
+  }
+}

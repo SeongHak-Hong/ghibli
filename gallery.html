@@ -40,18 +40,18 @@
     <div id="menu" class="absolute">
       <ul>
         <li>
-          <a href="#">
+          <a href="./index.html">
+            <span>HOME</span>
+          </a>
+        </li>
+        <li>
+          <a href="./news.html">
             <span>NEWS</span>
           </a>
         </li>
         <li>
           <a href="./event.html">
             <span>EVENT</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span>BOOK</span>
           </a>
         </li>
         <li>
@@ -235,7 +235,7 @@
       <img src="./img/icon/chevron_left.png" alt="prev">
     </div>
     <div id="pager">
-      <div id="cur-pos" class="inline-block"></div>
+      <div id="cur-pos" class="inline-block">1</div>
       <span>/</span>
       <div id="total-page" class="inline-block"></div>
     </div>
@@ -270,10 +270,15 @@
         slides.style.left = -(slideWidth + slideMargin) + "px";
       }
 
+      const pagerNumber = document.querySelectorAll('#pager div');
+      console.log(pagerNumber.length);
+      console.log(pagerNumber[0].textContent);
+
       next.addEventListener('click', function () {
         if (currentIdx <= slideCount-1) {
           slides.style.left = -(currentIdx+2) * (slideWidth+slideMargin) + "px";
           slides.style.transition = `${0.3}s ease-out`;
+          pagerNumber[0].textContent = currentIdx;
         }if (currentIdx === slideCount-1){
           setTimeout(function(){
             slides.style.left = -(slideWidth + slideMargin) + "px";
@@ -290,6 +295,7 @@
           if (currentIdx >= 0) {
             slides.style.left = -(currentIdx) * (slideWidth + slideMargin) + "px";
             slides.style.transition = `${0.3}s ease-out`;
+            pagerNumber[0].textContent = currentIdx;
           }if (currentIdx === 0){
             setTimeout(function(){
               slides.style.left = -(slideCount) * (slideWidth + slideMargin)+ "px";
@@ -304,10 +310,7 @@
   <!-- 컨트롤(페이저) 자바스크립트 -->
 <script>
   const totalPage = document.querySelector("#total-page");
-  const curPos = document.querySelector("#cur-pos");
   console.dir(totalPage);
-
-  curPos.textContent = slideCount + 1;
   console.log(currentIdx);
   // 총 슬라이드 수 표시
   totalPage.textContent = slideImg.length;
