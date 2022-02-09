@@ -246,13 +246,7 @@
       }
     );
       // kongukjae code for slide #pager numbering
-
-      const pagerNumber = document.querySelectorAll('#pager div');
-      console.log(pagerNumber.length);
-      console.log(pagerNumber[0].textContent); // 문자열 1(안의 내용물)이 출력되는것을 확인 할 수 있다. 
-
       // 문자열 1(안의 내용물)이 출력되는것을 확인 할 수 있다. 
-
       // <div id="pager">
       //  <div id="cur-pos" class="inline-block">1</div>
       //  <span>/</span>
@@ -261,23 +255,11 @@
       //  **************************************************************
       // #pager의 자식요소는 총 세개이다. / 그 중 div 태그는 두개이다.
 
-      
-    
-
-    prev.addEventListener('click', function () {
-      // kongukjae code added
-      pagerNumber[currentIdx].textContent = currentIdx + 100;
-      // currentIdx 핸들러 변수를 '값'으로 쓰는 예시이다.
-      // 변수는 조건식의 '기준'으로도 '값'으로도 사용할 수 있다. 
-
-
-
 
     prev.addEventListener('click', function () {
       // kongukjae code added
       // currentIdx 핸들러 변수를 '값'으로 쓰는 예시이다.
       // 변수는 조건식의 '기준'으로도 '값'으로도 사용할 수 있다. 
-
       console.log(currentIdx);
         if (currentIdx >= 0) {
           slides.style.left = -(currentIdx) * (slideWidth + slideMargin) + "px";
