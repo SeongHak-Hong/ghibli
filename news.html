@@ -258,120 +258,94 @@
 
 
   <!-- ***더보기 클릭시 해당 게시판 정보만 보이기*** -->
-  <!-- <script>
-    const boardList = document.querySelectorAll('#board li');
-    for (i = 0; i < boardList.length; i++) {
-      boardList[i].children[0].children[2].addEventListener ('click', function(event) {
-        // ***if문***
-        if (this.parentNode.parentNode.style.height !== '35rem') {
-          // Li
-          this.parentNode.parentNode.style.height = "35rem";
-          this.parentNode.parentNode.style.transition = .5 + "s";
-          // 썸네일랩
-          this.parentNode.children[0].style.width = "50%";
-          // 텍스트랩
-          this.parentNode.children[1].style.justifyContent = "center";
-          // 타이틀/날짜랩
-          this.parentNode.children[1].children[0].style.flexDirection = "column";
-          // 타이틀
-          this.parentNode.children[1].children[0].children[0].style.width = "100%";
-          this.parentNode.children[1].children[0].children[0].style.whiteSpace = "normal";
-          this.parentNode.children[1].children[0].children[0].style.textAlign = "end";
-          // 날짜
-          this.parentNode.children[1].children[0].children[1].style.margin = "1rem 0";
-          // 내용
-          this.parentNode.children[1].children[1].style.height = "max-content";
-          this.parentNode.children[1].children[1].style.overflowY = "scroll";
-          this.parentNode.children[1].children[1].style.paddingBottom = "1rem";
-          // 더보기 아이콘
-          this.children[0].src = "./img/icon/chevron_up.png";
-
-          // ***else문***
-        } else {
-          // Li
-          this.parentNode.parentNode.style.height = 8 + "rem";
-          // 썸네일랩
-          this.parentNode.children[0].style.width = "20%";
-          // 텍스트랩
-          this.parentNode.children[1].style.justifyContent = "unset";
-          // 타이틀/날짜랩
-          this.parentNode.children[1].children[0].style.flexDirection = "row";
-          // 타이틀
-          this.parentNode.children[1].children[0].children[0].style.width = "80%";
-          this.parentNode.children[1].children[0].children[0].style.whiteSpace = "nowrap";
-          this.parentNode.children[1].children[0].children[0].style.textAlign = "left";
-          // 날짜
-          this.parentNode.children[1].children[0].children[1].style.margin = "0";
-          // 내용
-          this.parentNode.children[1].children[1].style.height = "4.375rem";
-          this.parentNode.children[1].children[1].style.overflow = "hidden";
-          this.parentNode.children[1].children[1].style.paddingBottom = "0";
-          // 더보기 아이콘
-          this.children[0].src = "./img/icon/chevron_down.png";
-        }
-      
-      });
-    };
-  </script>
-   -->
-  <!-- check point : 1 -->
   <script>
-    // feedback point
-    /*
-    Q.
-    더보기 아이콘을 누르면 선택한 게시물 외에는 다 display none처리를 해서
-    클릭한 게시물이 스크롤 안 생기고 최상단에 가도록 만들고 싶은데
-    어떻게 짜야할지 감이 안 잡힙니다!
-    A.
-    1. 클릭한 대상외에 모든 형제요소가 display:none이 된다.
-    2. 클릭한 요소가 0번째 요소로 '순서가 바뀐다'
-    3. '클릭한 요소'가 무엇인지 분별한다.
-    */
     const board = document.querySelector('#board');
-    // li 형제요소의 부모 요소 식별
+
+    // more 클릭 이벤트 - 선택한 li만 보이도록
     board.addEventListener('click', function(event) {
       console.log(event.target);
-      // event.target '더보기 아이콘' 이어야함.
       console.dir(event.target);
-      // alt="more" 라는 속성 활용 
-      // 강사 설명 : 보통 alt를 이렇게 사용하지는 않지만 '선택하고 싶은 요소'를 변별하는 과정은 비슷하다.
-      // 사용자 정의 attribute setting / data- 속성을 쓰는것이 보편적 
-      console.log(event.target.alt === "more"); // 파란동그라미 더보기 아이콘을 누르면 true return
-      console.log(event.target.offsetParent); // 더보기 아이콘의 '기준점이되는 부모' 추출
-      // 1. event.target.offsetParent는 부모요소인 ul 태그의 자식들 li 태그 인것을 알수 있다.
-      // 2. li태그는 형제가 있다. 선택한 li태그 외의 형제를 선택하는 방법을 찾는다.
-      // 3. 매번 길게 작성하기 귀찮으니 임시로 사용할 변수 (지역변수)로 묶는다.
+      console.log(event.target.alt === "more");
+      console.log(event.target.offsetParent);
+      // 더보기 아이콘 alt값 얻기
       let getAltData = event.target.alt;
-      let getOffsetParent = event.target.offsetParent; // li element
-      // 관습적으로, 값을 가져올 때는 get이라는 접두사를 붙이는 편이다.
-      // 임의로 만들어야 할때는 set이라는 접두사를 붙인다. 
-
+      // 더보기 아이콘의 부모 li 얻기
+      let getOffsetParent = event.target.offsetParent;
+      // alt값이 more라면?
       if(getAltData === "more") {
-        // 더보기 아이콘에만 반응 해야하는 조건을 붙이기 위해
-        // 클릭한 '그것(event.target)'의 alt값이 "more" 라는 string을 가지고 있다면 true return
+        // li에 select-more 클래스 추가
         getOffsetParent.classList.add('select-more');
-        // 분별을 위해 간단하게 '선택한 더보기 아이콘의 기준부모에게 클래스 부여'
-        console.log(this.children); // 여기서 this는 #board 아이디 값을 가진 ul 요소
+        console.log(this.children);
         for(let i = 0; i < this.children.length; i++) {
           if(this.children[i].classList.contains('select-more')) {
-            // class 포함여부 for() loop -> 이것이 익숙해진다면 나중에는 forEach() 구문을 익혀볼것
-            console.log('hello');
-            // 아래는 간단한 스타일링
+            // ul 속성
+            this.style.overflowY = "unset";
+            // li 속성
             this.children[i].style.transition = "1s";
-            this.children[i].style.backgroundColor = "rgba(255, 255, 255, 1)";
-          } else {
-            // else 스코프가 핵심
-            // 윗 로직에서 '클릭한 대상의 기준부모요소에게 클래스를 부여했으니 나머지 요소는 'select-more'라는 클래스를 가지고 있지 않음 따라서
-            // 클릭한 요소의 나머지 형제로 분별할 수 있게 됨
-            this.children[i].style.display = 'none';
-            // 스크롤 없애는 방법은 간단하게 스타일 속성으로 처리 가능
+            this.children[i].style.backgroundColor = "rgba(240, 248, 255, .8)";
+            this.children[i].style.height = "35rem";
+            // thum-wrap(썸네일) 속성
+            this.children[i].children[0].children[0].style.width = "50%";
+            // text-wrap 속성
+            this.children[i].children[0].children[1].style.justifyContent = "center";
+            // title/date-wrap 속성
+            this.children[i].children[0].children[1].children[0].style.flexDirection = "column";
+            // title 속성
+            this.children[i].children[0].children[1].children[0].children[0].style.width = "100%";
+            this.children[i].children[0].children[1].children[0].children[0].style.whiteSpace = "normal";
+            this.children[i].children[0].children[1].children[0].children[0].style.textAlign = "end";
+            // date 속성
+            this.children[i].children[0].children[1].children[0].children[1].style.margin = "1rem 0";
+            // content 속성
+            this.children[i].children[0].children[1].children[1].style.height = "max-content";
+            this.children[i].children[0].children[1].children[1].style.overflowY = "scroll";
+            this.children[i].children[0].children[1].children[1].style.paddingBottom = "1rem";
+            // 더보기 아이콘
+            event.target.src = "./img/icon/chevron_up.png";
+            event.target.alt = "no-more";
           }
-          
+          // li에 select-more 클래스가 없다면?
+          else {
+            // select-more가 없는 li는 display 'none'처리
+            this.children[i].style.display = 'none';
+          }
         }
-
-      } else {
-        // else는 클릭한요소가 더보기 아이콘이 아니었을때의 실행구문이 됨
-        // UX 관점으로 사용자에게 클릭반응이 있는 요소라는 것을 암묵적으로 접근시키는 방식 
+      }
+      // alt값이 no-more라면?
+      else if(getAltData === "no-more") {
+        getOffsetParent.classList.remove('select-more');
+        for(let i = 0; i < this.children.length; i++) {
+          // ul 속성
+          this.style.overflowY = "scroll";
+          // li 속성
+          this.children[i].style.transition = "1s";
+          this.children[i].style.backgroundColor = "rgba(240, 248, 255, .7)";
+          this.children[i].style.height = "8rem";
+          // thum-wrap(썸네일) 속성
+          this.children[i].children[0].children[0].style.width = "20%";
+          // text-wrap 속성
+          this.children[i].children[0].children[1].style.justifyContent = "unset";
+          // title/date-wrap 속성
+          this.children[i].children[0].children[1].children[0].style.flexDirection = "row";
+          // title 속성
+          this.children[i].children[0].children[1].children[0].children[0].style.width = "80%";
+          this.children[i].children[0].children[1].children[0].children[0].style.whiteSpace = "nowrap";
+          this.children[i].children[0].children[1].children[0].children[0].style.textAlign = "left";
+          // date 속성
+          this.children[i].children[0].children[1].children[0].children[1].style.margin = 0;
+          // content 속성
+          this.children[i].children[0].children[1].children[1].style.height = "4.375rem";
+          this.children[i].children[0].children[1].children[1].style.overflowY = "hidden";
+          this.children[i].children[0].children[1].children[1].style.paddingBottom = 0;
+          // 더보기 아이콘
+          event.target.src = "./img/icon/chevron_down.png";
+          event.target.alt = "more";
+          // li 모두 보이도록
+          this.children[i].style.display = 'block';
+        }
+      }
+      else {
+        // more 외 영역을 눌렀을 때 애니메이션
         getOffsetParent.animate([
           {marginTop:"16px", marginBottom:"0px"},
           {marginTop:"24px", marginBottom:"16px"},
@@ -380,10 +354,8 @@
           duration:500
         });
       }
-    });
+    });    
   </script>
-
-
 
 
   

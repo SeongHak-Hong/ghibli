@@ -245,6 +245,7 @@
         currentIdx+=1;
       }
     );
+
       // kongukjae code for slide #pager numbering
 
       const pagerNumber = document.querySelectorAll('#pager div');
@@ -261,14 +262,13 @@
       //  **************************************************************
       // #pager의 자식요소는 총 세개이다. / 그 중 div 태그는 두개이다.
 
-      
-    
 
     prev.addEventListener('click', function () {
       // kongukjae code added
       pagerNumber[currentIdx].textContent = currentIdx + 100;
       // currentIdx 핸들러 변수를 '값'으로 쓰는 예시이다.
       // 변수는 조건식의 '기준'으로도 '값'으로도 사용할 수 있다. 
+    });
 
 
 
@@ -294,8 +294,8 @@
         }
     );
 
-    
 </script>
+
 <!-- 컨트롤(페이저) 자바스크립트 -->
 <script>
   const totalPage = document.querySelector("#total-page");
