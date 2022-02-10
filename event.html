@@ -225,11 +225,6 @@
       slides.style.left = -(slideWidth + slideMargin) + "px";
     }
 
-
-    const pagerNumber = document.querySelectorAll('#pager div');
-      console.log(pagerNumber.length);
-      console.log(pagerNumber[0].textContent);
-
     next.addEventListener('click', function () {
       pagerNumber[0].textContent = currentIdx + 1;
       if (currentIdx <= slideCount-1) {
@@ -246,7 +241,6 @@
       }
     );
 
-      // kongukjae code for slide #pager numbering
 
       const pagerNumber = document.querySelectorAll('#pager div');
       console.log(pagerNumber.length);
@@ -265,7 +259,7 @@
 
     prev.addEventListener('click', function () {
       // kongukjae code added
-      pagerNumber[currentIdx].textContent = currentIdx + 100;
+      pagerNumber[currentIdx].textContent = currentIdx + 1;
       // currentIdx 핸들러 변수를 '값'으로 쓰는 예시이다.
       // 변수는 조건식의 '기준'으로도 '값'으로도 사용할 수 있다. 
     });
@@ -313,7 +307,7 @@
 
 
 
-  <!-- ***라이트(불빛)*** -->\
+  <!-- ***라이트(불빛)*** -->
   <div id="light"></div>
 
 
