@@ -281,9 +281,10 @@
             // ul 속성
             this.style.overflowY = "unset";
             // li 속성
-            this.children[i].style.transition = "1s";
-            this.children[i].style.backgroundColor = "rgba(240, 248, 255, .8)";
-            this.children[i].style.height = "35rem";
+            const liStyle = this.children[i].style
+            liStyle.transition = "1s";
+            liStyle.backgroundColor = "rgba(240, 248, 255, .8)";
+            liStyle.height = "35rem";
             // thum-wrap(썸네일) 속성
             this.children[i].children[0].children[0].style.width = "50%";
             // text-wrap 속성
@@ -291,15 +292,17 @@
             // title/date-wrap 속성
             this.children[i].children[0].children[1].children[0].style.flexDirection = "column";
             // title 속성
-            this.children[i].children[0].children[1].children[0].children[0].style.width = "100%";
-            this.children[i].children[0].children[1].children[0].children[0].style.whiteSpace = "normal";
-            this.children[i].children[0].children[1].children[0].children[0].style.textAlign = "end";
+            const titleStyle = this.children[i].children[0].children[1].children[0].children[0].style
+            titleStyle.width = "100%";
+            titleStyle.whiteSpace = "normal";
+            titleStyle.textAlign = "end";
             // date 속성
             this.children[i].children[0].children[1].children[0].children[1].style.margin = "1rem 0";
             // content 속성
-            this.children[i].children[0].children[1].children[1].style.height = "max-content";
-            this.children[i].children[0].children[1].children[1].style.overflowY = "scroll";
-            this.children[i].children[0].children[1].children[1].style.paddingBottom = "1rem";
+            const contentStyle = this.children[i].children[0].children[1].children[1].style
+            contentStyle.height = "max-content";
+            contentStyle.overflowY = "scroll";
+            contentStyle.paddingBottom = "1rem";
             // 더보기 아이콘
             event.target.src = "./img/icon/chevron_up.png";
             event.target.alt = "no-more";
@@ -318,9 +321,10 @@
           // ul 속성
           this.style.overflowY = "scroll";
           // li 속성
-          this.children[i].style.transition = "1s";
-          this.children[i].style.backgroundColor = "rgba(240, 248, 255, .7)";
-          this.children[i].style.height = "8rem";
+          const liStyle = this.children[i].style
+          liStyle.transition = "1s";
+          liStyle.backgroundColor = "rgba(240, 248, 255, .7)";
+          liStyle.height = "8rem";
           // thum-wrap(썸네일) 속성
           this.children[i].children[0].children[0].style.width = "20%";
           // text-wrap 속성
@@ -328,15 +332,17 @@
           // title/date-wrap 속성
           this.children[i].children[0].children[1].children[0].style.flexDirection = "row";
           // title 속성
-          this.children[i].children[0].children[1].children[0].children[0].style.width = "80%";
-          this.children[i].children[0].children[1].children[0].children[0].style.whiteSpace = "nowrap";
-          this.children[i].children[0].children[1].children[0].children[0].style.textAlign = "left";
+          const titleStyle = this.children[i].children[0].children[1].children[0].children[0].style
+          titleStyle.width = "80%";
+          titleStyle.whiteSpace = "nowrap";
+          titleStyle.textAlign = "left";
           // date 속성
           this.children[i].children[0].children[1].children[0].children[1].style.margin = 0;
           // content 속성
-          this.children[i].children[0].children[1].children[1].style.height = "4.375rem";
-          this.children[i].children[0].children[1].children[1].style.overflowY = "hidden";
-          this.children[i].children[0].children[1].children[1].style.paddingBottom = 0;
+          const contentStyle = this.children[i].children[0].children[1].children[1].style
+          contentStyle.height = "4.375rem";
+          contentStyle.overflowY = "hidden";
+          contentStyle.paddingBottom = 0;
           // 더보기 아이콘
           event.target.src = "./img/icon/chevron_down.png";
           event.target.alt = "more";
