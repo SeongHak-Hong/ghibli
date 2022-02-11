@@ -132,7 +132,7 @@
   top:0;
 }
 /* li */
-.slide-li {
+#slide-ul li {
   width:1000px;
   height:100%;
 }
