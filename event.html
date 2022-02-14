@@ -18,10 +18,10 @@
 
     <!-- ***배경*** -->
     <div id="bg" class="absolute"></div>
-    
 
 
-    
+
+
     <!-- ***헤더영역*** -->
     <div id="header-wrap" class="flex space-between">
       <header class="flex relative">
@@ -84,7 +84,9 @@
       <span>·</span>
       <a href="#">Rss feed</a>
     </footer>
-    
+    <!-- 메뉴 토글 -->
+    <script src="./js/menu.js"></script>
+    <div id="menu-bg" class="absolute"></div>
 
 
 
@@ -109,13 +111,6 @@
     <section id="film" class="flex absolute align-items-center justify-content-center">
       <h2 class="none">film-info</h2>
     </section>
-
-
-
-
-    <!-- ***메뉴토글*** -->
-    <script src="./js/menu.js"></script>
-    <div id="menu-bg" class="absolute"></div>
 
 
 
@@ -337,11 +332,7 @@
       }
   });
   </script>
-
-
-
-
-<!-- ***사이드메뉴 closed 누르면 '1. 종료된 행사 보이기', '2. 페이저 숨기기', '3. 랜턴 깜박', '4. 손전등'*** -->
+<!-- 사이드메뉴 closed -->
   <script>
     // const film = document.querySelector("#film");
     const sidemenuLi = document.querySelectorAll("#side-menu-ul li");
@@ -349,23 +340,27 @@
     const lantern = document.querySelector("#lantern");
     const light = document.querySelector('#light');
 
-    // info on
+    // closed
     sidemenuLi[1].onclick = function(e) {
+      // 손전등 켜기
       light.style.opacity = 1;
       light.style.zIndex = 10;
       light.style.transition = .4 +"s";
+      // 랜턴 끄기
       lantern.style.zIndex = 0;
       lantern.style.opacity = 0;
-      controls.style.opacity = .3;
+      // 컨트롤러(페이저) 투명도
+      controls.style.opacity = .5;
     }
 
-    // info off
+    // ongoing
     sidemenuLi[0].onclick = function(e) {
+      // 손전등 끄기
       light.style.opacity = 0;
       light.style.zIndex = 0;
       light.style.transition = 3 +"s";
+      // 랜턴 켜기
       lantern.style.zIndex = 2;
-      controls.style.opacity = 1;
       const blink0 = setTimeout(function(){
         lantern.style.opacity = 1;
       }, 530);
@@ -388,7 +383,8 @@
         lantern.style.opacity = 1;
       }, 1700);
       clearTimeout(blink0, blink1, blink2, blink3, blink4, blink5, blink6);
-      
+      // 컨트롤러(페이저) 투명도
+      controls.style.opacity = 1;
     }
   </script>
 

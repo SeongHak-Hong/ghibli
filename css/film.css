@@ -21,34 +21,35 @@ main {
 #film {
   height:28rem;
 }
-#film ul {
-  justify-content: space-between;
-  flex-wrap:wrap;
-  list-style-type: none;
-}
-#poster-wrap {
+#slide-ul {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   height:28rem;
+  flex-wrap: wrap;
+  list-style-type: none;
   overflow-y: scroll;
-  overflow-x: hidden;
 }
-.poster {
-  width:30%;
+#slide-ul::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+#slide-ul li {
+  width:18.75rem;
   box-sizing: border-box;
 }
-.poster a {
+#slide-ul li a {
   display: block;
   text-decoration: none;
   text-align: center;
 }
-.poster a img {
+#slide-ul li a img {
   width:100%;
   border:.25rem solid transparent;
   box-sizing: border-box;
 }
-.poster a:hover img {
+#slide-ul li a:hover img {
   border:.25rem solid #109CEB;
 }
-.poster span {
+#slide-ul li span {
   display: block;
   color: rgba(249, 255, 254, 0.5);
   font-family: 'Be Vietnam Pro', sans-serif;
@@ -60,28 +61,7 @@ main {
   overflow: hidden;
   white-space: nowrap;
 }
-/* 페이저 */
-.pager {
-  right:-5%;
-  top:40%;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-.pager ul {
-  list-style-type: none;
-}
-.pager ul li {
-  width:.75rem;
-  height:.75rem;
-  border:1px solid rgba(249, 255, 254, 0.6);
-  border-radius: 50%;
-}
-.pager ul li ~ li {
-  margin-top:.75rem;
-}
-.pager-on {
-  background: rgba(249, 255, 254, 0.6);
-}
+
 
 
 
@@ -103,7 +83,7 @@ main {
   top:0;
 }
 video {
-  width:100%;
+  width:100vw;
 }
 
 
@@ -197,4 +177,11 @@ video {
   /* .pager {
     top:26%;
   } */
+}
+
+@media screen and (max-aspect-ratio: 1920/1080) {
+  video {
+      width: auto;
+      height: 100vh;
+  }
 }

@@ -120,11 +120,11 @@
   transform: translateX(-50%);
   width:10rem;
   height:1.6rem;
-  transition: .3s;
   padding:.8rem 1.6rem;
   border-radius: 2rem;
   z-index: 1;
   color: rgba(249, 255, 254, .6);
+  transition: .3s;
 }
 /* 페이저 호버 */
 #controls:hover {
@@ -155,5 +155,5 @@
   width:100%;
   height:100%;
   background-color: #101010;
-  z-index: 100;
+  z-index: 102;
 }

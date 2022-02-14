@@ -82,7 +82,7 @@
   <main id="container" class="flex absolute justify-content-center align-items-center">
     <ul id="board">
       <!-- 1 -->
-      <li class="board-list hidden border-box">
+      <li class=" hidden border-box">
         <div class="content-wrap flex">
           <div class="thum-wrap flex align-items-center justify-content-center">
             <img src="./img/news/park1.jpg" alt="thumb1">
@@ -107,7 +107,7 @@
         </div>
       </li>
       <!-- 2 -->
-      <li class="board-list hidden border-box">
+      <li class=" hidden border-box">
         <div class="content-wrap flex">
           <div class="thum-wrap flex align-items-center justify-content-center">
             
@@ -136,7 +136,7 @@
         </div>
       </li>
       <!-- 3 -->
-      <li class="board-list hidden border-box">
+      <li class=" hidden border-box">
         <div class="content-wrap flex">
           <div class="thum-wrap flex align-items-center justify-content-center">
             <img src="./img/news/nenga2022.jpg" alt="thumb1">
@@ -157,7 +157,7 @@
         </div>
       </li>
       <!-- 4 -->
-      <li class="board-list hidden border-box">
+      <li class=" hidden border-box">
         <div class="content-wrap flex">
           <div class="thum-wrap flex align-items-center justify-content-center">
             
@@ -176,7 +176,7 @@
         </div>
       </li>
       <!-- 5 -->
-      <li class="board-list hidden border-box">
+      <li class=" hidden border-box">
         <div class="content-wrap flex">
           <div class="thum-wrap flex align-items-center justify-content-center">
           </div>
@@ -194,7 +194,7 @@
         </div>
       </li>
       <!-- 6 -->
-      <li class="board-list hidden border-box">
+      <li class=" hidden border-box">
         <div class="content-wrap flex">
           <div class="thum-wrap flex align-items-center justify-content-center">
           </div>
@@ -212,7 +212,7 @@
         </div>
       </li>
       <!-- 7 -->
-      <li class="board-list hidden border-box">
+      <li class=" hidden border-box">
         <div class="content-wrap flex">
           <div class="thum-wrap flex align-items-center justify-content-center">
           </div>
@@ -232,7 +232,7 @@
         </div>
       </li>
       <!-- 8 -->
-      <li class="board-list hidden border-box">
+      <li class=" hidden border-box">
         <div class="content-wrap flex">
           <div class="thum-wrap flex align-items-center justify-content-center">
             <img src="./img/news/info211201b.jpg" alt="thumb1">
@@ -253,6 +253,14 @@
       </li>
     </ul>
   </main>
+
+
+
+
+  <!-- ***스크롤다운 아이콘*** -->
+<div id="scroll" class="absolute">
+  <img src="./img/icon/chevron_duo_down.png" alt="scroll down">
+</div>
   
 
 
@@ -364,7 +372,96 @@
   </script>
 
 
+
+
+ <!-- ***슬라이더*** -->
+  <script>
+  const boardUl = document.querySelector('#board');
+  const boardLi = document.querySelectorAll("#board li");
+
+  let order = 0;
   
+  // ***마우스휠 제어
+  boardUl.addEventListener('wheel', function (event) {
+    // 휠 기본기능 막기
+    event.preventDefault();
+    // li의 높이값
+    let getHeight = (boardLi[0].offsetHeight)*4 + (64); // 64 = li의 margin-top
+    console.log(getHeight);
+    // event.deltaY값이 0 이상
+    if(event.deltaY > order) {
+      // order값이 li의 길이보다 작을 때
+      if(order < boardLi.length) {
+        order++;
+        console.log(order);
+        console.log('scroll down');
+        boardUl.scrollTo({
+          top:getHeight * order,
+          behavior : "smooth", 
+        });
+      } else {
+        console.log("lastElement");
+        window.alert(['This is the last post.']);
+      }
+    } else {
+      if(order > 0) {
+        order--;
+        console.log(order);
+        console.log('scroll up');
+        boardUl.scrollTo({
+          top:getHeight * order,
+          behavior : "smooth"
+        });
+      } else {
+        console.log("firstElement");
+      }
+      console.log('scroll up');
+    }
+  })
+  
+  // ***스크롤다운 버튼 제어
+  const scroll = document.querySelector('#scroll');
+  
+  scroll.addEventListener('click', function () {
+    // li의 높이값
+    let getHeight = (boardLi[0].offsetHeight)*4 + (64); // 64 = li의 margin-top
+    console.log(getHeight);
+    // boardUl.deltaY값이 0 이상
+    console.log(boardUl.scrollTop);
+    if(boardUl.scrollTop > order) {
+      // order값이 li의 길이보다 작을 때
+      if(order < boardLi.length) {
+        order++;
+        console.log(order);
+        console.log('scroll down');
+        boardUl.scrollTo({
+          top:getHeight * order,
+          behavior : "smooth", 
+        });
+      } else {
+        console.log("lastElement");
+        window.alert(['This is the last post.']);
+      }
+    } else {
+      if(order > 0) {
+        order--;
+        console.log(order);
+        console.log('scroll up');
+        boardUl.scrollTo({
+          top:getHeight * order,
+          behavior : "smooth"
+        });
+      } else {
+        console.log("firstElement");
+      }
+      console.log('scroll up');
+    }
+  })
+</script>
+
+
+
+
   <!-- ***캐릭터*** -->
   <div id="character" class="absolute">
     <div id="kiki" class="absolute">
@@ -396,13 +493,6 @@
     </div>
   </div>
 
-
-
-
-<!-- ***스크롤다운 아이콘*** -->
-<div id="scroll" class="absolute">
-  <img src="./img/icon/chevron_duo_down.png" alt="scroll down">
-</div>
 
 
 

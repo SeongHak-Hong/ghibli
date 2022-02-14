@@ -8,10 +8,8 @@
 
 
 
-/* ***랜턴이미지*** */
+/* ***랜턴(등)*** */
 #lantern {
-  left:0;
-  top:0;
   width:100%;
   height:100%;
   background: url(../img/bg/lantern1.png) no-repeat 50% 50% / cover;
@@ -25,7 +23,7 @@
 
 
 
-/* ***배경이미지*** */
+/* ***배경*** */
 #bg {
   width:100%;
   height:100%;
@@ -47,6 +45,8 @@
   transform: translateY(3rem);
   margin-left:3.625rem;
   margin-top:2rem;
+  left:0;
+  top:0;
 }
 #side-menu a {
   font-family: 'Be Vietnam Pro', sans-serif;
@@ -65,7 +65,7 @@
 
 
 
-/* ***영화정보*** */
+/* ***영화 정보*** */
 #film {
   left:0;
   top: 0;
@@ -77,6 +77,7 @@
   opacity: 0;
   z-index: 0;
 }
+/* 포스터 */
 #poster {
   width:23.625rem;
   border-radius: .8rem;
@@ -85,6 +86,7 @@
   height:100%;
   min-width: 7.375rem;
 }
+/* 인포 */
 #info {
   width:max-content;
   margin-left:1.75rem;
@@ -230,7 +232,7 @@
   width:100%;
   height:100%;
   background-color: #101010;
-  z-index: 100;
+  z-index: 102;
 }
 
 
