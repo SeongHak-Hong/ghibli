@@ -80,7 +80,7 @@
       <!-- 포스터 리스트 -->
       <section id="film">
         <h2 class="none">film-list</h2>
-        <ul id="slide-ul" class="flex flex-wrap hidden space-between">
+        <ul id="slide-ul" class="flex flex-wrap hidden space-between" onmouseover="mouse_over()" onmouseout="mouse_out()">
           <li>
             <a href="#">
               <div class="img-wrap">
@@ -389,6 +389,33 @@
     })
     
   </script>
+
+
+
+
+<!-- ***스크롤다운 아이콘*** -->
+<div id="scroll" class="absolute">
+  <img src="./img/icon/chevron_duo_down.png" alt="scroll down">
+</div>
+<script>
+  const scrollIcon = document.querySelector('#scroll');
+  scrollIcon.style.display = 'none';
+
+  slideUl.addEventListener("mousemove", (e) => {
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+    scrollIcon.style.left = mouseX - 13 + 'px';
+    scrollIcon.style.top = mouseY + 10 + 'px';
+  });
+
+  function mouse_over(){
+    scrollIcon.style.display = 'block';
+  }
+
+  function mouse_out(){
+    scrollIcon.style.display = 'none';
+  }
+</script>
 
 
 

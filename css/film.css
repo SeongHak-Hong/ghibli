@@ -89,6 +89,25 @@ video {
 
 
 
+/* ***스크롤다운 아이콘*** */
+#scroll {
+  animation: scroll .3s infinite alternate;
+  z-index: 98;
+  pointer-events: none;
+}
+/* 스크롤다운 애니메이션 */
+@keyframes scroll {
+  0% {
+    transform:translateY(6px);
+  }
+  100% {
+    transform:translateY(0px);
+  }
+}
+
+
+
+
 /* ***미디어쿼리*** */
 
 @media screen and (max-width:1250px) {

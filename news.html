@@ -79,8 +79,8 @@
 
 
   <!-- ***메인영역*** -->
-  <main id="container" class="flex absolute justify-content-center align-items-center">
-    <ul id="board">
+  <main id="container" class="flex justify-content-center align-items-center">
+    <ul id="board" onmouseover="mouse_over()" onmouseout="mouse_out()">
       <!-- 1 -->
       <li class=" hidden border-box">
         <div class="content-wrap flex">
@@ -258,16 +258,36 @@
 
 
   <!-- ***스크롤다운 아이콘*** -->
-<div id="scroll" class="absolute">
-  <img src="./img/icon/chevron_duo_down.png" alt="scroll down">
-</div>
+  <div id="scroll" class="absolute">
+    <img src="./img/icon/chevron_duo_down.png" alt="scroll-down">
+  </div>
+  <script>
+    const scrollIcon = document.querySelector('#scroll');
+    const board = document.querySelector('#board');
+    scrollIcon.style.display = 'none';
+
+    board.addEventListener("mousemove", (e) => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+      scrollIcon.style.left = mouseX - 13 + 'px';
+      scrollIcon.style.top = mouseY + 10 + 'px';
+    });
+
+    function mouse_over(){
+      scrollIcon.style.display = 'block';
+    }
+
+    function mouse_out(){
+      scrollIcon.style.display = 'none';
+    }
+  </script>
   
 
 
 
   <!-- ***더보기 클릭시 해당 게시판 정보만 보이기*** -->
   <script>
-    const board = document.querySelector('#board');
+    // const board = document.querySelector('#board');
 
     // more 클릭 이벤트 - 선택한 li만 보이도록
     board.addEventListener('click', function(event) {
@@ -374,7 +394,7 @@
 
 
 
- <!-- ***슬라이더*** -->
+ <!-- ***슬라이드*** -->
   <script>
   const boardUl = document.querySelector('#board');
   const boardLi = document.querySelectorAll("#board li");
@@ -418,45 +438,7 @@
       console.log('scroll up');
     }
   })
-  
-  // ***스크롤다운 버튼 제어
-  const scroll = document.querySelector('#scroll');
-  
-  scroll.addEventListener('click', function () {
-    // li의 높이값
-    let getHeight = (boardLi[0].offsetHeight)*4 + (64); // 64 = li의 margin-top
-    console.log(getHeight);
-    // boardUl.deltaY값이 0 이상
-    console.log(boardUl.scrollTop);
-    if(boardUl.scrollTop > order) {
-      // order값이 li의 길이보다 작을 때
-      if(order < boardLi.length) {
-        order++;
-        console.log(order);
-        console.log('scroll down');
-        boardUl.scrollTo({
-          top:getHeight * order,
-          behavior : "smooth", 
-        });
-      } else {
-        console.log("lastElement");
-        window.alert(['This is the last post.']);
-      }
-    } else {
-      if(order > 0) {
-        order--;
-        console.log(order);
-        console.log('scroll up');
-        boardUl.scrollTo({
-          top:getHeight * order,
-          behavior : "smooth"
-        });
-      } else {
-        console.log("firstElement");
-      }
-      console.log('scroll up');
-    }
-  })
+
 </script>
 
 

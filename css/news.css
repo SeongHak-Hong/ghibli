@@ -8,15 +8,14 @@ body {
 /* ***메인섹션*** */
 /* 컨테이너 */
 #container {
-  left:0;
-  top:0;
+  height:60%;
   z-index: 98;
-  padding:0 1rem;
+  margin-top: 3rem;
 }
 /* 게시판 */
 #board {
   width:62.5rem;
-  height:60%;
+  height:100%;
   overflow-y: scroll;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -32,6 +31,7 @@ body {
   background-color: rgba(240, 248, 255, .7);
   backdrop-filter: blur(5px);
   padding:.3rem;
+  box-sizing: border-box;
 }
 /* 리스트간 상하 간격 */
 #board li ~ li {
@@ -111,22 +111,19 @@ body {
 
 
 
-
 /* ***스크롤다운 아이콘*** */
 #scroll {
-  left:50%;
-  bottom:10%;
-  animation: scroll .5s infinite alternate;
-  cursor: pointer;
+  animation: scroll .3s infinite alternate;
   z-index: 98;
+  pointer-events: none;
 }
 /* 스크롤다운 애니메이션 */
 @keyframes scroll {
   0% {
-    bottom:9%;
+    transform:translateY(6px);
   }
   100% {
-    bottom:11%;
+    transform:translateY(0px);
   }
 }
 
@@ -153,6 +150,7 @@ body {
   height:100%;
   left:0;
   top:0;
+  z-index: -1;
   pointer-events: none;
 }
 #kiki {
@@ -172,5 +170,78 @@ body {
   100% {
     top:50px;
     left:125px;
+  }
+}
+
+
+
+@media screen and (max-width:1050px) {
+  #board {
+    width:40rem;
+  }
+}
+
+@media screen and (max-width:768px) {
+  /* 캐릭터 */
+  #kiki {
+    left: 100px;
+    top: 80px;
+  }
+  @keyframes kiki {
+    0% {
+    }
+    50% {
+      top: 60px;
+      left:90px;
+    }
+    100% {
+      top:100px;
+      left:110px;
+    }
+  }
+  #kiki img {
+    width:60%;
+    height:60%;
+  }
+  /* 게시판 */
+  #board {
+    width:26rem;
+  }
+  /* 텍스트 */
+  .text-wrap {
+    width:65%;
+  }
+  /* 콘텐츠 제목 */
+  .text-wrap h1 {
+    width:70%;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  /* 콘텐츠 날짜 */
+  .text-wrap span {
+    font-size:.75rem;
+    font-weight: 300;
+  }
+  /* 콘텐츠 내용 */
+  .text-wrap p {
+    font-size:.75rem;
+    height:4.375rem;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-top:.25rem;
+    text-indent: .875rem;
+  }
+/* 더보기 이미지 */
+  .more {
+    margin-left: .875rem;
+  }
+  .more img {
+    width:1.2rem;
+  }
+  .more-bg {
+    width:1.5rem;
+    height:1.5rem;
+    background-color: #109CEB;
+    border-radius: 50%;
   }
 }

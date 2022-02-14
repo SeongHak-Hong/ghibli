@@ -78,7 +78,7 @@ header {
 }
 header:hover {
   background: rgb(249, 255, 254, .16);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(.375rem);
 }
 /* 메뉴 */
 #hamburger {
@@ -135,7 +135,7 @@ header:hover {
   color: rgba(249, 255, 254, .5);
   position: relative;
   z-index: 100;
-  transform: translateY(-104px);
+  transform: translateY(-6.5rem);
 }
 #menu ul li a.on {
   top:50%;
@@ -150,21 +150,15 @@ header:hover {
   width:7.5rem;
   height:6.75rem;
   position: absolute;
-  left:-100px;
+  left:-6.25rem;
   top:0;
   background: url(../img/icon/menu_hover.png) no-repeat 50% 50% / 100%;
 }
-#menu ul li:nth-child(2) a:hover:before {
-  left:-116px;
-}
 #menu ul li:nth-child(4) a:hover:before {
-  left:-76px;
+  left:-4.75rem;
 }
 #menu ul li:nth-child(5) a:hover:before {
-  left:-126px;
-}
-#menu ul li:nth-child(6) a:hover:before {
-  left:-86px;
+  left:-7.875rem;
 }
 /* 푸터 */
 footer {
@@ -195,7 +189,7 @@ footer.on {
   width:100vw;
   height:100vh;
   background: rgba(4, 15, 24, 0.9);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(.3125rem);
   transition: .3s;
 }
 /* 배경 블러 */
@@ -206,7 +200,7 @@ footer.on {
   width:100vw;
   height:100vh;
   background: rgba(3, 26, 39, 0.62);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(.3125rem);
 }
 
 
@@ -217,7 +211,7 @@ footer.on {
   left:3rem;
   bottom:3rem;
   z-index: 100;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 .25rem .25rem rgba(0, 0, 0, 0.25));
 }
 /* 앨범아트 */
 #album-art {
@@ -278,4 +272,83 @@ footer.on {
 }
 #play-control img {
   width:100%;
+}
+
+
+
+
+/* 미디어쿼리 */
+@media screen and (max-width:1050px) {
+  #menu ul li a span {
+    font-size:4rem;
+  }
+  #menu ul li {
+    height:5.5rem;
+  }
+   /* 메뉴호버 */
+  #menu ul li a:hover:before {
+    left:-3.75rem;
+    top:-.5rem;
+    background: url(../img/icon/menu_hover.png) no-repeat 50% 50% / 70%;
+  }
+  #menu ul li:nth-child(3) a:hover:before {
+    left:-4.375rem;
+  }
+  #menu ul li:nth-child(4) a:hover:before {
+    left:-2.5rem;
+  }
+  #menu ul li:nth-child(5) a:hover:before {
+    left:-4.75rem;
+  }
+  #menu ul li:nth-child(6) a:hover:before {
+    left:-3rem;
+  }
+}
+
+@media screen and (max-width:768px) {
+  /* 헤더 */
+  header {
+    height:5rem;
+    margin: 1rem 1rem 0;
+    padding: 0 .5rem;
+  }
+  /* 햄버거 */
+  #hamburger {
+    width:2.125rem;
+  }
+  #hamburger img {
+    width:100%;
+  }
+  /* 로고 */
+  #logo {
+    width:10.25rem;
+  }
+  #logo img {
+    width:100%;
+  }
+  /* 메뉴 */
+  #menu ul li a span {
+    font-size:3rem;
+  }
+  #menu ul li {
+    height:4rem;
+  }
+  /* 메뉴호버 */
+  #menu ul li a:hover:before {
+    left:-1.25rem;
+    top:-1.25rem;
+    background: url(../img/icon/menu_hover.png) no-repeat 50% 50% / 50%;
+  }
+  #menu ul li:nth-child(3) a:hover:before {
+    left:-1.625rem;
+  }
+  #menu ul li:nth-child(4) a:hover:before {
+    left:-.25rem;
+  }
+  #menu ul li:nth-child(5) a:hover:before {
+    left:-1.875rem;
+  }
+  #menu ul li:nth-child(6) a:hover:before {
+    left:-.5rem;
+  }
 }
