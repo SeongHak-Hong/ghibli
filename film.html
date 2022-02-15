@@ -7,6 +7,10 @@
   <title>Ghibli</title>
   <link href="./css/reset.css" rel="stylesheet">
   <link href="./css/film.css" rel="stylesheet">
+  <script defer src="./js/menu.js"></script>
+  <script defer src="./js/film.js"></script>
+  <script defer src="./js/scroll.js"></script>
+  <script defer src="./js/fade-in.js"></script>
 </head>
 <body>
 <!-- ***헤더영역*** -->
@@ -70,6 +74,8 @@
     <a href="#">Rss feed</a>
   </footer>
 </div>
+  <!-- 메뉴 배경 -->
+  <div id="menu-bg" class="absolute"></div>
 
 
 
@@ -309,113 +315,16 @@
 
 
 
-  <!-- ***메뉴토글*** -->
-  <script src="./js/menu.js"></script>
-  <div id="menu-bg" class="absolute"></div>
+  <!-- ***스크롤다운 아이콘*** -->
+  <div id="scroll" class="absolute">
+    <img src="./img/icon/chevron_duo_down.png" alt="scroll down">
+  </div>
 
 
 
 
   <!-- ***페이드인***  -->
   <div id="movie-bg" class="absolute"></div>
-
-  <script>
-    const movieBg = document.querySelector("#movie-bg");
-
-    movieBg.style.opacity = 1;
-
-    // 페이드인
-    const secondTime = setInterval(function(){
-      if (movieBg.style.opacity == 1) {
-        movieBg.style.opacity = 0;
-        movieBg.style.transition = 1 + "s";
-      } else {
-        clearInterval(secondTime);
-      }
-    }, 500);
-
-    // movieBG의 z-index 낮추기
-    const zIndex0 = setTimeout(function(){
-      movieBg.style.zIndex = 0;
-      clearTimeout(zIndex0);
-    }, 1200);
-  </script>
-
-
-
-
-  <!-- ***슬라이드*** -->
-  <script>
-    const slideUl = document.querySelector('#slide-ul');
-    const slideLi = document.querySelectorAll("#slide-ul li");
-
-    let order = 0;
-
-    slideUl.addEventListener('wheel', function (event) {
-      // 휠 기본기능 막기
-      event.preventDefault();
-      // li의 높이값
-      let getHeight = slideLi[0].offsetHeight;
-      console.log(getHeight);
-      // event.deltaY값이 0 이상
-      if(event.deltaY > order) {
-        // order값이 li의 길이보다 작을 때
-        if(order < slideLi.length) {
-          order++;
-          console.log(order);
-          console.log('scroll down');
-          slideUl.scrollTo({
-            top:getHeight * order,
-            behavior : "smooth", 
-          });
-        } else {
-          console.log("lastElement");
-          window.alert(['This is the last film list.']);
-        }
-      } else {
-        if(order > 0) {
-          order--;
-          console.log(order);
-          console.log('scroll up');
-          slideUl.scrollTo({
-            top:getHeight * order,
-            behavior : "smooth"
-          });
-        } else {
-          console.log("firstElement");
-        }
-        console.log('scroll up');
-      }
-    })
-    
-  </script>
-
-
-
-
-<!-- ***스크롤다운 아이콘*** -->
-<div id="scroll" class="absolute">
-  <img src="./img/icon/chevron_duo_down.png" alt="scroll down">
-</div>
-<script>
-  const scrollIcon = document.querySelector('#scroll');
-  scrollIcon.style.display = 'none';
-
-  slideUl.addEventListener("mousemove", (e) => {
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
-    scrollIcon.style.left = mouseX - 13 + 'px';
-    scrollIcon.style.top = mouseY + 10 + 'px';
-  });
-
-  function mouse_over(){
-    scrollIcon.style.display = 'block';
-  }
-
-  function mouse_out(){
-    scrollIcon.style.display = 'none';
-  }
-</script>
 
 
 
@@ -427,5 +336,9 @@
   <div id="bg-video" class="hidden absolute">
     <video src="./video/StudioGhibli_HBOMax_bg.mp4" muted autoplay loop></video>
   </div>
+
+
+
+
 </body>
 </html>

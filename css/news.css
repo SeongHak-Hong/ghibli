@@ -32,6 +32,7 @@ body {
   backdrop-filter: blur(5px);
   padding:.3rem;
   box-sizing: border-box;
+  align-items: center;
 }
 /* 리스트간 상하 간격 */
 #board li ~ li {
@@ -44,6 +45,8 @@ body {
 /* 썸네일 */
 .thum-wrap {
   width:20%;
+  height:90%;
+  overflow: hidden;
 }
 .thum-wrap img {
   width:70%;
@@ -52,7 +55,7 @@ body {
 .text-wrap {
   width:70%;
   height:100%;
-  margin:.5rem 0;
+  margin-top:.5rem;
 }
 /* 콘텐츠 제목 */
 .text-wrap h1 {

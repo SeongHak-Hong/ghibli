@@ -7,6 +7,8 @@
   <title>Ghibli</title>
   <link href="./css/reset.css" rel="stylesheet">
   <link href="./css/index.css" rel="stylesheet">
+  <script defer src="./js/menu.js"></script>
+  <script defer src="./js/index.js"></script>
 </head>
 <body>
   <!-- ***헤더영역*** -->
@@ -72,8 +74,6 @@
   </div>
   <!-- 메뉴 배경 -->
   <div id="menu-bg" class="absolute"></div>
-  <!-- 메뉴토글 -->
-  <script src="./js/menu.js"></script>
 
 
 
@@ -82,10 +82,10 @@
   <div id="container" class="flex justify-content-center">
     <main></main>
   </div>
-  
-  
 
-  
+
+
+
   <!-- ***영화 비주얼*** -->
   <!-- 영화스크린같은 줄 -->
   <div id="movie">
@@ -140,60 +140,6 @@
 
 
 
-
-  <!-- ***페이드 효과*** -->
-  <script>
-    const movieBg = document.querySelector("#movie-bg");
-    const movie = document.querySelector("#movie");
-    const character = document.querySelector("#character");
-    const musicPlayer = document.querySelector("#music-player");
-
-    movieBg.style.opacity = 1;
-    character.style.opacity = 0;
-    musicPlayer.style.opacity = 0;
-
-    // 첫번째 페이드인
-    const firstTime = setInterval(function(){
-      if (movieBg.style.opacity > 0) {
-        movieBg.style.opacity = 0;
-        movieBg.style.transition = 1 + "s";
-      } else {
-        clearInterval(firstTime);
-      }
-    }, 1000);
-
-    // 두번째 페이드아웃
-    const secondTime = setTimeout(function(){
-      if (movieBg.style.opacity == 0) {
-        
-
-        movieBg.style.opacity = 1;
-        movie.style.opacity = 0;
-        movie.style.transition = 1 + "s";
-      } else {
-        clearTimeout(secondTime);
-      }
-    }, 3000);
-
-    // 세번째 페이드인
-     const thirdTime = setTimeout(function() {
-      if (movieBg.style.opacity == 1) {
-        const header = document.querySelector("#header-wrap");
-        const body = document.querySelector("body");
-
-        movie.style.display = "none";
-        header.style.opacity = 1;
-        movieBg.style.opacity = 0;
-        body.style.background = "url(./img/bg/ghibli_background.jpg) no-repeat 50% 50% / cover";
-        character.style.opacity = 1;
-        character.style.transition = .6 + "s";
-        musicPlayer.style.opacity = 1;
-        musicPlayer.style.transition = .6 + "s";
-      } else {
-        clearTimeout(thirdTime);
-      }
-    }, 5000);
-  </script>
 
 </body>
 </html>

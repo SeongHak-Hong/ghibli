@@ -7,6 +7,9 @@
   <title>Ghibli</title>
   <link href="./css/reset.css" rel="stylesheet">
   <link href="./css/event.css" rel="stylesheet">
+  <script defer src="./js/slide.js"></script>
+  <script defer src="./js/menu.js"></script>
+  <script defer src="./js/event.js"></script>
 </head>
 <body>
   <div id="container" class="flex flex-direction-column absolute">
@@ -84,8 +87,7 @@
       <span>·</span>
       <a href="#">Rss feed</a>
     </footer>
-    <!-- 메뉴 토글 -->
-    <script src="./js/menu.js"></script>
+    <!-- 메뉴 배경 -->
     <div id="menu-bg" class="absolute"></div>
 
 
@@ -196,87 +198,6 @@
       <img src="./img/icon/chevron_right.png" alt="next">
     </div>
   </div>
-  <!-- 슬라이드 자바스크립트 -->
-  <script>
-    let slide = document.querySelector("#slide");
-    let slides = document.querySelector("#slide-ul");
-    let slideLi = document.querySelectorAll("#slide-ul li");
-    console.dir(slideLi);
-    let currentIdx = 0;
-    let slideLength = slideLi.length;
-    const prev = document.querySelector("#prev");
-    const next = document.querySelector("#next");
-    const slideWidth = slide.offsetWidth;
-    const slideSpeed = 500;
-
-    makeClone();
-    initfunction();
-    
-    // li 클론 만들기
-    function makeClone(){
-      let cloneSlideFirst = slideLi[0].cloneNode(true); //slideLi.firstElementChild.cloneNode(true);
-      let cloneSlideLast = slides.lastElementChild.cloneNode(true);
-      // 첫 슬라이드를 마지막슬라이드 뒤에 복사하여 붙이기
-      slides.append(cloneSlideFirst); 
-      // 마지막 슬라이드를 첫 슬라이드 앞에 복사하여 붙이기
-      slides.insertBefore(cloneSlideLast,slides.firstElementChild);
-    }
-
-
-    // 초기설정(너비, 위치값)
-    function initfunction(){
-      slides.style.width = (slideWidth) * (slideLength + 2) + "px";
-      slides.style.left = -(slideWidth) + "px";
-    }
-
-
-    // 페이저
-    const pagerNumber = document.querySelectorAll('#pager div');
-    // 총 슬라이드 수
-    pagerNumber[1].textContent = slideLength;
-    // 현재 슬라이드 번호(초기값)
-    pagerNumber[0].textContent = currentIdx + 1;
-
-
-    // next 버튼 클릭시 현재 보여지는 슬라이드
-    next.addEventListener('click', function () {
-      // 현재 인덱스가 (총 슬라이드 수-1)보다 작거나 같을 때
-      if (currentIdx <= slideLength-1) {
-        slides.style.left = -(currentIdx+2) * (slideWidth) + "px";
-        slides.style.transition = `${slideSpeed}ms ease-out`;
-      // 현재 인덱스가 (총 슬라이드 수-1)와 같을 때
-      }
-      if (currentIdx === slideLength-1){
-        setTimeout(function() {
-          slides.style.left = -(slideWidth) + "px";
-          slides.style.transition = `${0}s`;
-        }, slideSpeed);
-        currentIdx = -1;
-        } 
-        currentIdx++;
-        // 현재 슬라이드 번호
-        pagerNumber[0].textContent = currentIdx + 1;
-      }
-    );
-
-    // 이전 버튼 클릭시
-    prev.addEventListener('click', function () {
-        if (currentIdx >= 0) {
-          slides.style.left = -(currentIdx) * (slideWidth) + "px";
-          slides.style.transition = `${slideSpeed}ms ease-out`;
-          pagerNumber[0].textContent = currentIdx + 1;
-        }if (currentIdx === 0){
-          setTimeout(function(){
-            slides.style.left = -(slideLength) * (slideWidth)+ "px";
-            slides.style.transition = `${0}s ease-out`;
-          }, slideSpeed);
-          currentIdx=slideLength;
-          } 
-          currentIdx--;
-          pagerNumber[0].textContent = currentIdx + 1;
-        }
-    );
-</script>
 
 
 
@@ -293,159 +214,5 @@
 
 
 
-  <!-- ***사이드메뉴 on/off*** -->
-  <script>
-
-  const sidemenuUl = document.querySelector('#side-menu ul');
-  
-  for(let i = 0; i < sidemenuUl.children.length; i++) {
-    sidemenuUl.children[i].children[0].style.color = "#F9FFFE";
-    sidemenuUl.children[i].children[0].style.transition = ".7s";
-    sidemenuUl.children[0].children[0].style.opacity = 1;
-    sidemenuUl.children[1].children[0].style.opacity = .6;
-    sidemenuUl.children[0].children[0].style.textDecoration = "underline";
-    sidemenuUl.children[1].children[0].style.textDecoration = "";
-  }
-
-  // 클릭이벤트
-  sidemenuUl.addEventListener('click', function(event) {
-    console.log(event.target);
-    console.log(event.target.parentElement.dataset.index);
-    console.log(typeof event.target.parentElement.dataset.index);
-    let getIndexValue = Number(event.target.parentElement.dataset.index);
-    console.log(typeof getIndexValue);
-    
-
-    console.log("반복문으로 활용할 인덱스 값을 마크업 속성노드에서 추출 :" + getIndexValue);
-    for(let i = 0; i < sidemenuUl.children.length; i++) {
-      if(getIndexValue !== i) {
-          console.log(i);
-          console.log("제외된 추출값 :" + getIndexValue);
-          sidemenuUl.children[i].children[0].style.opacity = 0.6;
-          sidemenuUl.children[i].children[0].style.color = "#F9FFFE";
-          sidemenuUl.children[i].children[0].style.textDecoration = "none";
-        } else {
-          sidemenuUl.children[i].children[0].style.opacity = 1;
-          sidemenuUl.children[i].children[0].style.color = "#F9FFFE";
-          sidemenuUl.children[i].children[0].style.textDecoration = "underline";
-        }
-      }
-  });
-  </script>
-<!-- 사이드메뉴 closed -->
-  <script>
-    // const film = document.querySelector("#film");
-    const sidemenuLi = document.querySelectorAll("#side-menu-ul li");
-    const controls = document.querySelector("#controls");
-    const lantern = document.querySelector("#lantern");
-    const light = document.querySelector('#light');
-
-    // closed
-    sidemenuLi[1].onclick = function(e) {
-      // 손전등 켜기
-      light.style.opacity = 1;
-      light.style.zIndex = 10;
-      light.style.transition = .4 +"s";
-      // 랜턴 끄기
-      lantern.style.zIndex = 0;
-      lantern.style.opacity = 0;
-      // 컨트롤러(페이저) 투명도
-      controls.style.opacity = .5;
-    }
-
-    // ongoing
-    sidemenuLi[0].onclick = function(e) {
-      // 손전등 끄기
-      light.style.opacity = 0;
-      light.style.zIndex = 0;
-      light.style.transition = 3 +"s";
-      // 랜턴 켜기
-      lantern.style.zIndex = 2;
-      const blink0 = setTimeout(function(){
-        lantern.style.opacity = 1;
-      }, 530);
-      const blink1 = setTimeout(function(){
-        lantern.style.opacity = 0;
-      }, 730);
-      const blink2 = setTimeout(function(){
-        lantern.style.opacity = 1;
-      }, 830);
-      const blink3 = setTimeout(function(){
-        lantern.style.opacity = 0;
-      }, 930);
-      const blink4 = setTimeout(function(){
-        lantern.style.opacity = 1;
-      }, 1130);
-      const blink5 = setTimeout(function(){
-        lantern.style.opacity = 0;
-      }, 1230);
-      const blink6 = setTimeout(function(){
-        lantern.style.opacity = 1;
-      }, 1700);
-      clearTimeout(blink0, blink1, blink2, blink3, blink4, blink5, blink6);
-      // 컨트롤러(페이저) 투명도
-      controls.style.opacity = 1;
-    }
-  </script>
-
-
-
-
-  <!-- ***진입시 페이드효과, 랜턴 깜빡*** -->
-  <script>
-    const movieBg = document.querySelector("#movie-bg");
-
-    movieBg.style.opacity = 1;
-
-    // 페이드인
-    const secondTime = setInterval(function(){
-      if (movieBg.style.opacity == 1) {
-        movieBg.style.opacity = 0;
-        movieBg.style.transition = 1 + "s";
-      } else {
-        clearInterval(secondTime);
-      }
-    }, 500);
-
-    // movieBG의 z-index 낮추기
-    const zIndex0 = setTimeout(function(){
-      movieBg.style.zIndex = 0;
-      clearTimeout(zIndex0);
-    }, 1200);
-
-    // 랜턴 깜빡
-      const blink1 = setTimeout(function(){
-        lantern.style.opacity = 1;
-      }, 1516);
-      const blink2 = setTimeout(function(){
-        lantern.style.opacity = 0;
-      }, 1716);
-      const blink3 = setTimeout(function(){
-        lantern.style.opacity = 1;
-      }, 1816);
-      const blink4 = setTimeout(function(){
-        lantern.style.opacity = 0;
-      }, 1916);
-      const blink5 = setTimeout(function(){
-        lantern.style.opacity = 1;
-      }, 2016);
-      const blink6 = setTimeout(function(){
-        lantern.style.opacity = 0;
-      }, 2116);
-      const blink7 = setTimeout(function(){
-        lantern.style.opacity = 1;
-      }, 2616);
-
-    
-  </script>
-
-
-  <script>
-    var pos = document.documentElement;
-    pos.addEventListener('mousemove', e =>{
-      pos.style.setProperty('--x', e.clientX + 'px')
-      pos.style.setProperty('--y', e.clientY + 'px')
-    });
-  </script>
 </body>
 </html>
