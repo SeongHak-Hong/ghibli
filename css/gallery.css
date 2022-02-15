@@ -106,7 +106,10 @@
   top:0;
   z-index: -1;
 }
-#slide-ul img {
+#slide-ul li {
+  width:100vw;
+}
+#slide-ul li img {
   height:104%;
 }
 
@@ -156,4 +159,37 @@
   height:100%;
   background-color: #101010;
   z-index: 102;
+}
+
+
+
+
+/* ***미디어쿼리*** */
+@media screen and (max-width:900px) {
+  #title strong {
+    font-size: 1.375rem;
+  }
+}
+
+@media screen and (max-width:768px) {
+  /* 사이드메뉴 */
+  #side-menu {
+    transform: translateY(6rem);
+  }
+  #side-menu li a {
+    font-size:1rem;
+  }
+  .button span {
+    width: 5.625rem;
+    height: 1.625rem;
+    font-size:.875rem;
+  }  
+}
+
+/* 배경사이즈 미디어쿼리 */
+@media screen and (max-aspect-ratio: 1920/1080) {
+  #slide-ul li img {
+      width: auto;
+      height: 100vh;
+  }
 }

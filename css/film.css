@@ -1,9 +1,3 @@
-/* 바디 배경 */
-/* body {
-  background: url(../img/bg/howl050.jpg) no-repeat 50% 50% / cover;
-} */
-
-
 /* ***메인섹션*** */
 #container {
   padding: 0 4.5rem; 
@@ -17,14 +11,15 @@ main {
   width:62.5rem;
   z-index: 99;
 }
-/* 포스터 */
+/* 영화 영역 */
 #film {
   height:28rem;
 }
+/* 영화 리스트 */
 #slide-ul {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-  height:28rem;
+  height:100%;
   flex-wrap: wrap;
   list-style-type: none;
   overflow-y: scroll;
@@ -109,95 +104,60 @@ video {
 
 
 /* ***미디어쿼리*** */
-
 @media screen and (max-width:1250px) {
   /* ***메인*** */
-  #container {
-    margin-top:2rem;
-  }
   main {
     width:50rem;
     margin-top:4.5rem;
   }
-  /* 포스터 */
-  #poster-wrap {
-    height:30.25rem;
+  /* 영화 섹션 */
+  #film {
+    height:23.0625rem;
+  }
+  /* 영화 리스트 */
+  #slide-ul li {
+    width:15rem;
+    box-sizing: border-box;
   }
   #film a {
     line-height:1.6;
     font-size:.75rem;
   }
-  /* 페이저 */
-  /* .pager {
-    right:-7%;
-    top:35%;
-  }
-  .pager ul li {
-    width:.625rem;
-    height:.625rem;
-  }
-  .pager ul li ~ li {
-    margin-top:12px;
-  } */
 }
 
-@media screen and (max-width:950px) {
+@media screen and (max-width:1024px) {
   /* ***메인*** */
-  #container {
-    margin-top: 4rem;
-  }
   main {
     width:43.75rem;
   }
    /* 포스터 */
-   #poster-wrap {
-    height: 27.25rem;
+  #film {
+    height: 20.25rem;
   }
-  /* 페이저 */
-  /* .pager {
-    top:30%;
-  }
-  .pager ul li ~ li {
-    margin-top:.5rem;
-  } */
-}
-
-@media screen and (max-width:880px) {
-  /* ***메인*** */
-  main {
-    width:37.5rem;
-  }
-  #poster-wrap {
-    height:30rem;
-  }
-  .poster {
-    width:23%;
-  }
-  .poster:nth-child(5) ~ .poster {
-    margin-top:0;
-  }
-  .poster:nth-child(4) ~ .poster {
-    margin-top:1.875rem;
+  /* 영화 리스트 */
+  #slide-ul li {
+    width:13rem;
+    box-sizing: border-box;
   }
 }
 
 @media screen and (max-width:768px) {
-  /* 로고 */
-  .logo {
-    width:13.75rem;
-  }
   /* ***메인*** */
   main {
-    width:31.25rem;
+    width:39rem;
   }
-  #poster-wrap {
-    height:26rem;
+   /* 포스터 */
+  #film {
+    height: 19.5rem;
   }
-  /* .pager {
-    top:26%;
-  } */
+  /* 영화 리스트 */
+  #slide-ul li {
+    width:12.5rem;
+    box-sizing: border-box;
+  }
 }
 
+/* 비디오 배경사이즈 미디어쿼리 */
 @media screen and (max-aspect-ratio: 1920/1080) {
   video {
       width: auto;

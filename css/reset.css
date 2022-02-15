@@ -303,6 +303,10 @@ footer.on {
   #menu ul li:nth-child(6) a:hover:before {
     left:-3rem;
   }
+  /* 뮤직플레이어 */
+  #music-player {
+    display: none;
+  }
 }
 
 @media screen and (max-width:768px) {

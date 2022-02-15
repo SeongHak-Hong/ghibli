@@ -43,16 +43,9 @@
   width:max-content;
   height:30rem;
   transform: translateY(3rem);
-  margin-left:3.625rem;
-  margin-top:2rem;
+  margin:2rem 0 0 3.625rem;
   left:0;
   top:0;
-}
-#side-menu a {
-  font-family: 'Be Vietnam Pro', sans-serif;
-  font-size:1.375rem;
-  letter-spacing: -0.025rem;
-  text-decoration: none;
 }
 #side-menu li {
   height:2.75rem;
@@ -60,6 +53,10 @@
 #side-menu li a {
   height:100%;
   line-height: 2.75rem;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size:1.375rem;
+  letter-spacing: -0.025rem;
+  text-decoration: none;
 }
 
 
@@ -121,7 +118,7 @@
 
 /* ***슬라이드(배경화면)*** */
 #slide {
-  width:1000px;
+  width:62.5rem;
   height:50rem;
   left:50%;
   top:50%;
@@ -135,8 +132,7 @@
 }
 /* li */
 #slide-ul li {
-  width:1000px;
-  height:100%;
+  width:62.5rem;
 }
 /* 배너 */
 .banner {
@@ -173,8 +169,8 @@
 }
 /* 버튼 */
 .button span {
-  width:140px;
-  height:30px;
+  width:8.75rem;
+  height:1.875rem;
   border-radius: 15px;
   background-color: rgba(250, 250, 250, .6);
   cursor: pointer;
@@ -183,7 +179,7 @@
   letter-spacing: -.025em;
   color:#0f1216;
 }
-.button:hover span {
+.button span:hover  {
   background-color: rgba(250, 250, 250, 1);
 }
 
@@ -250,4 +246,109 @@
   z-index: 0;
   opacity: 0;
   pointer-events: none;
+}
+
+
+
+
+/* ***미디어쿼리*** */
+@media screen and (max-width:1200px) {
+  /* 슬라이드 */
+  #slide {
+    width:61rem;
+  }
+  #slide-ul li {
+    width:61rem;
+  }
+  /* 배너 */
+  .banner {
+    margin-top: 10rem;
+  }
+  /* 배너이미지 */
+  .banner img {
+    width:70%;
+  }
+}
+
+@media screen and (max-width:1024px) {
+  /* 슬라이드 */
+  #slide {
+    width:50rem;
+  }
+  #slide-ul li {
+    width:50rem;
+  }
+  /* 배너 */
+  .banner {
+    margin-top: 10rem;
+  }
+  /* 배너이미지 */
+  .banner img {
+    width:70%;
+  }
+  /* 사이드메뉴 */
+  #side-menu li {
+    height:2rem;
+  }
+  #side-menu li a {
+    font-size:1.2rem;
+  }
+  /* 슬라이드 제목 */
+  .slide-title {
+    font-size:2rem;
+  }
+  /* 컨트롤(페이저) */
+  #controls{
+    transform: translateX(-15%);
+  }
+}
+
+@media screen and (max-width:768px) {
+  /* 슬라이드 */
+  #slide {
+    width:40rem;
+  }
+  #slide-ul li {
+    width:40rem;
+  }
+  /* 배너 */
+  .banner {
+    margin-top: 10rem;
+  }
+  /* 배너이미지 */
+  .banner img {
+    width:70%;
+  }
+  /* 사이드메뉴 */
+  #side-menu {
+    transform: translateY(6rem);
+  }
+  #side-menu li a {
+    font-size:1rem;
+  }
+  /* 슬라이드 제목 */
+  .slide-title {
+    font-size:1.625rem;
+  }
+  /* 일정, 장소 */
+  .date, .place {
+    font-size:1rem;
+  }
+  /* 설명 */
+  .explain {
+    margin-top:2rem;
+    font-size:.875rem;
+    font-weight: 200;
+    color:rgba(250, 250, 250, .6);
+  }
+  .button span {
+    width: 5.625rem;
+    height: 1.625rem;
+    font-size:.875rem;
+  }
+  /* 컨트롤(페이저) */
+  #controls{
+    transform: translateX(-22%);
+  }
+  
 }

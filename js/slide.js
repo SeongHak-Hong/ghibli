@@ -5,7 +5,8 @@ let currentIdx = 0;
 let slideLength = slideLi.length;
 const prev = document.querySelector("#prev");
 const next = document.querySelector("#next");
-const slideWidth = slide.offsetWidth;
+const slideWidth = slideLi[0].offsetWidth;
+console.log(slideWidth);
 const slideSpeed = 500;
 
 makeClone();
