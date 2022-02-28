@@ -3,20 +3,29 @@ const scrollIcon = document.querySelector('#scroll');
 const board = document.querySelector('#board');
 scrollIcon.style.display = 'none';
 
+// 게시판에서 마우스 움직일 때 스크롤아이콘 따라다니기
 board.addEventListener("mousemove", (e) => {
   const mouseX = e.clientX;
   const mouseY = e.clientY;
   scrollIcon.style.left = mouseX - 13 + 'px';
   scrollIcon.style.top = mouseY + 10 + 'px';
+  // body의 width값이 480 이하일 때 스크롤다운 아이콘 숨기기
+  console.dir(document.body);
+  if (document.body.offsetWidth <= 480) {
+    scrollIcon.style.display = 'none';
+  }
+  
 });
-
+// 게시판에 마우스 오버시 스크롤다운 아이콘 보이기
 function mouse_over(){
   scrollIcon.style.display = 'block';
 }
-
+// 게시판에서 마우스 아웃시 스크롤다운 아이콘 숨기기
 function mouse_out(){
   scrollIcon.style.display = 'none';
 }
+
+
 
 
 // ***더보기 클릭시 해당 게시판 정보만 보이기
@@ -43,7 +52,7 @@ board.addEventListener('click', function(event) {
         const liStyle = this.children[i].style
         liStyle.transition = "1s";
         liStyle.backgroundColor = "rgba(240, 248, 255, .8)";
-        liStyle.height = "35rem";
+        liStyle.height = "100%";
         // thum-wrap(썸네일) 속성
         this.children[i].children[0].children[0].style.width = "50%";
         // text-wrap 속성
@@ -127,15 +136,28 @@ board.addEventListener('click', function(event) {
 // ***슬라이드
 const boardUl = document.querySelector('#board');
 const boardLi = document.querySelectorAll("#board li");
-
 let order = 0;
+// 컨테이너(메인)의 height값 설정
+const container = document.querySelector('#container');
+console.log(boardLi[0].offsetHeight);
+// body의 offsetWidth 값이 768 초과일 때
+if (document.body.offsetWidth > 768) {
+  container.style.height = ((boardLi[0].offsetHeight * 4) + 48) / 16 + "rem"; // 48은 li의 margin-top
+  console.log(container.offsetHeight);
+}
+// body의 offsetWidth 값이 768 이하일 때
+if (document.body.offsetWidth <= 768) {
+  container.style.height = ((boardLi[0].offsetHeight * 3) + 32) / 16 + "rem"; // 32는 li의 margin-top
+}
+
 
 // ***마우스휠 제어
 boardUl.addEventListener('wheel', function (event) {
   // 휠 기본기능 막기
   event.preventDefault();
-  // li의 높이값
-  let getHeight = (boardLi[0].offsetHeight)*4 + (64); // 64 = li의 margin-top
+  
+  // 컨테이너의 offsetHeight값 얻기
+  let getHeight = container.offsetHeight;
   console.log(getHeight);
   // event.deltaY값이 0 이상
   if(event.deltaY > order) {
@@ -144,6 +166,7 @@ boardUl.addEventListener('wheel', function (event) {
       order++;
       console.log(order);
       console.log('scroll down');
+      // boardUl를 
       boardUl.scrollTo({
         top:getHeight * order,
         behavior : "smooth", 

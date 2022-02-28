@@ -178,18 +178,28 @@ body {
 
 
 
-@media screen and (max-width:1050px) {
+@media screen and (max-width:1024px) {
+  /* 컨테이너 */
+  #container {
+    margin-top: 1rem;
+  }
+  /* 게시판 */
   #board {
     width:40rem;
   }
 }
 
 @media screen and (max-width:768px) {
-  /* 캐릭터 */
+  /* 컨테이너 */
+  #container {
+    margin-top: 2rem;
+  }
+  /* 캐릭터 박스 */
   #kiki {
     left: 100px;
     top: 80px;
   }
+  /* 캐릭터 애니메이션 */
   @keyframes kiki {
     0% {
     }
@@ -202,6 +212,7 @@ body {
       left:110px;
     }
   }
+  /* 캐릭터 이미지 */
   #kiki img {
     width:60%;
     height:60%;
@@ -234,17 +245,35 @@ body {
     margin-top:.25rem;
     text-indent: .875rem;
   }
-/* 더보기 이미지 */
+  /* 더보기 박스 */
   .more {
     margin-left: .875rem;
   }
+  /* 더보기 이미지 */
   .more img {
     width:1.2rem;
   }
+  /* 더보기 배경 */
   .more-bg {
     width:1.5rem;
     height:1.5rem;
     background-color: #109CEB;
     border-radius: 50%;
+  }
+}
+
+
+@media screen and (max-width:480px) {
+  /* 컨테이너 */
+  #container {
+    height: 63%;
+  }
+  /* 게시판 */
+  #board {
+    width: 20rem;
+  }
+  /* 스크롤다운 아이콘 */
+  #scroll {
+    display: none;
   }
 }
