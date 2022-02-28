@@ -259,6 +259,10 @@ body {
     background-color: #109CEB;
     border-radius: 50%;
   }
+  /* 더보기 호버 애니메이션 */
+  .more img:hover {
+    animation: none;
+  }
 }
 
 
