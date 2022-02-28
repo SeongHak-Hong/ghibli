@@ -145,14 +145,10 @@ window.addEventListener('DOMContentLoaded', function() {
   if (document.body.offsetWidth > 768) {
     container.style.height = ((boardLi[0].offsetHeight * 4) + 48) / 16 + "rem"; // 48은 li의 margin-top
     console.log(container.offsetHeight);
-    // 5번째 li의 marginTop값 0
-    boardLi[4].style.marginTop = 0;
   }
   // body의 offsetWidth 값이 768 이하일 때 게시판 3행 만들기
   if (document.body.offsetWidth <= 768) {
     container.style.height = ((boardLi[0].offsetHeight * 3) + 32) / 16 + "rem"; // 32는 li의 margin-top
-    // 4번째 li의 marginTop값 0
-    boardLi[3].style.marginTop = 0;
   }
 
 

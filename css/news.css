@@ -39,6 +39,10 @@ body {
 #board li ~ li {
   margin-top:1rem;
 }
+/* 게시판 4n+1번째 li */
+#board li:nth-child(4n+1) {
+  margin-top: 0;
+}
 /* 콘텐츠랩 */
 .content-wrap {
   height:100%;
@@ -213,6 +217,10 @@ body {
   /* 게시판 */
   #board {
     width:26rem;
+  }
+  /* 게시판 4n+1번째 li */
+  #board li:nth-child(4n+1) {
+    margin-top:1rem;
   }
   /* 텍스트 */
   .text-wrap {
