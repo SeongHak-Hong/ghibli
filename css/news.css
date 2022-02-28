@@ -118,7 +118,6 @@ body {
 /* ***스크롤다운 아이콘*** */
 #scroll {
   animation: scroll .3s infinite alternate;
-  /* pointer-events: none; */
   bottom:10%;
   left:50%;
 }
@@ -266,8 +265,16 @@ body {
 
 
 @media screen and (max-width:480px) {
+  /* 컨테이너 */
+  #container {
+    transform: translate(-50%, -45%);
+  }
   /* 게시판 */
   #board {
     width: 80%;
+  }
+  /* ***스크롤다운 아이콘*** */
+  #scroll {
+    bottom:7%;
   }
 }
