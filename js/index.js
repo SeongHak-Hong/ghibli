@@ -1,11 +1,9 @@
 // ***페이드효과
 const movieBg = document.querySelector("#movie-bg");
 const movie = document.querySelector("#movie");
-const character = document.querySelector("#character");
 const musicPlayer = document.querySelector("#music-player");
 
 movieBg.style.opacity = 1;
-character.style.opacity = 0;
 musicPlayer.style.opacity = 0;
 
 // 첫번째 페이드인
@@ -40,9 +38,7 @@ const thirdTime = setTimeout(function() {
     movie.style.display = "none";
     header.style.opacity = 1;
     movieBg.style.opacity = 0;
-    body.style.background = "url(./img/bg/ghibli_background.jpg) no-repeat 50% 50% / cover";
-    character.style.opacity = 1;
-    character.style.transition = .6 + "s";
+    body.style.background = "url(./img/bg/main_home.png) no-repeat 50% 50% / cover";
     musicPlayer.style.opacity = 1;
     musicPlayer.style.transition = .6 + "s";
   } else {
