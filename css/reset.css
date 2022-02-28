@@ -316,6 +316,11 @@ footer.on {
     margin: 1rem 1rem 0;
     padding: 0 .5rem;
   }
+  /* 헤더 호버 */
+  header:hover {
+    background: transparent;
+    backdrop-filter: blur(0);
+  }
   /* 햄버거 */
   #hamburger {
     width:2.125rem;
