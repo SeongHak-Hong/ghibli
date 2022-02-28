@@ -8,9 +8,10 @@ body {
 /* ***메인섹션*** */
 /* 컨테이너 */
 #container {
-  height:60%;
   z-index: 98;
-  margin-top: 3rem;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
 }
 /* 게시판 */
 #board {
@@ -179,10 +180,6 @@ body {
 
 
 @media screen and (max-width:1024px) {
-  /* 컨테이너 */
-  #container {
-    margin-top: 1rem;
-  }
   /* 게시판 */
   #board {
     width:40rem;
@@ -190,10 +187,6 @@ body {
 }
 
 @media screen and (max-width:768px) {
-  /* 컨테이너 */
-  #container {
-    margin-top: 2rem;
-  }
   /* 캐릭터 박스 */
   #kiki {
     left: 100px;
@@ -264,13 +257,9 @@ body {
 
 
 @media screen and (max-width:480px) {
-  /* 컨테이너 */
-  #container {
-    height: 63%;
-  }
   /* 게시판 */
   #board {
-    width: 20rem;
+    width: 80%;
   }
   /* 스크롤다운 아이콘 */
   #scroll {
