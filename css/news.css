@@ -155,8 +155,8 @@ body {
   pointer-events: none;
 }
 #kiki {
-  left: 120px;
   top: 40px;
+  left: 120px;
   animation: kiki 1.2s infinite ease-in-out alternate;
 }
 /* 캐릭터 애니메이션 */
@@ -186,16 +186,21 @@ body {
 @media screen and (max-width:768px) {
   /* 캐릭터 박스 */
   #kiki {
-    left: 40px;
-    top: 74px;
+    top: 40px;
+    left: 60px;
+    animation: kiki 1.2s infinite ease-in-out alternate;
   }
   /* 캐릭터 애니메이션 */
   @keyframes kiki {
     0% {
     }
+    50% {
+      top: 20px;
+      left:50px;
+    }
     100% {
-      left: 60px;
-      top: 56px;
+      top:50px;
+      left:65px;
     }
   }
   /* 캐릭터 이미지 */
