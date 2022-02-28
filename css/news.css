@@ -39,10 +39,6 @@ body {
 #board li ~ li {
   margin-top:1rem;
 }
-/* 게시판 4n+1번째 li */
-#board li:nth-child(4n+1) {
-  margin-top: 0;
-}
 /* 콘텐츠랩 */
 .content-wrap {
   height:100%;
@@ -122,16 +118,17 @@ body {
 /* ***스크롤다운 아이콘*** */
 #scroll {
   animation: scroll .3s infinite alternate;
-  z-index: 98;
-  pointer-events: none;
+  /* pointer-events: none; */
+  bottom:10%;
+  left:50%;
 }
 /* 스크롤다운 애니메이션 */
 @keyframes scroll {
   0% {
-    transform:translateY(6px);
+    transform:translate(-50%,6px);
   }
   100% {
-    transform:translateY(0px);
+    transform:translate(-50%,0);
   }
 }
 
@@ -222,6 +219,10 @@ body {
   #board li:nth-child(4n+1) {
     margin-top:1rem;
   }
+  /* 게시판 1번째 li */
+  #board li:nth-child(1) {
+    margin-top:0;
+  }
   /* 텍스트 */
   .text-wrap {
     width:65%;
@@ -268,9 +269,5 @@ body {
   /* 게시판 */
   #board {
     width: 80%;
-  }
-  /* 스크롤다운 아이콘 */
-  #scroll {
-    display: none;
   }
 }

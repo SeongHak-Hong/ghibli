@@ -1,33 +1,4 @@
 window.addEventListener('DOMContentLoaded', function() {
-  // ***스크롤다운 아이콘
-  const scrollIcon = document.querySelector('#scroll');
-  const board = document.querySelector('#board');
-  scrollIcon.style.display = 'none';
-
-  // 게시판에서 마우스 움직일 때 스크롤아이콘 따라다니기
-  board.addEventListener("mousemove", (e) => {
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
-    scrollIcon.style.left = mouseX - 13 + 'px';
-    scrollIcon.style.top = mouseY + 10 + 'px';
-    // body의 width값이 480 이하일 때 스크롤다운 아이콘 숨기기
-    console.dir(document.body);
-    if (document.body.offsetWidth <= 480) {
-      scrollIcon.style.display = 'none';
-    }
-    
-  });
-  // 게시판에 마우스 오버시 스크롤다운 아이콘 보이기
-  function mouse_over(){
-    scrollIcon.style.display = 'block';
-  }
-  // 게시판에서 마우스 아웃시 스크롤다운 아이콘 숨기기
-  function mouse_out(){
-    scrollIcon.style.display = 'none';
-  }
-
-
-
 
   // ***더보기 클릭시 해당 게시판 정보만 보이기
   // more 클릭 이벤트 - 선택한 li만 보이도록
@@ -154,7 +125,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
 
-  // ***마우스휠 제어
+  // ***게시판 마우스휠 제어
   boardUl.addEventListener('wheel', function (event) {
     // 휠 기본기능 막기
     event.preventDefault();
@@ -169,13 +140,14 @@ window.addEventListener('DOMContentLoaded', function() {
         order++;
         console.log(order);
         console.log('scroll down');
-        // boardUl를 
+        // boardUl를 container의 offsetHeight값만큼 스크롤함
         boardUl.scrollTo({
-          top:getHeight * order,
+          top:getHeight * order + 16, //16은 5번째 li의 margin값... 스크롤 다운시 덜컹거리는 것 잡아주기 위함
           behavior : "smooth", 
         });
       } else {
         console.log("lastElement");
+        // 더 이상 스크롤할 것이 없으면 경고창 띄우기
         window.alert(['This is the last post.']);
       }
     } else {
@@ -183,6 +155,7 @@ window.addEventListener('DOMContentLoaded', function() {
         order--;
         console.log(order);
         console.log('scroll up');
+        // boardUl를 container의 offsetHeight값만큼 스크롤함
         boardUl.scrollTo({
           top:getHeight * order,
           behavior : "smooth"
