@@ -2,9 +2,6 @@ body {
   background: url(../img/bg/ghibli_background.jpg) no-repeat 50% 50% / cover;
 }
 
-
-
-
 /* ***메인섹션*** */
 /* 컨테이너 */
 #container {
@@ -189,20 +186,16 @@ body {
 @media screen and (max-width:768px) {
   /* 캐릭터 박스 */
   #kiki {
-    left: 100px;
-    top: 80px;
+    left: 40px;
+    top: 74px;
   }
   /* 캐릭터 애니메이션 */
   @keyframes kiki {
     0% {
     }
-    50% {
-      top: 60px;
-      left:90px;
-    }
     100% {
-      top:100px;
-      left:110px;
+      left: 60px;
+      top: 56px;
     }
   }
   /* 캐릭터 이미지 */
