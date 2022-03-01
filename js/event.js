@@ -37,8 +37,6 @@ const sidemenuUl = document.querySelector('#side-menu ul');
   });
 
 
-
-
 // 사이드메뉴 closed
 const sidemenuLi = document.querySelectorAll("#side-menu-ul li");
 const controls = document.querySelector("#controls");
@@ -105,6 +103,7 @@ const secondTime = setInterval(function(){
   if (movieBg.style.opacity == 1) {
     movieBg.style.opacity = 0;
     movieBg.style.transition = 1 + "s";
+    movieBg.style.display = "none";
   } else {
     clearInterval(secondTime);
   }

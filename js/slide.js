@@ -1,5 +1,5 @@
-let slides = document.querySelector("#slide-ul");
-let slideLi = document.querySelectorAll("#slide-ul li");
+let slides = document.querySelector("#slide ul");
+let slideLi = document.querySelectorAll("#slide ul li");
 console.dir(slideLi);
 let currentIdx = 0;
 let slideLength = slideLi.length;

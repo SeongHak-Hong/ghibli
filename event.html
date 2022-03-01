@@ -109,93 +109,64 @@
 
 
 
-    <!-- ***영화정보*** -->
-    <section id="film" class="flex absolute align-items-center justify-content-center">
-      <h2 class="none">film-info</h2>
-    </section>
-
-
-
-
-    <!-- ***뮤직플레이어*** -->
-    <div id="music-player" class="absolute">
-      <div id="album-art" class="hidden relative">
-        <img src="img/music/ponyo040.jpg" alt="ponyo">
-      </div>
-      <div id="music-info" class="flex absolute align-items-center">
-        <div id="text">
-          <h1>Ponyo on the Cliff by the Sea</h1>
-          <p>Fujioka Fujimaki, Ohashi Nozomi</p>
-        </div> 
-        <div id="play-button"></div>
-      </div>
-      <div id="play-line"></div>
-      <div id="play-control" class="absolute">
-        <img src="./img/music/play1.png" alt="play-control">
-      </div>
+    <!-- ***슬라이드(이벤트 리스트)*** -->
+    <div id="slide" class="absolute flex justify-content-center align-items-center hidden">
+      <!-- ul -->
+      <ul id="slide-ul" class="flex absolute">
+        <!-- 첫번째 li -->
+        <li class="flex space-between flex-direction-column">
+          <div class="banner flex justify-content-center">
+            <img src="./img/event/Ghibli_exhibition.png" alt="banner1">
+          </div>
+          <div class="slide-text flex align-items-center flex-direction-column">
+            <strong class="slide-title block text-align-center">Toshio SUZUKI Ghibli exhibition</strong>
+            <span class="place block text-align-center">The Museum of Kyoto(Kyoto Prefecture)</span>
+            <p class="date text-align-center">
+              2022.04.23(Sat)- 2022.06.19(Sun)
+            </p>
+            <p class="explain text-align-center">
+              Takahata Isao ・ Miyazaki and the Kata-mai (literally, " both have sent a bunch of animated film out in the world along with Studio Ghibli and producers Toshio Suzuki 
+              producer) draw attention to an exhibition.
+            </p>
+          </div>
+          <div class="button flex justify-content-center">
+            <span class="text-align-center">More</span>
+          </div>
+        </li>
+        <!-- 두번째 li -->
+        <li class=" flex space-between flex-direction-column">
+          <div class="banner flex justify-content-center">
+            <img src="./img/event/Ghibli_expo.png" alt="banner2">
+          </div>
+          <div class="slide-text flex align-items-center flex-direction-column">
+            <strong class="slide-title block text-align-center">Ghibli The Grand Exposition</strong>
+            <span class="place block text-align-center">Iwate Prefectural Museum of Art, access</span>
+            <p class="date text-align-center">
+              2022.03.23(Sat)- 2022.05.19(Sun)
+            </p>
+            <p class="explain text-align-center">
+              So far, Ghibli -- which eventually go out in the world of the trajectory of the propaganda that are produced by various trials and errors, While He together with an undisclosed data said.Another Tales of the public is clearly and return of his work, Ghibli.
+            </p>
+          </div>
+          <div class="button flex justify-content-center">
+            <span class="text-align-center">More</span>
+          </div>
+        </li>
+      </ul>
     </div>
-  </div>
-
-
-
-
-  <!-- ***슬라이드(이벤트 리스트)*** -->
-  <div id="slide" class="relative flex justify-content-center hidden">
-    <!-- ul -->
-    <ul id="slide-ul" class="flex absolute">
-      <!-- 첫번째 li -->
-      <li class="flex justify-content-center flex-direction-column">
-        <div class="banner flex justify-content-center">
-          <img src="./img/event/Ghibli_exhibition.png" alt="banner1">
-        </div>
-        <div class="slide-text flex align-items-center flex-direction-column">
-          <strong class="slide-title block text-align-center">Toshio SUZUKI Ghibli exhibition</strong>
-          <span class="place block text-align-center">The Museum of Kyoto(Kyoto Prefecture)</span>
-          <p class="date text-align-center">
-            2022.04.23(Sat)- 2022.06.19(Sun)
-          </p>
-          <p class="explain text-align-center">
-            Takahata Isao ・ Miyazaki and the Kata-mai (literally, " both have sent a bunch of animated film out in the world along with Studio Ghibli and producers Toshio Suzuki 
-            producer) draw attention to an exhibition.
-          </p>
-        </div>
-        <div class="button flex justify-content-center">
-          <span class="text-align-center">More</span>
-        </div>
-      </li>
-      <!-- 두번째 li -->
-      <li class=" flex justify-content-center flex-direction-column">
-        <div class="banner flex justify-content-center">
-          <img src="./img/event/Ghibli_expo.png" alt="banner2">
-        </div>
-        <div class="slide-text flex align-items-center flex-direction-column">
-          <strong class="slide-title block text-align-center">Ghibli The Grand Exposition</strong>
-          <span class="place block text-align-center">Iwate Prefectural Museum of Art, access</span>
-          <p class="date text-align-center">
-            2022.03.23(Sat)- 2022.05.19(Sun)
-          </p>
-          <p class="explain text-align-center">
-            So far, Ghibli -- which eventually go out in the world of the trajectory of the propaganda that are produced by various trials and errors, While He together with an undisclosed data said.Another Tales of the public is clearly and return of his work, Ghibli.
-          </p>
-        </div>
-        <div class="button flex justify-content-center">
-          <span class="text-align-center">More</span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <!-- 컨트롤(페이저) -->
-  <div id="controls" class="flex absolute space-between">
-    <div id="prev" class="swapBtn">
-      <img src="./img/icon/chevron_left.png" alt="prev">
-    </div>
-    <div id="pager">
-      <div id="cur-pos" class="inline-block"></div>
-      <span>/</span>
-      <div id="total-page" class="inline-block"></div>
-    </div>
-    <div id="next" class="swapBtn">
-      <img src="./img/icon/chevron_right.png" alt="next">
+    <!-- 컨트롤(페이저) -->
+    <div id="controls" class="flex absolute space-between">
+      <div id="prev" class="swapBtn">
+        <img src="./img/icon/chevron_left.png" alt="prev">
+      </div>
+      <div id="pager">
+        <div id="cur-pos" class="inline-block"></div>
+        <span>/</span>
+        <div id="total-page" class="inline-block"></div>
+      </div>
+      <div id="next" class="swapBtn">
+        <img src="./img/icon/chevron_right.png" alt="next">
+      </div>
     </div>
   </div>
 
