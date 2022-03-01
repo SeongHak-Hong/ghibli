@@ -1,6 +1,32 @@
 body {
   background: url(../img/bg/intro.png) no-repeat 50% 50% / cover;
 }
+body.mobile {
+  animation: mobile-bg 50s 3s infinite;
+}
+@keyframes mobile-bg {
+  0% {
+    background: url(../img/bg/index_mobile0.jpg) no-repeat 50% 50% / cover;
+  }
+  20% {
+    background: url(../img/bg/index_mobile1.jpg) no-repeat 50% 50% / cover;
+  }
+  40% {
+    background: url(../img/bg/index_mobile2.jpg) no-repeat 50% 50% / cover;
+  }
+  60% {
+    background: url(../img/bg/index_mobile3.jpg) no-repeat 50% 50% / cover;
+  }
+  80% {
+    background: url(../img/bg/index_mobile4.jpg) no-repeat 50% 50% / cover;
+  }
+  100% {
+    background: url(../img/bg/index_mobile0.jpg) no-repeat 50% 50% / cover;
+  }
+}
+
+
+
 
 /* ***메인섹션*** */
 main {
@@ -8,6 +34,8 @@ main {
   height:60rem;
   z-index: 98;
 }
+
+
 
 
 /* ***영화 비주얼*** */
@@ -80,6 +108,8 @@ main {
   left: 802px;
   top: 13px;
 }
+
+
 
 
 /* ***뮤직플레이어*** */
@@ -156,6 +186,10 @@ main {
   width:100%;
 }
 
+
+
+
+/* ***미디어쿼리 */
 @media screen and (max-width:768px) {
   body {
     background: url(../img/bg/intro_tablet.png) no-repeat 50% 50% / cover;

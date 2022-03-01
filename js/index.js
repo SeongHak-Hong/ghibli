@@ -39,7 +39,15 @@ const thirdTime = setTimeout(function() {
     movie.style.display = "none";
     header.style.opacity = 1;
     movieBg.style.opacity = 0;
-    body.style.background = "url(./img/bg/main_home.png) no-repeat 50% 50% / cover";
+    // 해상도 768 초과(desktop, laptop)
+    if (document.body.offsetWidth > 768) {
+      body.style.background = "url(./img/bg/main_home.png) no-repeat 50% 50% / cover";
+    }
+    // 해상도 768 이하(tablet, mobile)
+    if (document.body.offsetWidth <= 768) {
+      body.style.background = "url(../img/bg/index_mobile0.jpg) no-repeat 50% 50% / cover";
+      body.classList.add('mobile');
+    }
     musicPlayer.style.opacity = 1;
     musicPlayer.style.transition = .6 + "s";
   } else {
