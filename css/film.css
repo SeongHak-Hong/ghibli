@@ -133,6 +133,7 @@ video {
     width:15rem;
     box-sizing: border-box;
   }
+  /* 영화 폰트 */
   #film a {
     line-height:1.6;
     font-size:.75rem;
@@ -168,7 +169,7 @@ video {
   #film ul li {
     width:15rem;
   }
-  /* ***스크롤다운 아이콘*** */
+  /* 스크롤다운 아이콘 */
   #scroll {
     display: block;
   }

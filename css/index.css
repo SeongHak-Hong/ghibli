@@ -1,56 +1,23 @@
-/* display */
-.flex {display:flex;}
-.block {display:block;}
-.inline-block {display:inline-block;}
-.inline {display: inline;}
-.none {display: none;}
-
-/* position */
-.relative {position: relative;}
-.absolute {position: absolute;}
-
-/* text-indent */
-.text-indent-9999 {text-indent: -9999em;}
-
-/* overfloww */
-.hidden {overflow: hidden;}
-
-/* flex */
-.space-between {justify-content: space-between;}
-.justify-content-center {justify-content: center;}
-
-
-* {
-  padding:0;
-  margin:0;
-}
 body {
-  background: url(../img/bg/tpDykBH.png) no-repeat 50% 50% / cover;
+  background: url(../img/bg/totoro.png) no-repeat 50% 50% / cover;
 }
-
-/* 헤더 */
-#header-wrap {
-  opacity: 0;
-}
-
 
 /* ***메인섹션*** */
 main {
   width:62.5rem;
   height:60rem;
-  /* margin-top:1.5rem; */
   z-index: 98;
-  /* background: orangered; */
 }
 
 
 /* ***영화 비주얼*** */
-/* 영화스크린같은 줄 */
+/* 영화 스크린 같은 위, 아래 줄 */
 #movie > * {
   background-color: #101010;
   width:100%;
-  height:3.125rem;
+  height:2.5rem;
 }
+/* 영화 배경 */
 #movie-bg {
   left:0;
   top:0;
@@ -58,6 +25,7 @@ main {
   height:100%;
   background-color: #101010;
   pointer-events: none;
+  z-index: 100;
 }
 /* 아랫줄 */
 .over {
@@ -111,4 +79,79 @@ main {
 #laputa {
   left: 802px;
   top: 13px;
+}
+
+
+/* ***뮤직플레이어*** */
+#music-player {
+  left:3rem;
+  bottom:3rem;
+  z-index: 0;
+  filter: drop-shadow(0 .25rem .25rem rgba(0, 0, 0, 0.25));
+}
+/* 앨범아트 */
+#album-art {
+  width:5.125rem;
+  height:5.125rem;
+  border-radius: 50%;
+  border: .375rem solid #F9FFFE;
+  z-index: 98;
+}
+/* 앨범아트 이미지 */
+#album-art img {
+  height:100%;
+  transform: translateX(-20%);
+}
+/* 음악정보 */
+#music-info {
+  width:22.5rem;
+  height:3.5rem;
+  left:3rem;
+  bottom:3rem;
+  transform: translateY(50%);
+  background: #F9FFFE;
+  z-index: 97;
+  border-radius: 1.875rem;
+}
+/* 음악정보 텍스트 박스 */
+#music-info #text {
+  padding-left:3.5rem;
+  transform: translateY(-.2rem);
+}
+/* 음악정보 제목 */
+#music-info #text h1 {
+  font-size:1rem;
+  color:#474747;
+}
+/* 음악정보 작곡가 */
+#music-info #text p {
+  font-size: .75rem;
+  color:#7c7c7c;
+}
+/* 플레이버튼 */
+#play-button {
+  width:1.625rem;
+  height:1.625rem;
+  background: url(../img/icon/icon_play.png) 50% 50% no-repeat;
+  margin-left:2rem;
+  cursor: pointer;
+}
+/* 재생구간 */
+#play-line {
+  width:16.875rem;
+  height:.125rem;
+  background: #F9FFFE;
+  transform: translate(6rem, -.3rem);
+}
+/* 재생 컨트롤러 */
+#play-control {
+  width:2.5rem;
+  height:2.5rem;
+  left:5rem;
+  bottom:-.75rem;
+  z-index: 100;
+}
+/* 재생 컨트롤러 이미지 */
+#play-control img {
+  width:100%;
 }

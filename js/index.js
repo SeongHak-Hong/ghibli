@@ -1,8 +1,10 @@
 // ***페이드효과
+const header = document.querySelector("#header-wrap");
 const movieBg = document.querySelector("#movie-bg");
 const movie = document.querySelector("#movie");
 const musicPlayer = document.querySelector("#music-player");
 
+header.style.opacity = 0;
 movieBg.style.opacity = 1;
 musicPlayer.style.opacity = 0;
 
@@ -32,7 +34,6 @@ const secondTime = setTimeout(function(){
 // 세번째 페이드인
 const thirdTime = setTimeout(function() {
   if (movieBg.style.opacity == 1) {
-    const header = document.querySelector("#header-wrap");
     const body = document.querySelector("body");
 
     movie.style.display = "none";
