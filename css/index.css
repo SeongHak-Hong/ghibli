@@ -1,5 +1,5 @@
 body {
-  background: url(../img/bg/totoro.png) no-repeat 50% 50% / cover;
+  background: url(../img/bg/intro.png) no-repeat 50% 50% / cover;
 }
 
 /* ***메인섹션*** */
@@ -154,4 +154,16 @@ main {
 /* 재생 컨트롤러 이미지 */
 #play-control img {
   width:100%;
+}
+
+@media screen and (max-width:768px) {
+  body {
+    background: url(../img/bg/intro_tablet.png) no-repeat 50% 50% / cover;
+  }
+}
+
+@media screen and (max-width:480px) {
+  body {
+    background: url(../img/bg/intro_mobile.png) no-repeat 50% 50% / cover;
+  }
 }
