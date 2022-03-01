@@ -173,6 +173,14 @@ video {
   #scroll {
     display: block;
   }
+  /* 비디오 배경 */
+  #bg-video {
+    display: none;
+  }
+  /* body 배경 */
+  body {
+    background: url(../img/bg/film_mobile.jpg) no-repeat 50% 50% / cover;
+  }
 }
 
 @media screen and (max-width:480px) {
