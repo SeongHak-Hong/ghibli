@@ -1,0 +1,225 @@
+/* ***헤더섹션*** */
+/* 헤더 */
+header {
+  z-index: 101;
+  width:112.75rem;
+  height:7.5rem;
+  margin:1.25rem 2.625rem 0;
+  padding: 0 1rem;
+  align-items: center;
+  justify-content: space-between;
+  transition: .5s;
+  border-radius: 1rem;
+}
+/* 헤더 호버 */
+header:hover {
+  background: rgb(249, 255, 254, .16);
+  backdrop-filter: blur(.375rem);
+}
+/* 햄버거 */
+#hamburger {
+  width:3.125rem;
+}
+/* 햄버거 이미지 */
+#hamburger img {
+  width:100%;
+}
+/* 로고 */
+#logo {
+  width:15.25rem;
+}
+/* 로고 이미지 */
+#logo img {
+  width:100%;
+}
+/* 메뉴클릭시 소환 */
+#menu {
+  display: none;
+  left:50%;
+  top:50%;
+  z-index: 101;
+  transform: translate(-50%,-50%);
+}
+/* 메뉴 활성화 */
+#menu.on {
+  display:block;
+}
+/* 메뉴 ul */
+#menu ul {
+  list-style-type: none;
+}
+/* 메뉴 li */
+#menu ul li {
+  position: relative;
+  width:18.75rem;
+  height:6.5rem;
+  z-index: 100;
+}
+/* 메뉴 li 상하 간격 */
+#menu ul li ~ li {
+  margin-top: 1rem;
+}
+/* 메뉴 li a */
+#menu ul li a {
+  display: block;
+  overflow: hidden;
+  width:100%;
+  text-decoration: none;
+  z-index: 100;
+}
+/* 메뉴 a 활성화 */
+#menu ul li a.on {
+  top:50%;
+}
+/* 메뉴 글자 */
+#menu ul li a span {
+  display: inline-block;
+  width:100%;
+  text-align: center;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 400;
+  font-size:5.125rem;
+  letter-spacing: -0.025em;
+  color: rgba(249, 255, 254, .5);
+  position: relative;
+  z-index: 100;
+  transform: translateY(-6.5rem);
+}
+/* 메뉴호버 span */
+#menu ul li a:hover span {
+  color: #F9FFFE;
+  text-decoration: underline;
+}
+/* 메뉴호버 before */
+#menu ul li a:hover:before {
+  content:'';
+  width:7.5rem;
+  height:6.75rem;
+  position: absolute;
+  left:-6.25rem;
+  top:0;
+  background: url(../img/icon/menu_hover.png) no-repeat 50% 50% / 100%;
+}
+/* 메뉴호버 4번째 li before */
+#menu ul li:nth-child(4) a:hover:before {
+  left:-4.75rem;
+}
+/* 메뉴호버 5번째 li before */
+#menu ul li:nth-child(5) a:hover:before {
+  left:-7.875rem;
+}
+/* 푸터 */
+footer {
+  display: none;
+  right:3.75rem;
+  bottom:2.375rem;
+  z-index: 100;
+}
+/* 푸터 전체적용 */
+footer > * {
+  text-decoration: none;
+  color: rgba(249, 255, 254, .5);
+  font-weight: 200;
+  font-size:.875rem;
+}
+/* 메뉴 활성화시 푸터 */
+footer.on {
+  display: block;
+}
+
+
+
+/* ***미디어쿼리 */
+@media screen and (max-width:1024px) {
+  #menu ul li a span {
+    font-size:4rem;
+  }
+  #menu ul li {
+    height:5.5rem;
+  }
+   /* 메뉴호버 */
+  #menu ul li a:hover:before {
+    left:-3.75rem;
+    top:-.5rem;
+    background: url(../img/icon/menu_hover.png) no-repeat 50% 50% / 70%;
+  }
+  /* 메뉴 호버 3번째 li before */
+  #menu ul li:nth-child(3) a:hover:before {
+    left:-4.375rem;
+  }
+   /* 메뉴 호버 4번째 li before */
+  #menu ul li:nth-child(4) a:hover:before {
+    left:-2.5rem;
+  }
+   /* 메뉴 호버 5번째 li before */
+  #menu ul li:nth-child(5) a:hover:before {
+    left:-4.75rem;
+  }
+   /* 메뉴 호버 6번째 li before */
+  #menu ul li:nth-child(6) a:hover:before {
+    left:-3rem;
+  }
+  /* 햄버거 */
+  #hamburger {
+    width:2.125rem;
+  }
+  /* 로고 */
+  #logo {
+    width:10.25rem;
+  }
+}
+
+@media screen and (max-width:768px) {
+  /* 헤더 */
+  header {
+    height:5rem;
+    margin: 1rem 1rem 0;
+    padding: 0 .5rem;
+  }
+  /* 헤더 호버 삭제 */
+  header:hover {
+    background: transparent;
+    backdrop-filter: blur(0);
+  }
+  /* 메뉴 글자 크기 */
+  #menu ul li a span {
+    font-size:3rem;
+  }
+  /* 메뉴 li 높이 */
+  #menu ul li {
+    height:4rem;
+  }
+  /* 메뉴호버 */
+  #menu ul li a:hover:before {
+    left:-1.25rem;
+    top:-1.25rem;
+    background: url(../img/icon/menu_hover.png) no-repeat 50% 50% / 50%;
+  }
+   /* 메뉴 호버 3번째 li before */
+  #menu ul li:nth-child(3) a:hover:before {
+    left:-1.625rem;
+  }
+   /* 메뉴 호버 4번째 li before */
+  #menu ul li:nth-child(4) a:hover:before {
+    left:-.25rem;
+  }
+   /* 메뉴 호버 5번째 li before */
+  #menu ul li:nth-child(5) a:hover:before {
+    left:-1.875rem;
+  }
+   /* 메뉴 호버 6번째 li before */
+  #menu ul li:nth-child(6) a:hover:before {
+    left:-.5rem;
+  }
+}
+
+@media screen and (max-width:480px) {
+  /* 햄버거 */
+  #hamburger {
+    width:1.75rem;
+  }
+  /* 로고 */
+  #logo {
+    width:6.25rem;
+  }
+}
