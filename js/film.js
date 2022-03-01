@@ -23,25 +23,25 @@ slideUl.addEventListener('wheel', function (event) {
   console.log(getHeight);
   // event.deltaY값이 0 이상
   if(event.deltaY > order) {
-    // order값이 li의 길이보다 작을 때
+    // order값이 li의 길이보다 작을 때 (스크롤다운)
     if(order < slideLi.length) {
       order++;
       console.log(order);
       console.log('scroll down');
       slideUl.scrollTo({
-        top:(getHeight + 32) * order,
+        top:(getHeight + 32) * order, //32는 li 마진탑 값
         behavior : "smooth", 
       });
     } else {
       console.log("lastElement");
     }
-  } else {
+  } else { //스크롤업
     if(order > 0) {
       order--;
       console.log(order);
       console.log('scroll up');
       slideUl.scrollTo({
-        top:(getHeight + 32) * order,
+        top:(getHeight + 32) * order, //32는 li 마진탑 값
         behavior : "smooth"
       });
     } else {

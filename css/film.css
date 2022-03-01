@@ -98,15 +98,16 @@ video {
   animation: scroll .3s infinite alternate;
   z-index: 98;
   pointer-events: none;
-  display: none;
+  left:50%;
+  bottom:5%;
+  transform:translate(-50%,-50%);
 }
 /* 스크롤다운 애니메이션 */
 @keyframes scroll {
   0% {
-    transform:translateY(6px);
   }
   100% {
-    transform:translateY(0px);
+    bottom:6%;
   }
 }
 
@@ -163,20 +164,25 @@ video {
   #film ul li {
     width:15rem;
   }
+  /* ***스크롤다운 아이콘*** */
+  #scroll {
+    display: block;
+  }
 }
 
 @media screen and (max-width:480px) {
   /* 포스터 */
   #film {
-    height: 29rem;
+    height: 27.5rem;
   }
   /* 영화 리스트 */
   #film ul {
     padding: 0 1rem;
+    justify-content: center;
   }
   /* 영화 리스트 */
   #film ul li {
-    width:20rem;
+    width:18rem;
   }
   /* 영화 1행 마진탑 재추가 */
   #film ul li:nth-child(2), #film ul li:nth-child(3) {
