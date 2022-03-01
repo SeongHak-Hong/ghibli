@@ -78,7 +78,7 @@
   height:100%;
 }
 /* li */
-#slide ul li {
+#slide li {
   width:58rem;
 }
 /* 배너 이미지 */
@@ -115,6 +115,7 @@
 .button span {
   width:7rem;
   height:1.875rem;
+  line-height:1.875rem;
   border-radius: 15px;
   background-color: rgba(250, 250, 250, .6);
   cursor: pointer;
@@ -134,7 +135,7 @@
   bottom:3rem;
   left:50%;
   width:10rem;
-  height:1.6rem;
+  height:max-content;
   transition: .3s;
   padding:.8rem 1.6rem;
   border-radius: 2rem;
@@ -200,7 +201,7 @@
     width:50rem;
   }
   /* 슬라이드 li */
-  #slide ul li {
+  #slide li {
     width:50rem;
   }
   /* 슬라이드 타이틀 */
@@ -284,7 +285,12 @@
   .button span {
     width: 5.625rem;
     height: 1.625rem;
+    line-height: 1.625rem;
     font-size:.875rem;
+  }
+  /* 이전, 다음 버튼 이미지 */
+  #prev img, #next img {
+    transform: translateY(.1875rem);
   }
 }
 
@@ -325,11 +331,14 @@
   }
   /* 슬라이드 제목 */
   .slide-title {
-    font-size:1.625rem;
+    font-size:1.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   /* 일정, 장소 */
   .date, .place {
-    font-size:1rem;
+    font-size:.875rem;
     font-weight: 300;
   }
   /* 설명 */
@@ -340,10 +349,14 @@
   .button span {
     width: 5.625rem;
     height: 1.625rem;
-    font-size:.875rem;
+    font-size:.75rem;
   }
   /* 컨트롤러 */
   #controls {
     transform: translateX(-50%);
+  }
+  /* 이전, 다음 버튼 이미지 */
+  #prev img, #next img {
+    width:80%;
   }
 }
