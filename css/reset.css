@@ -64,37 +64,6 @@ ul {
 
 
 
-
-
-
-
-
-/* ***배경*** */
-/* 메뉴클릭시 bg블러 */
-#menu-bg.on {
-  left:0;
-  top:0;
-  z-index: 100;
-  width:100vw;
-  height:100vh;
-  background: rgba(4, 15, 24, 0.9);
-  backdrop-filter: blur(.3125rem);
-  transition: .3s;
-}
-/* 배경 블러 */
-#bg-blur {
-  left:0;
-  top:0;
-  z-index: 1;
-  width:100vw;
-  height:100vh;
-  background: rgba(3, 26, 39, 0.62);
-  backdrop-filter: blur(.3125rem);
-}
-
-
-
-
 /* ***뮤직플레이어*** */
 #music-player {
   left:3rem;
@@ -168,30 +137,6 @@ ul {
 
 /* 미디어쿼리 */
 @media screen and (max-width:1024px) {
-  #menu ul li a span {
-    font-size:4rem;
-  }
-  #menu ul li {
-    height:5.5rem;
-  }
-   /* 메뉴호버 */
-  #menu ul li a:hover:before {
-    left:-3.75rem;
-    top:-.5rem;
-    background: url(../img/icon/menu_hover.png) no-repeat 50% 50% / 70%;
-  }
-  #menu ul li:nth-child(3) a:hover:before {
-    left:-4.375rem;
-  }
-  #menu ul li:nth-child(4) a:hover:before {
-    left:-2.5rem;
-  }
-  #menu ul li:nth-child(5) a:hover:before {
-    left:-4.75rem;
-  }
-  #menu ul li:nth-child(6) a:hover:before {
-    left:-3rem;
-  }
   /* 뮤직플레이어 */
   #music-player {
     display: none;
@@ -199,17 +144,6 @@ ul {
 }
 
 @media screen and (max-width:768px) {
-  /* 헤더 */
-  header {
-    height:5rem;
-    margin: 1rem 1rem 0;
-    padding: 0 .5rem;
-  }
-  /* 헤더 호버 */
-  header:hover {
-    background: transparent;
-    backdrop-filter: blur(0);
-  }
   /* 햄버거 */
   #hamburger {
     width:2.125rem;

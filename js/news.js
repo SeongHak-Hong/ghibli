@@ -147,8 +147,6 @@ window.addEventListener('DOMContentLoaded', function() {
         });
       } else {
         console.log("lastElement");
-        // 더 이상 스크롤할 것이 없으면 경고창 띄우기
-        window.alert(['This is the last post.']);
       }
     } else {
       if(order > 0) {
