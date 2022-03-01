@@ -1,60 +1,69 @@
 /* ***메인섹션*** */
 #container {
-  padding: 0 4.5rem; 
   height:max-content;
   left:50%;
   top:50%;
   transform: translate(-50%,-50%);
   z-index: 5;
 }
+/* 메인 */
 main {
-  width:62.5rem;
+  width:56%;
   z-index: 99;
 }
 /* 영화 영역 */
 #film {
-  height:28rem;
+  height:29rem;
 }
 /* 영화 리스트 */
-#slide-ul {
+#film ul {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   height:100%;
   flex-wrap: wrap;
   list-style-type: none;
   overflow-y: scroll;
+  padding: 0 2rem;
 }
-#slide-ul::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera*/
-}
-#slide-ul li {
+/* 영화 li */
+#film ul li {
   width:18.75rem;
+  height:100%;
   box-sizing: border-box;
+  margin-top:2rem;
 }
-#slide-ul li a {
+/* 영화 1행 마진탑 삭제 */
+#film ul li:nth-child(1), #film ul li:nth-child(2), #film ul li:nth-child(3) {
+  margin-top:0;
+}
+/* 영화 a */
+#film ul li a {
   display: block;
   text-decoration: none;
   text-align: center;
 }
-#slide-ul li a img {
+/* 영화 포스터 */
+#film ul li a img {
   width:100%;
   border:.25rem solid transparent;
   box-sizing: border-box;
 }
-#slide-ul li a:hover img {
+/* 포스터 호버시 이미지 */
+#film ul li a:hover img {
   border:.25rem solid #109CEB;
 }
-#slide-ul li span {
+/* 영화 제목 */
+#film ul li span {
   display: block;
   color: rgba(249, 255, 254, 0.5);
   font-family: 'Be Vietnam Pro', sans-serif;
   font-weight: 300;
   letter-spacing: -0.025rem;
-  line-height:2;
   font-size:.875rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  margin-top:.5rem;
 }
 
 
@@ -89,6 +98,7 @@ video {
   animation: scroll .3s infinite alternate;
   z-index: 98;
   pointer-events: none;
+  display: none;
 }
 /* 스크롤다운 애니메이션 */
 @keyframes scroll {
@@ -103,40 +113,18 @@ video {
 
 
 
-/* ***페이저*** */
-#pager {
-  right:24%;
-  top:50%;
-  transform: translateY(-50%);
-  z-index: 98;
-}
-#pager .dot {
-  width:.875rem;
-  height:.875rem;
-  border: 1px solid rgb(255, 255, 255, .6);
-  border-radius: 50%;
-  margin: .7rem 0;
-}
-#pager .dot.active {
-  background:rgb(255, 255, 255, .9);
-  border: 1px solid rgb(255, 255, 255, .9);
-}
-
-
-
 /* ***미디어쿼리*** */
-@media screen and (max-width:1250px) {
-  /* ***메인*** */
+@media screen and (max-width:1440px) {
+  /* 메인 */
   main {
-    width:50rem;
-    margin-top:4.5rem;
+    width:60%;
   }
   /* 영화 섹션 */
   #film {
-    height:23.0625rem;
+    height:24rem;
   }
   /* 영화 리스트 */
-  #slide-ul li {
+  #film ul li {
     width:15rem;
     box-sizing: border-box;
   }
@@ -149,32 +137,50 @@ video {
 @media screen and (max-width:1024px) {
   /* ***메인*** */
   main {
-    width:43.75rem;
+    width:75%;
   }
    /* 포스터 */
   #film {
     height: 20.25rem;
   }
   /* 영화 리스트 */
-  #slide-ul li {
+  #film ul li {
     width:13rem;
     box-sizing: border-box;
   }
 }
 
 @media screen and (max-width:768px) {
-  /* ***메인*** */
+  /* 메인 */
   main {
-    width:39rem;
-  }
-   /* 포스터 */
+    width:80%;
+  } 
+  /* 포스터 */
   #film {
-    height: 19.5rem;
+    height: 24rem;
   }
   /* 영화 리스트 */
-  #slide-ul li {
-    width:12.5rem;
-    box-sizing: border-box;
+  #film ul li {
+    width:15rem;
+  }
+}
+
+@media screen and (max-width:480px) {
+  /* 포스터 */
+  #film {
+    height: 29rem;
+  }
+  /* 영화 리스트 */
+  #film ul {
+    padding: 0 1rem;
+  }
+  /* 영화 리스트 */
+  #film ul li {
+    width:20rem;
+  }
+  /* 영화 1행 마진탑 재추가 */
+  #film ul li:nth-child(2), #film ul li:nth-child(3) {
+    margin-top:2rem;
   }
 }
 
