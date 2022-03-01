@@ -106,10 +106,10 @@
   top:0;
   z-index: -1;
 }
-#slide-ul li {
+#slide ul li {
   width:100vw;
 }
-#slide-ul li img {
+#slide ul li img {
   height:104%;
 }
 
@@ -188,7 +188,7 @@
 
 /* 배경사이즈 미디어쿼리 */
 @media screen and (max-aspect-ratio: 1920/1080) {
-  #slide-ul li img {
+  #slide ul li img {
       width: auto;
       height: 100vh;
   }
