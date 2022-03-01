@@ -102,6 +102,9 @@ video {
   bottom:5%;
   transform:translate(-50%,-50%);
 }
+#scroll img {
+  width:80%;
+}
 /* 스크롤다운 애니메이션 */
 @keyframes scroll {
   0% {
