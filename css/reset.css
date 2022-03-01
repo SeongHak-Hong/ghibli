@@ -113,3 +113,10 @@ ul {
     left:-.5rem;
   }
 }
+
+/* 애니메이션 저하 디바이스 대응 미디어쿼리 */
+@media (print), (prefers-reduced-motion: reduce) {
+  .animated {
+      opacity: 1 !important;
+  }
+}
