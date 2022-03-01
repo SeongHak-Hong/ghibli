@@ -28,7 +28,7 @@ main {
 /* 영화 li */
 #film ul li {
   width:18.75rem;
-  height:100%;
+  /* height:100%; */
   box-sizing: border-box;
   margin-top:2rem;
 }
@@ -159,15 +159,15 @@ video {
 @media screen and (max-width:768px) {
   /* 메인 */
   main {
-    width:80%;
+    width:90%;
   } 
   /* 포스터 */
   #film {
-    height: 24rem;
+    height: 19rem;
   }
   /* 영화 리스트 */
   #film ul li {
-    width:15rem;
+    width:12rem;
   }
   /* 스크롤다운 아이콘 */
   #scroll {
@@ -178,20 +178,19 @@ video {
 @media screen and (max-width:480px) {
   /* 포스터 */
   #film {
-    height: 27.5rem;
+    height: 25.5rem;
   }
   /* 영화 리스트 */
   #film ul {
     padding: 0 1rem;
-    justify-content: center;
   }
   /* 영화 리스트 */
   #film ul li {
-    width:18rem;
+    width:7rem;
   }
-  /* 영화 1행 마진탑 재추가 */
-  #film ul li:nth-child(2), #film ul li:nth-child(3) {
-    margin-top:2rem;
+  /* 영화 제목 */
+  #film ul li span {
+    font-size: .75rem;
   }
 }
 
