@@ -255,10 +255,13 @@
 @media screen and (max-width:768px) {
   /* 슬라이드 */
   #slide {
-    width:40rem;
+    width:36rem;
+    height:44%;
+    transform: translate(-47%, -46%);
   }
+  /* 슬라이드 li */
   #slide ul li {
-    width:40rem;
+    width:36rem;
   }
   /* 배너이미지 */
   .banner img {
@@ -266,7 +269,7 @@
   }
   /* 사이드메뉴 */
   #side-menu {
-    transform: translateY(6rem);
+    transform: translateY(38%);
   }
   #side-menu li a {
     font-size:1rem;
@@ -289,6 +292,10 @@
     height: 1.625rem;
     line-height: 1.625rem;
     font-size:.875rem;
+  }
+  /* 컨트롤러 */
+  #controls {
+    transform: translateX(-39%);
   }
   /* 이전, 다음 버튼 이미지 */
   #prev img, #next img {
