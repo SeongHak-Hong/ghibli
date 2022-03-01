@@ -45,7 +45,7 @@ const thirdTime = setTimeout(function() {
     }
     // 해상도 768 이하(tablet, mobile)
     if (document.body.offsetWidth <= 768) {
-      body.style.background = "url(../img/bg/index_mobile0.jpg) no-repeat 50% 50% / cover";
+      body.style.background = "url(./img/bg/index_mobile0.jpg) no-repeat 50% 50% / cover";
       body.classList.add('mobile');
     }
     musicPlayer.style.opacity = 1;
