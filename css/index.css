@@ -2,7 +2,7 @@ body {
   background: url(../img/bg/intro.png) no-repeat 50% 50% / cover;
 }
 body.mobile {
-  animation: mobile-bg 50s 3s infinite;
+  animation: mobile-bg 50s 5s infinite;
 }
 @keyframes mobile-bg {
   0% {
