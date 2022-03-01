@@ -11,9 +11,3 @@ const secondTime = setInterval(function(){
     clearInterval(secondTime);
   }
 }, 500);
-
-// movieBG's z-index
-const zIndex0 = setTimeout(function(){
-  movieBg.style.zIndex = 0;
-  clearTimeout(zIndex0);
-}, 1200);

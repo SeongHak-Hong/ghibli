@@ -1,5 +1,4 @@
-// ***사이드메뉴 on/off
-
+// ***사이드메뉴
 const sidemenuUl = document.querySelector('#side-menu ul');
   
   for(let i = 0; i < sidemenuUl.children.length; i++) {
@@ -93,27 +92,7 @@ sidemenuLi[0].onclick = function(e) {
 
 
 
-// ***진입시 페이드효과, 랜턴 깜빡
-const movieBg = document.querySelector("#movie-bg");
-
-movieBg.style.opacity = 1;
-
-// 페이드인
-const secondTime = setInterval(function(){
-  if (movieBg.style.opacity == 1) {
-    movieBg.style.opacity = 0;
-    movieBg.style.transition = 1 + "s";
-    movieBg.style.display = "none";
-  } else {
-    clearInterval(secondTime);
-  }
-}, 500);
-
-// movieBG의 z-index 낮추기
-const zIndex0 = setTimeout(function(){
-  movieBg.style.zIndex = 0;
-  clearTimeout(zIndex0);
-}, 1200);
+// ***진입시 랜턴 깜빡
 
 // 랜턴 깜빡
 const blink1 = setTimeout(function(){

@@ -130,7 +130,7 @@ footer.on {
 
 
 /* ***미디어쿼리 */
-@media screen and (max-width:1024px) {
+@media screen and (max-width:1440px) {
   #menu ul li a span {
     font-size:4rem;
   }
@@ -159,6 +159,9 @@ footer.on {
   #menu ul li:nth-child(6) a:hover:before {
     left:-3rem;
   }
+}
+
+@media screen and (max-width:1024px) {
   /* 햄버거 */
   #hamburger {
     width:2.125rem;

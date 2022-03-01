@@ -14,7 +14,7 @@
   <script defer src="./js/fade-in.js"></script>
 </head>
 <body>
-  <div id="container" class="flex flex-direction-column">
+  <div id="container">
     <!-- ***헤더*** -->
     <div id="header-wrap" class="flex space-between">
       <header class="flex relative">
@@ -188,69 +188,62 @@
         <img src="./img/music/play1.png" alt="play-control">
       </div>
     </div>
-  </div>
 
-
-
-
-  <!-- ***슬라이드*** -->
-  <div id="slide" class="absolute">
-    <ul class="flex absolute">
-      <li>
-        <img src="./img/gallery/howl043.jpg" alt="howl1">
-      </li>
-      <li>
-        <img src="./img/gallery/howl001.jpg" alt="howl2">
-      </li>
-      <li>
-        <img src="./img/gallery/howl004.jpg" alt="howl3">
-      </li>
-      <li>
-        <img src="./img/gallery/howl005.jpg" alt="howl4">
-      </li>
-      <li>
-        <img src="./img/gallery/howl016.jpg" alt="howl5">
-      </li>
-      <li>
-        <img src="./img/gallery/howl033.jpg" alt="howl6">
-      </li>
-      <li>
-        <img src="./img/gallery/howl035.jpg" alt="howl7">
-      </li>
-      <li>
-        <img src="./img/gallery/howl039.jpg" alt="howl8">
-      </li>
-      <li>
-        <img src="./img/gallery/howl050.jpg" alt="howl9">
-      </li>
-      <li>
-        <img src="./img/gallery/howl045.jpg" alt="howl10">
-      </li>
-    </ul>
-  </div>
-  <!-- 컨트롤러(페이저) -->
-  <div id="controls" class="flex absolute space-between">
-    <div id="prev" class="swapBtn">
-      <img src="./img/icon/chevron_left.png" alt="prev">
+    <!-- ***슬라이드*** -->
+    <div id="slide" class="absolute">
+      <ul class="flex absolute">
+        <li>
+          <img src="./img/gallery/howl043.jpg" alt="howl1">
+        </li>
+        <li>
+          <img src="./img/gallery/howl001.jpg" alt="howl2">
+        </li>
+        <li>
+          <img src="./img/gallery/howl004.jpg" alt="howl3">
+        </li>
+        <li>
+          <img src="./img/gallery/howl005.jpg" alt="howl4">
+        </li>
+        <li>
+          <img src="./img/gallery/howl016.jpg" alt="howl5">
+        </li>
+        <li>
+          <img src="./img/gallery/howl033.jpg" alt="howl6">
+        </li>
+        <li>
+          <img src="./img/gallery/howl035.jpg" alt="howl7">
+        </li>
+        <li>
+          <img src="./img/gallery/howl039.jpg" alt="howl8">
+        </li>
+        <li>
+          <img src="./img/gallery/howl050.jpg" alt="howl9">
+        </li>
+        <li>
+          <img src="./img/gallery/howl045.jpg" alt="howl10">
+        </li>
+      </ul>
     </div>
-    <div id="pager">
-      <div id="cur-pos" class="inline-block">1</div>
-      <span>/</span>
-      <div id="total-page" class="inline-block"></div>
+    <!-- 컨트롤러(페이저) -->
+    <div id="controls" class="flex absolute space-between">
+      <div id="prev" class="swapBtn">
+        <img src="./img/icon/chevron_left.png" alt="prev">
+      </div>
+      <div id="pager">
+        <div id="cur-pos" class="inline-block">1</div>
+        <span>/</span>
+        <div id="total-page" class="inline-block"></div>
+      </div>
+      <div id="next" class="swapBtn">
+        <img src="./img/icon/chevron_right.png" alt="next">
+      </div>
     </div>
-    <div id="next" class="swapBtn">
-      <img src="./img/icon/chevron_right.png" alt="next">
-    </div>
+
+
+
+
+    <!-- ***페이드인 효과(윈도우 로드시)*** -->
+    <div id="movie-bg" class="absolute"></div>
   </div>
-
-
-
-
-  <!-- ***페이드인 효과(윈도우 로드시)*** -->
-  <div id="movie-bg" class="absolute"></div>
-
-
-
-
 </body>
 </html>
