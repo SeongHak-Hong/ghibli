@@ -242,6 +242,7 @@
   #side-menu li {
     height:2rem;
   }
+  /* 사이드메뉴 폰트 */
   #side-menu li a {
     font-size:1.2rem;
   }
