@@ -1,33 +1,3 @@
-body {
-  background: url(../img/bg/intro.png) no-repeat 50% 50% / cover;
-}
-body.mobile {
-  animation: mobile-bg 50s 5s infinite;
-}
-@keyframes mobile-bg {
-  0% {
-    background: url(../img/bg/index_mobile0.jpg) no-repeat 50% 50% / cover;
-  }
-  20% {
-    background: url(../img/bg/index_mobile1.jpg) no-repeat 50% 50% / cover;
-  }
-  40% {
-    background: url(../img/bg/index_mobile2.jpg) no-repeat 50% 50% / cover;
-  }
-  60% {
-    background: url(../img/bg/index_mobile3.jpg) no-repeat 50% 50% / cover;
-  }
-  80% {
-    background: url(../img/bg/index_mobile4.jpg) no-repeat 50% 50% / cover;
-  }
-  100% {
-    background: url(../img/bg/index_mobile0.jpg) no-repeat 50% 50% / cover;
-  }
-}
-
-
-
-
 /* ***메인섹션*** */
 main {
   width:62.5rem;
@@ -39,11 +9,9 @@ main {
 
 
 /* ***영화 비주얼*** */
-/* 영화 스크린 같은 위, 아래 줄 */
-#movie > * {
-  background-color: #101010;
-  width:100%;
-  height:2.5rem;
+#intro {
+  left:0;
+  top:0;
 }
 /* 영화 배경 */
 #movie-bg {
@@ -55,60 +23,28 @@ main {
   pointer-events: none;
   z-index: 100;
 }
-/* 아랫줄 */
-.over {
-  left:0;
-  top:0;
-}
-/* 아랫줄 */
-.under {
-  left:0;
-  bottom:0;
-}
-/* 캐릭터 */
-#character {
-  width:100%;
-  height:100%;
-  left:0;
-  top:0;
-}
-#ponyo {
-  left: 35px;
-  top: 520px;
-  z-index: 1;
-}
-#cloud {
-  left:0;
-  top: -6px;
-}
-#porco {
-  left: 69px;
-  top: 127px;
-  z-index: -1;
-}
-#haul {
-  left: 379px;
-  top: 283px;
-  z-index: 1;
-}
-#mononoke {
-  left: 617px;
-  bottom: 60px;
-}
-#totoro {
-  left: 842px;
-  bottom: 60px;
-  z-index: -1;
-}
-#kiki {
-  left: 1285px;
-  top: 228px;
-}
-#laputa {
-  left: 802px;
-  top: 13px;
-}
 
+
+
+
+/* ***배경 */
+/* pc 버전 */
+#pc-bg {
+  left:0;
+  top:0;
+}
+/* mobile 버전 */
+#mobile-bg {
+  left:0;
+  top:0;
+}
+/* pc, mobile버전(tablet 포함) 이미지 */
+#pc-bg img, #mobile-bg img {
+  height:100vh;
+  left:0;
+  top:0;
+  transition: 1s;
+}
 
 
 
