@@ -15,24 +15,13 @@
 </head>
 <body>
   <div id="container">
-    <!-- ***헤더*** -->
+    <!-- ***헤더영역*** -->
     <div id="header-wrap" class="flex space-between">
       <header class="flex relative">
-        <div id="left" class="flex align-items-center">
-          <div id="hamburger">
-            <a href="#" class="block">
-              <img src="./img/icon/hamburger.png" alt="menu">
-            </a>
-          </div>
-          <!-- 타이틀 -->
-            <div id="title" class="flex align-items-center">
-              <strong class="inline-block">Howl's Moving Castle</strong>
-              <div id="close">
-                <a href="./film.html" class="block">
-                  <img src="./img/icon/close_small.png" alt="close">
-                </a>
-              </div>
-            </div>
+        <div id="hamburger">
+          <a href="#" class="block">
+            <img src="./img/icon/hamburger.png" alt="menu">
+          </a>
         </div>
         <div id="logo">
           <a href="./index.html">
@@ -40,7 +29,7 @@
           </a>
         </div>
       </header>
-    </div> 
+    </div>
     <!-- 메뉴 -->
     <div id="menu" class="absolute">
       <ul>
@@ -92,10 +81,10 @@
 
 
 
-    <!-- ***영화 정보*** -->
+    <!-- ***영화 정보 -->
     <section id="film" class="flex absolute align-items-center justify-content-center">
       <h2 class="none">film-info</h2>
-      <div id="content" class="flex justify-content-center">
+      <div id="film-content" class="flex justify-content-center">
         <!-- 포스터 -->
         <div id="poster" class="hidden">
           <img src="./img/poster/howl.jpg" alt="howl">
@@ -171,61 +160,163 @@
 
 
 
-    <!-- ***슬라이드*** -->
-    <div id="slide" class="flex align-items-center justify-content-center absolute">
-      <ul class="flex absolute">
-        <li>
-          <img src="./img/gallery/howl043.jpg" alt="howl1">
-        </li>
-        <li>
-          <img src="./img/gallery/howl001.jpg" alt="howl2">
-        </li>
-        <li>
-          <img src="./img/gallery/howl004.jpg" alt="howl3">
-        </li>
-        <li>
-          <img src="./img/gallery/howl005.jpg" alt="howl4">
-        </li>
-        <li>
-          <img src="./img/gallery/howl016.jpg" alt="howl5">
-        </li>
-        <li>
-          <img src="./img/gallery/howl033.jpg" alt="howl6">
-        </li>
-        <li>
-          <img src="./img/gallery/howl035.jpg" alt="howl7">
-        </li>
-        <li>
-          <img src="./img/gallery/howl039.jpg" alt="howl8">
-        </li>
-        <li>
-          <img src="./img/gallery/howl050.jpg" alt="howl9">
-        </li>
-        <li>
-          <img src="./img/gallery/howl045.jpg" alt="howl10">
-        </li>
-      </ul>
-    </div>
-    <!-- 컨트롤러(페이저) -->
-    <div id="controls" class="flex absolute space-between">
-      <div id="prev" class="swapBtn">
-        <img src="./img/icon/chevron_left.png" alt="prev">
+    <!-- ***갤러리 -->
+    <section id="gallery" class="flex flex-direction-column justify-content-center align-items-center absolute">
+      <h2 class="none">gallery</h2>
+      <!-- 콘텐츠 영역 -->
+      <div id="gallery-content" class="flex flex-direction-column">
+        <!-- 타이틀 -->
+        <div id="title" class="flex align-items-center">
+          <strong class="inline-block">Howl's Moving Castle</strong>
+          <div id="close">
+            <a href="./film.html" class="block">
+              <img src="./img/icon/close_small.png" alt="close">
+            </a>
+          </div>
+        </div>
+        <!-- 슬라이드 영역 -->
+        <div id="slide" class="flex">
+          <!-- 왼쪽 영역 -->
+          <div id="left" class="flex flex-direction-column">
+            <div id="view" class="relative">
+              <img data-view="0" src="./img/gallery/howl001.jpg" alt="이미지 보기">
+              <img data-view="1" src="./img/gallery/howl002.jpg" alt="이미지 보기">
+              <img data-view="2" src="./img/gallery/howl003.jpg" alt="이미지 보기">
+              <img data-view="3" src="./img/gallery/howl004.jpg" alt="이미지 보기">
+              <img data-view="4" src="./img/gallery/howl005.jpg" alt="이미지 보기">
+              <img data-view="5" src="./img/gallery/howl006.jpg" alt="이미지 보기">
+              <img data-view="6" src="./img/gallery/howl007.jpg" alt="이미지 보기">
+              <img data-view="7" src="./img/gallery/howl008.jpg" alt="이미지 보기">
+              <img data-view="8" src="./img/gallery/howl009.jpg" alt="이미지 보기">
+              <img data-view="9" src="./img/gallery/howl010.jpg" alt="이미지 보기">
+              <img data-view="10" src="./img/gallery/howl011.jpg" alt="이미지 보기">
+              <img data-view="11" src="./img/gallery/howl012.jpg" alt="이미지 보기">
+              <img data-view="12" src="./img/gallery/howl013.jpg" alt="이미지 보기">
+              <img data-view="13" src="./img/gallery/howl014.jpg" alt="이미지 보기">
+              <img data-view="14" src="./img/gallery/howl015.jpg" alt="이미지 보기">
+              <img data-view="15" src="./img/gallery/howl016.jpg" alt="이미지 보기">
+              <img data-view="16" src="./img/gallery/howl017.jpg" alt="이미지 보기">
+              <img data-view="17" src="./img/gallery/howl018.jpg" alt="이미지 보기">
+              <img data-view="18" src="./img/gallery/howl019.jpg" alt="이미지 보기">
+              <img data-view="19" src="./img/gallery/howl020.jpg" alt="이미지 보기">
+              <img data-view="20" src="./img/gallery/howl021.jpg" alt="이미지 보기">
+              <img data-view="21" src="./img/gallery/howl022.jpg" alt="이미지 보기">
+              <img data-view="22" src="./img/gallery/howl023.jpg" alt="이미지 보기">
+              <img data-view="23" src="./img/gallery/howl024.jpg" alt="이미지 보기">
+              <img data-view="24" src="./img/gallery/howl025.jpg" alt="이미지 보기">
+              <img data-view="25" src="./img/gallery/howl026.jpg" alt="이미지 보기">
+              <img data-view="26" src="./img/gallery/howl027.jpg" alt="이미지 보기">
+              <img data-view="27" src="./img/gallery/howl028.jpg" alt="이미지 보기">
+              <img data-view="28" src="./img/gallery/howl029.jpg" alt="이미지 보기">
+              <img data-view="29" src="./img/gallery/howl030.jpg" alt="이미지 보기">
+              <img data-view="30" src="./img/gallery/howl031.jpg" alt="이미지 보기">
+              <img data-view="31" src="./img/gallery/howl032.jpg" alt="이미지 보기">
+              <img data-view="32" src="./img/gallery/howl033.jpg" alt="이미지 보기">
+              <img data-view="33" src="./img/gallery/howl034.jpg" alt="이미지 보기">
+              <img data-view="34" src="./img/gallery/howl035.jpg" alt="이미지 보기">
+              <img data-view="35" src="./img/gallery/howl036.jpg" alt="이미지 보기">
+              <img data-view="36" src="./img/gallery/howl037.jpg" alt="이미지 보기">
+              <img data-view="37" src="./img/gallery/howl038.jpg" alt="이미지 보기">
+              <img data-view="38" src="./img/gallery/howl039.jpg" alt="이미지 보기">
+              <img data-view="39" src="./img/gallery/howl040.jpg" alt="이미지 보기">
+              <img data-view="40" src="./img/gallery/howl041.jpg" alt="이미지 보기">
+              <img data-view="41" src="./img/gallery/howl042.jpg" alt="이미지 보기">
+              <img data-view="42" src="./img/gallery/howl043.jpg" alt="이미지 보기">
+              <img data-view="43" src="./img/gallery/howl044.jpg" alt="이미지 보기">
+              <img data-view="44" src="./img/gallery/howl045.jpg" alt="이미지 보기">
+              <img data-view="45" src="./img/gallery/howl046.jpg" alt="이미지 보기">
+              <img data-view="46" src="./img/gallery/howl047.jpg" alt="이미지 보기">
+              <img data-view="47" src="./img/gallery/howl048.jpg" alt="이미지 보기">
+              <img data-view="48" src="./img/gallery/howl049.jpg" alt="이미지 보기">
+              <img data-view="49" src="./img/gallery/howl050.jpg" alt="이미지 보기">
+            </div>
+          </div>
+          <!-- 오른쪽 영역 -->
+          <div id="right">
+            <!-- 썸네일 -->
+            <div id="thumbnail" class="hidden">
+              <div id="thumb-hidden" class="overflow-y-scroll">
+                <div class="flex flex-direction-column">
+                  <img data-thumb="0" src="./img/gallery/howl001.jpg" alt="썸네일">
+                  <img data-thumb="1" src="./img/gallery/howl002.jpg" alt="썸네일">
+                  <img data-thumb="2" src="./img/gallery/howl003.jpg" alt="썸네일">
+                  <img data-thumb="3" src="./img/gallery/howl004.jpg" alt="썸네일">
+                  <img data-thumb="4" src="./img/gallery/howl005.jpg" alt="썸네일">
+                  <img data-thumb="5" src="./img/gallery/howl006.jpg" alt="썸네일">
+                  <img data-thumb="6" src="./img/gallery/howl007.jpg" alt="썸네일">
+                  <img data-thumb="7" src="./img/gallery/howl008.jpg" alt="썸네일">
+                  <img data-thumb="8" src="./img/gallery/howl009.jpg" alt="썸네일">
+                  <img data-thumb="9" src="./img/gallery/howl010.jpg" alt="썸네일">
+                  <img data-thumb="10" src="./img/gallery/howl011.jpg" alt="썸네일">
+                  <img data-thumb="11" src="./img/gallery/howl012.jpg" alt="썸네일">
+                  <img data-thumb="12" src="./img/gallery/howl013.jpg" alt="썸네일">
+                  <img data-thumb="13" src="./img/gallery/howl014.jpg" alt="썸네일">
+                  <img data-thumb="14" src="./img/gallery/howl015.jpg" alt="썸네일">
+                  <img data-thumb="15" src="./img/gallery/howl016.jpg" alt="썸네일">
+                  <img data-thumb="16" src="./img/gallery/howl017.jpg" alt="썸네일">
+                  <img data-thumb="17" src="./img/gallery/howl018.jpg" alt="썸네일">
+                  <img data-thumb="18" src="./img/gallery/howl019.jpg" alt="썸네일">
+                  <img data-thumb="19" src="./img/gallery/howl020.jpg" alt="썸네일">
+                  <img data-thumb="20" src="./img/gallery/howl021.jpg" alt="썸네일">
+                  <img data-thumb="21" src="./img/gallery/howl022.jpg" alt="썸네일">
+                  <img data-thumb="22" src="./img/gallery/howl023.jpg" alt="썸네일">
+                  <img data-thumb="23" src="./img/gallery/howl024.jpg" alt="썸네일">
+                  <img data-thumb="24" src="./img/gallery/howl025.jpg" alt="썸네일">
+                  <img data-thumb="25" src="./img/gallery/howl026.jpg" alt="썸네일">
+                  <img data-thumb="26" src="./img/gallery/howl027.jpg" alt="썸네일">
+                  <img data-thumb="27" src="./img/gallery/howl028.jpg" alt="썸네일">
+                  <img data-thumb="28" src="./img/gallery/howl029.jpg" alt="썸네일">
+                  <img data-thumb="29" src="./img/gallery/howl030.jpg" alt="썸네일">
+                  <img data-thumb="30" src="./img/gallery/howl031.jpg" alt="썸네일">
+                  <img data-thumb="31" src="./img/gallery/howl032.jpg" alt="썸네일">
+                  <img data-thumb="32" src="./img/gallery/howl033.jpg" alt="썸네일">
+                  <img data-thumb="33" src="./img/gallery/howl034.jpg" alt="썸네일">
+                  <img data-thumb="34" src="./img/gallery/howl035.jpg" alt="썸네일">
+                  <img data-thumb="35" src="./img/gallery/howl036.jpg" alt="썸네일">
+                  <img data-thumb="36" src="./img/gallery/howl037.jpg" alt="썸네일">
+                  <img data-thumb="37" src="./img/gallery/howl038.jpg" alt="썸네일">
+                  <img data-thumb="38" src="./img/gallery/howl039.jpg" alt="썸네일">
+                  <img data-thumb="39" src="./img/gallery/howl040.jpg" alt="썸네일">
+                  <img data-thumb="40" src="./img/gallery/howl041.jpg" alt="썸네일">
+                  <img data-thumb="41" src="./img/gallery/howl042.jpg" alt="썸네일">
+                  <img data-thumb="42" src="./img/gallery/howl043.jpg" alt="썸네일">
+                  <img data-thumb="43" src="./img/gallery/howl044.jpg" alt="썸네일">
+                  <img data-thumb="44" src="./img/gallery/howl045.jpg" alt="썸네일">
+                  <img data-thumb="45" src="./img/gallery/howl046.jpg" alt="썸네일">
+                  <img data-thumb="46" src="./img/gallery/howl047.jpg" alt="썸네일">
+                  <img data-thumb="47" src="./img/gallery/howl048.jpg" alt="썸네일">
+                  <img data-thumb="48" src="./img/gallery/howl049.jpg" alt="썸네일">
+                  <img data-thumb="49" src="./img/gallery/howl050.jpg" alt="썸네일">
+                </div>
+              </div>
+            </div>
+            <!-- 휠 다운 이미지 -->
+            <div id="wheel" class="flex align-items-center justify-content-center">
+              <img src="./img/icon/chevron_duo_down.png" alt="마우스휠 내려주세요">
+            </div>
+          </div>
+        </div>
       </div>
-      <div id="pager">
-        <div id="cur-pos" class="inline-block">1</div>
+      <!-- 페이저 -->
+      <div id="pager" class="flex justify-content-center align-items-end">
+        <strong>1</strong>
         <span>/</span>
-        <div id="total-page" class="inline-block"></div>
+        <p></p>
       </div>
-      <div id="next" class="swapBtn">
-        <img src="./img/icon/chevron_right.png" alt="next">
-      </div>
-    </div>
+    </section>
+    
 
 
 
 
-    <!-- ***페이드인 효과(윈도우 로드시)*** -->
+    <!-- ***페이드인 효과(윈도우 로드시) -->
     <div id="movie-bg" class="absolute"></div>
+
+
+
+
+    <!-- ***백드랍필터 블러 배경 -->
+    <div id="blur-bg" class="absolute"></div>
   </div>
 </body>
 </html>

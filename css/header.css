@@ -113,9 +113,9 @@ footer {
   display: none;
   right:3.75rem;
   bottom:2.375rem;
-  z-index: 100;
+  z-index: 101;
 }
-/* 푸터 전체적용 */
+/* 푸터 글씨 */
 footer > * {
   text-decoration: none;
   color: rgba(249, 255, 254, .5);
@@ -244,5 +244,15 @@ footer.on {
   /* 로고 */
   #logo {
     width:6.25rem;
+  }
+  /* 푸터 */
+  footer {
+    right: 50%;
+    bottom: 3%;
+    transform: translateX(60%);
+  }
+  /* 푸터 글씨 */
+  footer > * {
+    font-size: .75rem;
   }
 }

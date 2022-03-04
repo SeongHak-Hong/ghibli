@@ -9,7 +9,9 @@ header.style.opacity = 0;
 movieBg.style.opacity = 1;
 musicPlayer.style.opacity = 0;
 pcBg.style.opacity = 0;
+pcBg.style.display = 'none';
 mobileBg.style.opacity = 0;
+mobileBg.style.display = 'none';
 
 
 // *** 해상도별 인트로
@@ -68,10 +70,14 @@ const thirdTime = setTimeout(function() {
     // 해상도 768 초과(desktop, laptop)
     if (document.body.offsetWidth > 768) {
       pcBg.style.opacity = 1;
+      pcBg.style.display = 'block';
+      mobileBg.style.display = 'none';
     }
     // 해상도 768 이하(tablet, mobile)
     if (document.body.offsetWidth <= 768) {
       mobileBg.style.opacity = 1;
+      mobileBg.style.display = 'block';
+      pcBg.style.display = 'none';
     }
     // 뮤직플레이어 투명도 1, 트랜지션 .6s
     musicPlayer.style.opacity = 1;
@@ -85,8 +91,9 @@ const thirdTime = setTimeout(function() {
 // ***배경 자동전환(인트로 끝난 후)
 for (i=0; i<mobileBg.children.length; i++) {
   mobileBg.children[i].style.position = 'absolute';
+  pcBg.children[i].style.position = 'absolute';
 }
-// 모바일배경 투명도 함수
+// mobile배경 투명도 함수
 const mobileBgOpacity = function (opa1, opa2, opa3, opa4, opa5) {
   mobileBg.children[0].style.opacity = opa1;
   mobileBg.children[1].style.opacity = opa2;
@@ -94,33 +101,67 @@ const mobileBgOpacity = function (opa1, opa2, opa3, opa4, opa5) {
   mobileBg.children[3].style.opacity = opa4;
   mobileBg.children[4].style.opacity = opa5;
 }
+// pc배경 투명도 함수
+const pcBgOpacity = function (opa1, opa2, opa3, opa4, opa5) {
+  pcBg.children[0].style.opacity = opa1;
+  pcBg.children[1].style.opacity = opa2;
+  pcBg.children[2].style.opacity = opa3;
+  pcBg.children[3].style.opacity = opa4;
+  pcBg.children[4].style.opacity = opa5;
+}
 mobileBgOpacity(1,0,0,0,0);
+pcBgOpacity(1,0,0,0,0);
 
 setTimeout(() =>{
   // mobile버전 배경화면이 보이고 있다면?
   if (mobileBg.style.opacity == 1) {
     // 40초마다 무한반복
     setInterval(() =>{
-      // 1번 이미지 6초동안 보여주기
+      // 1번 이미지 8초동안 보여주기
       setTimeout(() =>{
         mobileBgOpacity(1,0,0,0,0);
       }, 0);
-      // 2번 이미지 6초동안 보여주기
+      // 2번 이미지 8초동안 보여주기
       setTimeout(() =>{
         mobileBgOpacity(0,1,0,0,0);
       }, 8000);
-      // 3번 이미지 6초동안 보여주기
+      // 3번 이미지 8초동안 보여주기
       setTimeout(() =>{
         mobileBgOpacity(0,0,1,0,0);
       }, 16000);
-      // 4번 이미지 6초동안 보여주기
+      // 4번 이미지 8초동안 보여주기
       setTimeout(() =>{
         mobileBgOpacity(0,0,0,1,0);
       }, 24000);
-      // 5번 이미지 6초동안 보여주기
+      // 5번 이미지 8초동안 보여주기
       setTimeout(() =>{
         mobileBgOpacity(0,0,0,0,1);
       }, 32000);
     }, 40000);
+  } // PC버전 배경화면이 보이고 있다면?
+    else if (pcBg.style.opacity == 1) {
+    // 40초마다 무한반복
+    setInterval(() =>{
+      // 1번 이미지 8초동안 보여주기
+      setTimeout(() =>{
+        pcBgOpacity(1,0,0,0,0);
+      }, 0);
+      // 2번 이미지 8초동안 보여주기
+      setTimeout(() =>{
+        pcBgOpacity(0,1,0,0,0);
+      }, 8000);
+      // 3번 이미지 8초동안 보여주기
+      setTimeout(() =>{
+        pcBgOpacity(0,0,1,0,0);
+      }, 16000);
+      // 4번 이미지 8초동안 보여주기
+      setTimeout(() =>{
+        pcBgOpacity(0,0,0,1,0);
+      }, 24000);
+      // 5번 이미지 8초동안 보여주기
+      setTimeout(() =>{
+        pcBgOpacity(0,0,0,0,1);
+      }, 32000);
+    }, 40000);
   };
-},5016);
+}, 5016);

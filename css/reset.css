@@ -18,8 +18,9 @@
 .ellipsis {text-overflow: ellipsis;}
 .white-space-nowrap {white-space: nowrap;}
 
-/* overfloww */
+/* overflow */
 .hidden {overflow: hidden;}
+.overflow-y-scroll {overflow-y: scroll;}
 
 /* flex */
 .space-between {justify-content: space-between;}

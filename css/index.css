@@ -40,11 +40,13 @@ main {
 }
 /* pc, mobile버전(tablet 포함) 이미지 */
 #pc-bg img, #mobile-bg img {
+  width:100vw;
   height:100vh;
   left:0;
   top:0;
   transition: 1s;
 }
+
 
 
 
