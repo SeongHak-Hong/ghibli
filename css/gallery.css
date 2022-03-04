@@ -118,7 +118,7 @@ body {
 /* 콘텐츠 영역 */
 #gallery-content {
   width:64%;
-  height:65%;
+  height:67%;
   transform: translateX(8%);
 }
 /* 슬라이드 영역 */
@@ -229,7 +229,7 @@ body {
   }
   /* 콘텐츠 영역 */
   #gallery-content {
-    height: 50%;
+    height: 53%;
   }
 }
 
@@ -264,7 +264,7 @@ body {
   }
   /* 콘텐츠 영역 */
   #gallery-content {
-    height: 43%;
+    height: 46%;
   }
   /* 페이저 글자크기 */
   #pager > * {
