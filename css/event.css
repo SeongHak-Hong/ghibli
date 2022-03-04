@@ -42,9 +42,8 @@
   z-index: 99;
   width:max-content;
   height:30rem;
-  transform: translateY(3rem);
-  margin:2rem 0 0 3.625rem;
-  left:0;
+  transform: translate(0, 50%);
+  left:4%;
   top:0;
 }
 #side-menu li {
@@ -324,7 +323,7 @@
     transform: translate(-50%,-50%);
     height: max-content;
     left: 50%;
-    top: 10%;
+    top: 24%;
     margin:0;
   }
   /* 사이드메뉴 ul */
