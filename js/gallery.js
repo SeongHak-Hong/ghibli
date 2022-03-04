@@ -58,6 +58,7 @@ sidemenuLi[0].onclick = function(e) {
 const view = document.querySelector('#view');
 const thumbnail = document.querySelector('#thumbnail');
 const curPage = document.querySelector('#pager strong');
+const thumbImg = document.querySelectorAll('#thumb-hidden div img');
 
 // 뷰어 이미지 스타일 적용
 for(i=0; i<view.children.length; i++) {
@@ -71,6 +72,18 @@ for(i=0; i<view.children.length; i++) {
 
 // 처음 페이지 들어왔을 때 1번 이미지만 뷰어에 보이도록 하기
 view.children[0].style.opacity = 1;
+
+// 처음 페이지 들어왔을 때 1번 이미지의 썸네일에 색깔 테두리 적용
+// 해상도 480 초과
+if (document.body.offsetWidth > 480) {
+  // 클릭시 모든 썸네일의 테두리 투명으로 바꾸기
+  thumbImg[0].style.border = '4px solid #109CEB';
+}
+// 해상도 480 이하
+if (document.body.offsetWidth <= 480) {
+  // 클릭시 모든 썸네일의 테두리 투명으로 바꾸기
+  thumbImg[0].style.border = '3px solid #109CEB';
+}
 
 
 
@@ -86,7 +99,28 @@ thumbnail.addEventListener('click', function(event) {
     for(i=0; i<view.children.length; i++) {
       view.children[i].style.opacity = 0;
     }
-    // 클릭시 해당 데이터셋을 가진 썸네일이 뷰어에 보이도록 하기
+    // 해상도 480 초과의 썸네일 테두리 스타일
+    if (document.body.offsetWidth > 480) {
+      // 클릭시 모든 썸네일의 테두리 투명으로 바꾸기
+      for(i=0; i<thumbImg.length; i++) {
+        thumbImg[i].style.border = '4px solid transparent';
+      }
+      // 클릭시 해당 썸네일의 테두리에 색깔 적용
+      event.target.style.border = '4px solid #109CEB';
+      // 클릭시 해당 데이터셋을 가진 썸네일이 뷰어에 보이도록 하기
+    }
+
+    // 해상도 480 이하의 썸네일 테두리 스타일
+    if (document.body.offsetWidth <= 480) {
+      // 클릭시 모든 썸네일의 테두리 투명으로 바꾸기
+      for(i=0; i<thumbImg.length; i++) {
+        thumbImg[i].style.border = '3px solid transparent';
+      }
+      // 클릭시 해당 썸네일의 테두리에 색깔 적용
+      event.target.style.border = '3px solid #109CEB';
+      // 클릭시 해당 데이터셋을 가진 썸네일이 뷰어에 보이도록 하기
+    }
+    
     view.children[getThumbDataset].style.opacity = "1";
     // 클릭시 페이저의 현재 이미지의 데이터셋값 불러오기
     curPage.textContent = Number(getThumbDataset) + 1;

@@ -140,11 +140,6 @@ body {
 #view img {
   width:100%;
 }
-/*  */
-#under {
-  width:64%;
-  transform: translateX(8%)
-}
 /* 페이저 */
 #pager {
   margin-top:1rem;
@@ -177,6 +172,8 @@ body {
 #thumbnail img {
   width:100%;
   cursor: pointer;
+  border: 4px solid transparent;
+  box-sizing: border-box;
 }
 /* 썸네일 이미지 상하간격 */
 #thumbnail div img ~ img {
@@ -388,6 +385,10 @@ body {
   /* 콘텐츠 영역 */
   #gallery-content {
     height: 43%;
+  }
+  /* 썸네일 이미지 */
+  #thumbnail img {
+    border: 2px solid transparent;
   }
   /* 페이저 글자크기 */
   #pager > * {
