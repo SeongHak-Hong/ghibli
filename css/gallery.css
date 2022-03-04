@@ -263,7 +263,15 @@ body {
   }
   /* 콘텐츠 영역 */
   #gallery-content {
-    height: 42%;
+    height: 43%;
+  }
+  /* 페이저 글자크기 */
+  #pager > * {
+    font-size:.875rem;
+  }
+  /* 휠 이미지 */
+  #wheel img {
+    width: 2rem;
   }
 }
 
