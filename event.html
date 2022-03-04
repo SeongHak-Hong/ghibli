@@ -14,20 +14,8 @@
   <script defer src="./js/event.js"></script>
 </head>
 <body>
-  <div id="container" class="flex flex-direction-column absolute">
-    <!-- ***랜턴이미지*** -->
-    <div id="lantern" class="absolute"></div>
-
-
-
-
-    <!-- ***배경*** -->
-    <div id="bg" class="absolute"></div>
-
-
-
-
-    <!-- ***헤더영역*** -->
+  <div id="container">
+  <!-- ***헤더영역*** -->
   <div id="header-wrap" class="flex space-between">
     <header class="flex relative">
       <div id="hamburger">
@@ -94,8 +82,20 @@
 
 
 
+    <!-- ***랜턴이미지*** -->
+    <div id="lantern" class="absolute"></div>
+
+
+
+
+    <!-- ***배경*** -->
+    <div id="bg" class="absolute"></div>
+
+
+
+
     <!-- ***사이드메뉴*** -->
-    <section id="side-menu" class="relative">
+    <section id="side-menu" class="absolute">
       <h2 class="none">side-menu</h2>
       <ul id="side-menu-ul" class="list-style-none">
         <li data-index="0">
