@@ -247,7 +247,11 @@ body {
   }
   /* 인포 */
   #info {
-    margin-left:1rem;
+    margin-left:.5rem;
+  }
+  /* 포스터 */
+  #poster {
+    width: 24%;
   }
   /* 인포 폰트 */
   #info span, #info strong {
