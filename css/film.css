@@ -1,5 +1,5 @@
 body {
-  background: url(../img/bg/film_bg.jpg) no-repeat 0 0 / 100%;
+  background: url(../img/bg/film_bg.jpg) no-repeat 100% 100% / cover;
 }
 
 /* ***메인섹션*** */
